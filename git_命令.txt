@@ -1,3 +1,49 @@
+
+…or create a new repository on the command line
+echo "# -" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/xuli309/xuli_201904031011.git
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/xuli309/xuli_201904031011.git
+git push -u origin master
+
+…or import code from another repository
+You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+
+git config --global user.name "name"
+
+git config --global user.email "email"
+
+此配置存放在~/.gitconfig文件中，可以通过more或者cat命令查看
+
+
+--创建分支
+git checkout -b 新分支名字
+
+--提交分支到github服务器
+git push origin xuli_201904031726 // 推送到获取新分支名
+
+--查看分支
+git branch // 查看当前在哪个分支上面
+
+git log --oneline 查看log
+git checkout -b 新分支名字 log中的hash // 创建分支
+
+
+--切换到master分支
+git checkout master
+--删除本地分支
+git branch -d name
+
+--删除服务器上的分支
+git push origin :name   (分支名前的冒号代表删除)
+
+
 --第一次提交
 echo "# xuli_201904031011" >> README.md
 git add README.md
