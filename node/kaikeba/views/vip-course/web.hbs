@@ -1,0 +1,80 @@
+web <br />
+
+<!-- html注释 -->
+{{! hbs注释}}
+
+<!-- html内容 -->
+{{htmlStr}} <br />
+{{{htmlStr}}}
+
+
+{{! 条件语句  bool 只能是bool值，不能是表达式}}
+{{#if bool}}
+欢迎您
+{{else}}
+请登录
+{{/if}}
+<br />
+
+
+{{#if typeSwitch.isAAA}}
+aaa
+{{else if typeSwitch.isBBB}}
+bbb
+{{else if typeSwitch.isCCC}}
+cccc
+{{else}}
+dddd
+{{/if}}
+<br>
+{{#unless abc}}
+    abc内容
+{{/unless}}
+<br>
+
+
+
+
+{{! 循环}}
+<ul>
+{{#each arr}}
+    <li>
+        {{! 行内helper addOne}}
+        {{addOne @index}}
+        {{name}}--
+        {{city.cname}}--
+        {{#each hobby}}
+            {{.}}
+        {{/each}}
+    </li>
+{{/each}}
+</ul>
+
+
+{{! 对象遍历  数组为空时用else }}
+{{#each obj}}
+ key:{{@key}}
+ value:{{.}}
+ {{else}}
+ 没有数据
+{{/each}}
+<br>
+
+生日：{{date birthday 'YYYY-MM-DD hh:mm:ss'}}
+<br>
+
+{{#and a b}}
+a&b is true
+{{else}}
+a&b is false
+{{/and}}
+
+{{{link text='<i>kkb</i>' href='http://www.baidu.com' style='color:red'}}}
+
+{{#extend 'jquery'}}
+<script>
+    $(function(){
+        
+    })
+</script>
+{{/extend}}

@@ -1,0 +1,40 @@
+--第一次提交
+echo "# xuli_201904031011" >> README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/xuli309/xuli_201904031011.git
+git push -u origin master
+
+
+--之后提交
+git add .
+git init
+git commit -m  https://github.com/xuli309/xuli_201904031011.git
+git push -u origin master
+
+
+
+//创建版本库
+ git init
+//创建远程仓库,最后的字符串是github仓库的SSH key,可以看到我建立
+//的仓库叫test，
+ git remote add origin git@github.com:CodeofGame/test.git
+//创建一个文件 a.txt
+touch a.txt 
+ //将a.txt存入暂存区
+git add a.txt 
+//提交代码到本地仓库
+git commit -m "测试远程连接是否成功"
+//将你的代码提交到远程仓库的master分支下
+git push origin master
+
+
+将github上的项目代码删除将项目代码文件夹上
+
+git rm --cached filename 
+git commit -m "delete"
+git push origin branch
+
+--cached 的指令 都是和staging area或者叫index有关的，就是git add了但还没有commit出去的状态。
+
+git rm --cached filename 把文件从staging area中删了，再commit，push，就把github里面那份也删了。

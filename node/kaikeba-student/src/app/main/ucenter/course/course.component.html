@@ -1,0 +1,9 @@
+<app-panel panelTitle="我的职业课程">
+  <a class="course-item" (mouseover)="isHidden=true" (mouseout)="isHidden=false" *ngFor="let course of courses">
+    <img class="course-bg" width="222px" height="125px"
+         [src]="course.poster">
+    <div class="shadow"></div>
+    <span class="course-name" [hidden]="isHidden">{{course.name}} {{course.phase}}</span>
+    <span class="opt" [hidden]="!isHidden" [routerLink]="['/main/course', course.id]">进入课程主页</span>
+  </a>
+</app-panel>

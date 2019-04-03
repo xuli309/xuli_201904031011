@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>面向对象示例React</title>
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<script src="js/browser.js"></script>
+<script type="text/babel">
+    class Item extends React.Component{
+        constructor(...args){
+            super(...args);
+        }
+
+        render(){
+            return <li>{this.props.str}</li>;
+        }
+    }
+
+    class List extends React.Component{
+        constructor(...args){
+            super(...args);
+        }
+
+        render(){
+            let aItems=[];
+            for(let i=0;i<this.props.arr.length;i++){
+                aItems.push(<Item str={this.props.arr[i]}></Item>);
+            }
+            return <ul>{aItems}</ul>;
+        }
+    }
+
+
+    window.onload=function(){
+        let oDiv = document.getElementById("div1");
+
+        ReactDOM.render(
+            <List arr={['abc','ddd','afc','dddfddd']}></List>,
+            oDiv
+        )
+    }
+</script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>本地存储</title>
+</head>
+<body>
+<script>
+//cookie 4k左右
+//sessionStorage 浏览器关闭就无效了  5M
+// localStorage 浏览器关闭任然存在，需手动删除
+sessionStorage.setItem("name","你好");
+sessionStorage.setItem("age","18");
+sessionStorage.setItem("sex","男");
+
+console.log(sessionStorage.getItem("name"),sessionStorage.getItem("age"),sessionStorage.getItem("sex"));
+
+// window.sessionStorage.clear();
+
+sessionStorage.removeItem("age");
+
+console.log(sessionStorage.getItem("name"),sessionStorage.getItem("age"),sessionStorage.getItem("sex"));
+</script>
+</body>
+</html>

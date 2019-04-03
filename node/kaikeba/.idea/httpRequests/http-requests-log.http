@@ -1,0 +1,395 @@
+GET http://localhost:3000/api/courses/search?keyword=WEB
+Content-Type: application/json
+
+<> 2019-03-28T053749.200.json
+
+###
+
+GET http://localhost:3000/api/coureses/search?keyword=WEB
+Content-Type: application/json
+
+<> 2019-03-28T053704.404.html
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-26T053638.200.json
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "phone": "13400000000",
+  "password": "123"
+}
+
+<> 2019-03-26T053633.200.json
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-26T053053.200.json
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "phone": "13400000000",
+  "password": "123"
+}
+
+<> 2019-03-26T053050.200.json
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-26T043830.200.json
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-25T035739.200.json
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-25T035610.200.json
+
+###
+
+GET http://localhost:3000/api/users/code-img
+Content-Type: application/json
+
+<> 2019-03-25T035348.200.json
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "phone": "13400000000",
+  "password": "123"
+}
+
+<> 2019-03-25T035143.200.json
+
+###
+
+GET http://localhost:3000/api/user/code-img
+Content-Type: application/json
+
+<> 2019-03-25T035126.404.html
+
+###
+
+GET http://localhost:3000/api/user/code-img
+Content-Type: application/json
+
+<> 2019-03-25T035013.404.html
+
+###
+
+GET http://localhost:3000/api/code-img
+Content-Type: application/json
+
+<> 2019-03-25T034950.404.html
+
+###
+
+GET http://localhost:3000/api/code-img
+Content-Type: application/json
+
+###
+
+GET http://localhost:3000/api/code-img
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "phone": "13400000000",
+  "password": "123"
+}
+
+<> 2019-03-25T103406.200.json
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "phone": "13400000000",
+  "password": 123
+}
+
+<> 2019-03-25T103231.404.html
+
+###
+
+POST http://localhost:3000/api/users/login
+Content-Type: application/json
+
+{
+  "name": "13400000000",
+  "password": 123
+}
+
+<> 2019-03-25T103202.404.html
+
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "13400000000",
+  "password": 123
+}
+
+<> 2019-03-25T103114.404.html
+
+###
+
+DELETE http://localhost:3000/users/Jerry
+Content-Type: application/json
+
+<> 2019-03-18T092349.200.json
+
+###
+
+DELETE http://localhost:3000/users/tom
+Content-Type: application/json
+
+<> 2019-03-18T092343.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T092339.200.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 20
+}
+
+<> 2019-03-18T092334.200.json
+
+###
+
+GET http://localhost:3000/users?a=b
+Content-Type: application/json
+
+<> 2019-03-18T092331.200.json
+
+###
+
+DELETE http://localhost:3000/users/tom
+Content-Type: application/json
+
+<> 2019-03-18T092305.200.json
+
+###
+
+GET http://localhost:3000/users?a=b
+Content-Type: application/json
+
+<> 2019-03-18T092302.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T092146.200.json
+
+###
+
+DELETE http://localhost:3000/users/tom
+Content-Type: application/json
+
+<> 2019-03-18T092140.200.json
+
+###
+
+GET http://localhost:3000/users?a=b
+Content-Type: application/json
+
+<> 2019-03-18T092135.200.json
+
+###
+
+DELETE http://localhost:3000/users/tom
+Content-Type: application/json
+
+<> 2019-03-18T092122.200.json
+
+###
+
+DELETE http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T091951.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T091917.200.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 20
+}
+
+<> 2019-03-18T091910.200.json
+
+###
+
+GET http://localhost:3000/users?a=b
+Content-Type: application/json
+
+<> 2019-03-18T091650.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "tom",
+  "age": 30
+}
+
+<> 2019-03-18T091539.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T091511.200.json
+
+###
+
+PUT http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 30
+}
+
+<> 2019-03-18T091430.200.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 20
+}
+
+<> 2019-03-18T091153.200.json
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "Jerry",
+  "age": 20
+}
+
+<> 2019-03-18T091128.200.json
+
+###
+
+GET http://localhost:3000/users?a=b
+Content-Type: application/json
+
+<> 2019-03-18T090739.200.json
+
+###
+
+GET http://localhost:3000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-03-18T090703.200.json
+
+###
+
+GET http://localhost:3000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-03-18T090642.200.json
+
+###
+
+GET http://localhost:8080/users
+Accept: */*
+Cache-Control: no-cache
+
+###
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>伸缩布局</title>
+<style>
+    .cls{
+        width: 500px;
+        height:700px;
+        border:1px solid red;
+
+        display: flex;/*伸缩盒子*/
+        /*子元素在主轴方向的对齐方式配置*/
+       /* justify-content: flex-start;/*默认从左到右*/
+        /*justify-content: flex-end;/*从右到左*/
+        /*justify-content: center;/*中间显示*/
+        /*justify-content:space-between;/*两端对齐方式*/
+       /* justify-content: space-around;/*两端留白，环绕对齐*/
+
+        /*主轴方向做为调整*/
+        /*flex-direction: row;/*默认水平*/
+        /*flex-direction: row-reverse;/*水平反转*/
+        /*flex-direction: column;/*主轴垂直*/
+       /* flex-direction: column-reverse;/*主轴垂直反转*/
+        
+       /*侧轴对齐*/
+       /*align-items: flex-start;/*侧轴开始*/
+       /*align-items: flex-end;/*侧轴开始*/
+       /*align-items: center;*/
+       /*align-items: stretch;/*拉伸效果展示，要想有效果，必须干掉子元素的高度*/
+        
+       /*flex-wrap: wrap;/*子元素换行*/
+       /*flex-wrap: nowrap;/*默认值*/
+       /*flex-wrap: wrap-reverse;*/
+       /*align-content: flex-start;/*子元素换行后，希望没有空白行，需要重新设置主轴方向*/   
+
+    }
+
+    /*伸缩的百分比*/
+    .div1{
+        width:100px;
+        height:100px;
+        background:red;
+        margin:0 10px;
+        flex:2;
+    }
+
+    .div2{
+        width:100px;
+        height:100px;
+        background:green;
+        margin:0 10px;
+        flex:2;
+    }
+    .div3{
+        width:100px;
+        height:100px;
+        background:blue;
+        margin:0 10px;
+        flex:1;
+    }
+   
+</style>
+</head>
+<body>
+<div class="cls">
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+</div>
+</body>
+</html>

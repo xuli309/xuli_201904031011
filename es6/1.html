@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>es6</title>
+<!--  <script src="const.js"></script>-->
+<script src="scope.js"></script>
+<script>
+let arr = [12,5,8,9];
+// alert(arr.includes(2));
+// for(let i in arr){
+//     alert(i)
+// }
+
+// for(let i of arr){
+//     alert(i)
+// }
+
+// for(let key of arr.keys()){
+//     alert(key)
+// }
+
+// console.log(arr)
+// for(let value of arr.values()){
+//     alert(value)
+// }
+
+for(let [key,value] of arr.entries()){
+    alert(`${key}==${value}`)
+}
+</script>
+</head>
+<body>hh3333
+</body>
+</html>

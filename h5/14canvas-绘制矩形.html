@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>会动的矩形</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+<script>
+    
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+
+    var x=0;//x轴
+    var step = 5;//每次移动的步数
+    var i=1;
+    setInterval(function(){
+        ctx.clearRect(0,0,c.width,c.height);
+
+        ctx.fillStyle="green";
+        ctx.fillRect(x,100,100,200);//横纵坐标，宽，高
+        ctx.stroke();
+
+        x += step*i;
+        if( x > c.width-100){
+            i = -1;//标记设置为-1
+        }else if(x<=0){
+            i = 1;
+        }
+        
+    },10);
+
+    
+    
+    
+   
+
+</script>
+</body>
+</html>

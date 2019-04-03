@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>h5</title>
+<style>
+header{
+     background:red;
+     font-size:50px;
+     text-align: center;
+}
+
+footer{
+     background:yellow;
+     font-size:50px;
+     text-align: center;
+}
+</style>
+<script>
+    //ie8适用
+    //解决办法1：在该标签的css样式中设置该标签的display:block;
+    //通过DOM的方式创建这个标签
+    // document.createElement("header")
+</script>
+<script>
+    //解决办法2：引入外部的 htmlshiv.js文件（插件，外部js文件）
+</script>
+<script>
+    //为了解决h5标签在IE8中的兼容的问题，引入外部的h5js文件，但是谷歌本身就职称执行标签，
+    //没有必要访问这个h5js的文件（不需要请求）
+
+    //如果是IE8就请求这个文件，如果是谷歌就不要请求了
+    //所有的浏览器都可以支持这些标签
+    //cc:ie6 tab键即可
+</script>
+<!-- 如果浏览器小于ie8就执行里面的代码，该命令只针对IE浏览器有用 -->
+<!--[if lte IE 8]>
+    <script src="../html5shiv-master/dist/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>头部</header>
+<footer>底部</footer>
+</body>
+</html>
+

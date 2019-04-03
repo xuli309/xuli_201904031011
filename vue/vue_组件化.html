@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue_组件化</title>
+
+    <script src="js/vue.js"></script>
+   
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <todo-item v-for="(item, index) in todos" :key="index" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ul>
+    </div>
+    <script>
+       Vue.component('todo-item',{ // todo-item 组件现在接受一个
+              props: ['todo'], // "prop"，类似于一个自定义特性。 这个 prop 名为 todo。
+              template: '<li>{{todo.id}}、{{ todo.text }}</li>',
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+               todos:[
+                { id: 0, text: '蔬菜' },
+                { id: 1, text: '奶酪' },
+                { id: 2, text: '随便其它什么人吃的东西' }
+               ]
+           }
+        })
+
+    </script>
+</body>
+
+</html>

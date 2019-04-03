@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>background</title>
+<style>
+    div{
+        width:200px;
+        height: 200px;
+
+        border:10px dashed red;
+        color:#fff;
+        background:green;
+        padding:20px;
+
+        background:url("bg2.jpg") no-repeat;
+        background-origin:border-box;
+        background-clip: border-box;
+        
+        /*设置背景按照比例缩放完整的显示*/
+        /* background-size:contain;*/
+        /*设置背景按照自己的缩放比例铺满，不确定是否完整显示*/
+        background-size:cover;
+
+    }
+</style>
+</head>
+<body>
+<div>我最帅</div>
+</body>
+</html>

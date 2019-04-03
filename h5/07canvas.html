@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvas</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+
+<script>
+    //画一条线
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+
+    ctx.moveTo(100,100);//开始的位置
+    ctx.lineTo(300,100);//结束的位置
+
+    //设置样式
+    ctx.strokeStyle="red";
+    ctx.lineWidth="10";
+   
+    ctx.stroke(); //执行绘制
+
+    ctx.beginPath();//重置路径
+    ctx.moveTo(100,200);//开始的位置
+    ctx.lineTo(400,200);//结束的位置
+
+    //设置样式
+    ctx.strokeStyle="green";
+    ctx.lineWidth="2";
+
+    ctx.stroke();
+
+</script>
+</body>
+</html>

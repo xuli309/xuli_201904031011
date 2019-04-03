@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文本阴影</title>
+<style>
+    div{
+        width:400px;
+        height: 200px;
+        border:3px solid blue;
+        text-align: center;
+        padding-top:50px;
+        font-size:30px;
+
+        /*水平，垂直，模糊度，颜色*/
+        text-shadow: 5px 5px 5px red;
+    }
+
+    .cls{
+        width:400px;
+        height: 200px;
+        border:3px solid blue;
+    }
+
+    p~ul{
+        background:green;
+    }
+
+    
+</style>
+</head>
+<body>
+<div>我最帅</div>
+
+<div class="cls">
+    <p>我最帅</p>
+    <ul>
+        <li><a href="http://www.baidu.com">baidu</a></li>
+        <li><a href="http://www.baidu.com">baidu</a></li>
+        <li><a href="http://www.baidu.com">baidu</a></li>
+        <li><a href="http://www.baidu.com">baidu</a></li>
+    </ul>
+</div>
+</body>
+</html>

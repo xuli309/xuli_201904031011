@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>h5</title>
+<script>
+//页面两个上传文件的按钮
+//1.上传css -- 设置div样式
+//2.上传js--设置div事件及样式
+</script>
+</head>
+<body>
+<input type="file"  id="f1" />
+<input type="file"  id="f2" />
+<input type="file"  id="f3" />
+
+<div></div>
+<script>
+
+    //css演示
+    //读取文件，获取上传文件的标签的这个对象
+    var f1 = document.querySelector("#f1");
+    //上传文件的触发事件 -- (只要上传文件就触发该事件)
+    f1.onchange = function(){
+        //获取读取的文件
+        var fl1 = this.files[0];
+        //读取文件，创建读取文件的对象
+        var fReader = new FileReader();
+        //读取文件
+        fReader.readAsText(fl1);
+        //开始读取加载的事件
+        fReader.onload = function(){
+            var style = document.createElement("style");
+            //获取读取的结果
+            style.innerHTML=fReader.result;
+            document.querySelector("head").appendChild(style);
+        }
+    }
+
+    //js演示
+    var f2 = document.querySelector("#f2");
+    f2.onchange = function(){
+        var fl2 = this.files[0];
+        var fReader  = new FileReader();
+        fReader.readAsText(fl2);
+        fReader.onload =  function(){
+            var js = document.createElement("script");
+            js.innerHTML = fReader.result;
+            document.querySelector("head").append(js);
+        }
+    }
+
+    //读取图片处理
+    var f3 = document.querySelector("#f3");
+    f3.onchange = function(){
+        var fl3 = this.files[0];
+        var fReader  = new FileReader();
+        fReader.readAsDataURL(fl3);
+        fReader.onload =  function(){
+            var img = document.createElement("img");
+            img.src = fReader.result;
+            document.querySelector("body").append(img);
+        }
+    }
+
+</script>
+
+</body>
+</html>

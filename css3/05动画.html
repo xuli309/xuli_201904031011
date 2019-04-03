@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动画</title>
+<style>
+    .cls{
+        width:0;
+        height:0;
+        border-top:100px solid red;
+        border-right:100px solid blue;
+        border-bottom:100px solid orange;
+        border-left:100px solid green;
+
+        border-radius: 50%;
+        
+        animation-name: rotate;
+        animation-duration: 2s;/*秒数*/
+        animation-iteration-count: infinite;/*设置动画执行的次数*/
+        animation-timing-function: linear;/*匀速，设置速度*/
+        animation-direction: alternate;/*动画逆播*/
+        animation-delay: 1s;/*延时执行*/
+        animation-fill-mode: forwards;/*动画执行结束*/
+
+    }
+
+    .cls:hover{
+        animation-play-state: paused;/*鼠标进入就停止*/
+    }
+
+    /*定义动画集*/
+    /*@keyframes 名字*/
+    @keyframes rotate{
+        form{
+            transform: rotateZ(0deg);
+        }
+        to{
+            transform: rotateZ(360deg);
+        }
+    }
+   
+   
+</style>
+</head>
+<body>
+<div class="cls"></div>
+</body>
+</html>

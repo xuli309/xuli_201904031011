@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvas</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+<script>
+    
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+
+    //起始位置横纵坐标，半径，结束位置的横纵坐标，半径
+    var rgd = ctx.createRadialGradient(200,150,50,200,150,100);
+    //0--开始的，1结束，0-1直接的小数
+    rgd.addColorStop(0,"red");
+    rgd.addColorStop(0.5,"green");
+    rgd.addColorStop(1,"blue");
+    ctx.fillStyle=rgd;
+
+    ctx.moveTo(100,50);//开始的位置
+    ctx.lineTo(300,50);//结束的位置
+    ctx.lineTo(300,300);//结束的位置
+    ctx.lineTo(100,300);//结束的位置
+    ctx.closePath();
+    
+    ctx.fill();//填充
+    ctx.stroke();
+
+</script>
+</body>
+</html>

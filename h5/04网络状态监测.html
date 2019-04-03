@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>h5</title>
+<script>
+//网络状态监测
+var state = window.navigator.onLine;
+if(state){
+    alert("在线的");
+}else{
+    alert("不在线的");
+}
+//两个事件--联网触发第一个，没网触发第二个
+window.onLine = function(){
+    alert("连接上了");
+}
+
+window.onoffline = function(){
+    alert("断网了");
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

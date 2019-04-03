@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>绘制文本</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="600" height="600"></canvas>
+<script>
+    
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+    //绘制弧度：圆心坐标，半径，开始弧度，结束弧度，默认顺时针（false）
+    ctx.arc(200,150,50,Math.PI/2,2*Math.PI,true);
+    ctx.stroke();
+
+    //平移
+   
+</script>
+</body>
+</html>

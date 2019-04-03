@@ -1,0 +1,31 @@
+{
+  "name": "kaikeba",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node-dev ./bin/www"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^3.4.1",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.0",
+    "express-mysql-session": "^2.1.0",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "handlebars-helpers": "^0.10.0",
+    "hbs": "~4.0.1",
+    "http-errors": "~1.6.2",
+    "jquery": "^3.3.1",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "morgan": "~1.9.0",
+    "multer": "^1.4.1",
+    "mysql": "^2.16.0",
+    "mysql2": "^1.6.5",
+    "sequelize": "^4.43.0",
+    "trek-captcha": "^0.4.0"
+  }
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+</head>
+<body>
+<!-- 导航栏 -->
+
+<div class="nav">
+    <div class="left-logo">
+        <a><img src="https://img.kaikeba.com/logo-new.png"></a>
+    </div>
+    <div class="right-view">
+        <div id="menu-item-vip">
+            <a href class="menu-item">·VIP+</a>
+            <div class="menu-vip" style="display: none;">
+                <div class="menu-arrow"></div>
+                <div class="menu-content">
+                    <p class="vip-title">VIP课程</p>
+                    <div class="course-list">
+                        <a class="course-list-item" href="/vip-course/web">
+                            <img class="course-img" src="https://img.kaikeba.com/web_menu.jpg">
+                            <div class="course-text">
+                                <p class="course-name">web全栈</p>
+                                <p class="course-describe">授课深度对标百度。。。。。。。。。。。。。</p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="menu-item" href="/open-courses">公开课</a>
+        <a class="menu-item" href="/student">学习中心</a>
+    </div>
+</div>
+
+
+出现错误时，您会看见这段话
+
+<div class="win">
+    <div>这是partial搬家的内容</div>
+</div>
+<div class="top">
+    这是top
+</div>
+
+<div class="content">
+    <div class="left">
+        这是foo
+    </div>
+    <div class="right">
+        这是bar
+    </div>
+</div>
+<h1>Not Found</h1>
+<h2>404</h2>
+<pre>NotFoundError: Not Found
+    at F:\keikeba\node\kaikeba\app.js:74:8
+    at Layer.handle [as handle_request] (F:\keikeba\node\kaikeba\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:317:13)
+    at F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:275:10)
+    at F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:635:15
+    at next (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:260:14)
+    at Function.handle (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:174:3)
+    at router (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:47:12)
+    at Layer.handle [as handle_request] (F:\keikeba\node\kaikeba\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:317:13)
+    at F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:284:7
+    at Function.process_params (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:335:12)
+    at next (F:\keikeba\node\kaikeba\node_modules\express\lib\router\index.js:275:10)
+    at exports.initLocals (F:\keikeba\node\kaikeba\middleweare\index.js:22:13)
+    at process._tickCallback (internal/process/next_tick.js:68:7)</pre>
+
+
+<script src="/javascripts/jquery.js"></script>
+<script>
+    $("#menu-item-vip").on('mouseenter', function () {
+        $(".menu-vip").show();
+    }).on('mouseleave', function () {
+        $(".menu-vip").hide();
+    })
+</script>
+
+
+</body>
+</html>

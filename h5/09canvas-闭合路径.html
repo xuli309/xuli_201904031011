@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvas</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+<script>
+    //画矩形
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+
+    ctx.moveTo(100,100);//开始的位置
+    ctx.lineTo(100,300);//结束的位置
+    ctx.lineTo(400,300);//结束的位置
+    ctx.lineTo(400,100);//结束的位置
+   
+    ctx.closePath();
+
+    //设置样式
+    ctx.strokeStyle="red";
+    ctx.lineWidth=10;
+    ctx.lineJoin="round";//设置连接处的样式 round  bevel miter
+    ctx.lineCap= "round";
+
+    ctx.stroke();
+
+</script>
+</body>
+</html>

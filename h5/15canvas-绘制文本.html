@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>绘制文本</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="600" height="600"></canvas>
+<script>
+    
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.moveTo(0,200);
+    ctx.lineTo(600,200);
+    ctx.stroke();
+
+    //像素 字体
+    ctx.font="50px 宋体";
+
+    //设置文本对齐方式
+    ctx.textAlign="center"; //left right center
+    ctx.textBaseline="middle";//top bottom middle alphabetic(默认值)
+    //设置阴影
+    ctx.shadowColor="red";//阴影颜色
+    ctx.shadowOffsetX=5;//阴影水平方向
+    ctx.shadowOffsetY=5;//阴影垂直方向
+    ctx.shadowBlur=5;//阴影模糊度
+
+    ctx.strokeText("全网最帅",300,200);//参数1：文字内容，参数2：横坐标，参数3：纵坐标 \
+    ctx.fillText("全网最帅",300,200);
+   
+</script>
+</body>
+</html>

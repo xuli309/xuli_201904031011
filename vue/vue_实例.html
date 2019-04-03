@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue_组件化</title>
+
+    <script src="js/vue.js"></script>
+   
+</head>
+
+<body>
+    <div id="app">
+        <p>{{a}}</p>
+        <button v-on:click="a='我变了吧？'">change it</button>
+    </div>
+    <script>
+        var data = {a:1};
+        var vm = new Vue({
+            el: '#app',
+            data: data
+        })
+        console.log(vm.a === data.a);// => true
+        vm.a = 11111;
+        console.log(data.a);// => 11111
+        data.a = 2222;
+        console.log(vm.a);// => 2222
+        vm.b = 'hi';
+
+        console.log(vm.$data === data);// => true
+        console.log(vm.$el === document.getElementById("app"));// => true
+        
+        // $watch 是一个实例方法
+        vm.$watch('a', function(newValue, oldValue){ // 这个回调将在 `vm.a` 改变后调用
+            console.log('switch', newValue, oldValue);
+        })
+
+        
+    </script>
+</body>
+
+</html>

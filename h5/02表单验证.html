@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>h5</title>
+<style>
+
+</style>
+
+</head>
+<body>
+    <!-- autocomplete:关闭智能提示 -->
+    <!-- novalidate:关闭验证功能 -->
+     <!-- form属性在表单标签中写，值就设置为form标签中的id值，那么该标签就可以提交了 -->
+<form action="" autocomplete="off" novalidate id="fm">
+    <!-- required: 该属性出现当前表单元素必须有验证 -->
+   邮箱：<input type="email" name="email" required /> <br /><br />
+   <!-- autofocus: 可以自动获取焦点 -->
+   <!-- placeholder: 可以设置默认文本框提示信息 -->
+  
+   名字：<input type="text" value="" name="txt" autofocus placeholder="请输入名字"   /><br /><br />
+    <input type="submit" value="提交"  /><br /><br />
+
+    <!------------------------------->
+    <!-- dataList标签需要有自己的id值，然后配合list属性来使用，才可以有数据列表的效果 -->
+    <input type="text" value="" name="textList" list="url_list"  />
+    <datalist id="url_list">
+        <option value="https://www.baidu.com">百度</option>
+        <option value="https://www.google.com">谷歌</option>
+    </datalist>
+    <!------------------------------->
+
+</form>
+<br /><br />
+<input type="text" value="" name="name"  form="fm" />
+<script>
+//有一个表单元素的标签，不想再form标签中写，但还是想提交
+</script>
+
+
+
+</body>
+</html>
+

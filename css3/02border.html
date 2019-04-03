@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>border</title>
+<style>
+    .div1{
+        width:300px;
+        height: 200px;
+
+        color:#fff;
+        background:green;
+        padding:20px;
+        /*设置四个角角度*/
+        border-radius: 10px 20px;
+        /*水平，垂直，模糊度，颜色 inset-内部阴影*/
+        box-shadow: 10px 20px 5px blue inset;
+        display: none;
+
+    }
+
+    .div2{
+        width:300px;
+        height: 200px;
+
+        color:#fff;
+        background:green;
+       border:20px solid red;
+
+       border-image-source: url("bg2.jpg");
+       border-image-slice: 19;
+       border-image-repeat:round; /*stretch-拉伸 repeat-平铺 */
+    }
+</style>
+</head>
+<body>
+<div class="div1">我最帅</div>
+<div class="div2">我最帅</div>
+</body>
+</html>

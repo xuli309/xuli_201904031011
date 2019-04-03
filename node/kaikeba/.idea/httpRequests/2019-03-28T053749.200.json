@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "name": "web全栈",
+      "url": "/vip-course/web",
+      "poster": "https://img.kaikebao.com/web_vip.png",
+      "icon": "https://img.kaikeba.com/web_menu.jpg",
+      "desc": "授课深度对标百度。。。。。。。。。。。。。",
+      "cooperation": "https://img.kaikeba.com/baidu.png,https://img.kaikeba.com/toutiao.png"
+    }
+  ]
+}

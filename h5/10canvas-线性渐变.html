@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canvas</title>
+<style>
+    canvas{
+        border:1px solid red;
+    }
+</style>
+<script>
+    /**
+     * 1.要有画布 canvas
+     * 2.创建画图的对象
+     * 3.开始的位置
+     * 4.结束的位置
+     * 5.画图
+     * 
+    **/
+
+</script>
+
+</head>
+<body>
+<canvas width="800" height="600"></canvas>
+<script>
+    
+    var c = document.querySelector("canvas");
+    var ctx = c.getContext("2d");
+
+    //起始位置横纵坐标，结束位置的横纵坐标
+    var lgd = ctx.createLinearGradient(100,100,500,100);
+    //0--开始的，1结束，0-1直接的小数
+    lgd.addColorStop(0,"red");
+    lgd.addColorStop(0.2,"green");
+    lgd.addColorStop(0.5,"blue");
+    lgd.addColorStop(1,"yellow");
+    ctx.strokeStyle=lgd;
+
+    ctx.moveTo(100,100);//开始的位置
+    ctx.lineTo(500,100);//结束的位置
+    ctx.lineWidth=30;
+    
+    ctx.stroke();
+
+</script>
+</body>
+</html>
