@@ -1,5 +1,9 @@
 
+<<<<<<< HEAD
 ¡­or create a new repository on the command line
+=======
+â€¦or create a new repository on the command line
+>>>>>>> a1b59d594a6fb2f09d69743c436c75432575f24a
 echo "# -" >> README.md
 git init
 git add README.md
@@ -7,11 +11,19 @@ git commit -m "first commit"
 git remote add origin https://github.com/xuli309/xuli_201904031011.git
 git push -u origin master
 
+<<<<<<< HEAD
 ¡­or push an existing repository from the command line
 git remote add origin https://github.com/xuli309/xuli_201904031011.git
 git push -u origin master
 
 ¡­or import code from another repository
+=======
+â€¦or push an existing repository from the command line
+git remote add origin https://github.com/xuli309/xuli_201904031011.git
+git push -u origin master
+
+â€¦or import code from another repository
+>>>>>>> a1b59d594a6fb2f09d69743c436c75432575f24a
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
 
 
@@ -19,6 +31,7 @@ git config --global user.name "name"
 
 git config --global user.email "email"
 
+<<<<<<< HEAD
 ´ËÅäÖÃ´æ·ÅÔÚ~/.gitconfigÎÄ¼şÖĞ£¬¿ÉÒÔÍ¨¹ımore»òÕßcatÃüÁî²é¿´
 
 
@@ -46,6 +59,35 @@ git push origin :name   (·ÖÖ§ÃûÇ°µÄÃ°ºÅ´ú±íÉ¾³ı)
 
 
 --µÚÒ»´ÎÌá½»
+=======
+æ­¤é…ç½®å­˜æ”¾åœ¨~/.gitconfigæ–‡ä»¶ä¸­ï¼Œå¯ä»¥é€šè¿‡moreæˆ–è€…catå‘½ä»¤æŸ¥çœ‹
+
+
+--åˆ›å»ºåˆ†æ”¯
+git checkout -b æ–°åˆ†æ”¯åå­—
+
+--æäº¤åˆ†æ”¯åˆ°githubæœåŠ¡å™¨
+git push origin xuli_201904031726 // æ¨é€åˆ°è·å–æ–°åˆ†æ”¯å
+
+--æŸ¥çœ‹åˆ†æ”¯
+git branch // æŸ¥çœ‹å½“å‰åœ¨å“ªä¸ªåˆ†æ”¯ä¸Šé¢
+
+git log --oneline æŸ¥çœ‹log
+git checkout -b æ–°åˆ†æ”¯åå­— logä¸­çš„hash // åˆ›å»ºåˆ†æ”¯
+
+
+--åˆ‡æ¢åˆ°masteråˆ†æ”¯
+git checkout master
+
+--åˆ é™¤æœ¬åœ°åˆ†æ”¯
+git branch -d name
+
+--åˆ é™¤æœåŠ¡å™¨ä¸Šçš„åˆ†æ”¯
+git push origin :name   (åˆ†æ”¯åå‰çš„å†’å·ä»£è¡¨åˆ é™¤)
+
+
+--ç¬¬ä¸€æ¬¡æäº¤
+>>>>>>> a1b59d594a6fb2f09d69743c436c75432575f24a
 echo "# xuli_201904031011" >> README.md
 git add README.md
 git commit -m "first commit"
@@ -53,7 +95,7 @@ git remote add origin https://github.com/xuli309/xuli_201904031011.git
 git push -u origin master
 
 
---Ö®ºóÌá½»
+--ä¹‹åæäº¤
 git add .
 git init
 git commit -m  https://github.com/xuli309/xuli_201904031011.git
@@ -61,27 +103,27 @@ git push -u origin master
 
 
 
-//´´½¨°æ±¾¿â
+//åˆ›å»ºç‰ˆæœ¬åº“
  git init
-//´´½¨Ô¶³Ì²Ö¿â,×îºóµÄ×Ö·û´®ÊÇgithub²Ö¿âµÄSSH key,¿ÉÒÔ¿´µ½ÎÒ½¨Á¢
-//µÄ²Ö¿â½Ğtest£¬
+//åˆ›å»ºè¿œç¨‹ä»“åº“,æœ€åçš„å­—ç¬¦ä¸²æ˜¯githubä»“åº“çš„SSH key,å¯ä»¥çœ‹åˆ°æˆ‘å»ºç«‹
+//çš„ä»“åº“å«testï¼Œ
  git remote add origin git@github.com:CodeofGame/test.git
-//´´½¨Ò»¸öÎÄ¼ş a.txt
+//åˆ›å»ºä¸€ä¸ªæ–‡ä»¶ a.txt
 touch a.txt 
- //½«a.txt´æÈëÔİ´æÇø
+ //å°†a.txtå­˜å…¥æš‚å­˜åŒº
 git add a.txt 
-//Ìá½»´úÂëµ½±¾µØ²Ö¿â
-git commit -m "²âÊÔÔ¶³ÌÁ¬½ÓÊÇ·ñ³É¹¦"
-//½«ÄãµÄ´úÂëÌá½»µ½Ô¶³Ì²Ö¿âµÄmaster·ÖÖ§ÏÂ
+//æäº¤ä»£ç åˆ°æœ¬åœ°ä»“åº“
+git commit -m "æµ‹è¯•è¿œç¨‹è¿æ¥æ˜¯å¦æˆåŠŸ"
+//å°†ä½ çš„ä»£ç æäº¤åˆ°è¿œç¨‹ä»“åº“çš„masteråˆ†æ”¯ä¸‹
 git push origin master
 
 
-½«githubÉÏµÄÏîÄ¿´úÂëÉ¾³ı½«ÏîÄ¿´úÂëÎÄ¼ş¼ĞÉÏ
+å°†githubä¸Šçš„é¡¹ç›®ä»£ç åˆ é™¤å°†é¡¹ç›®ä»£ç æ–‡ä»¶å¤¹ä¸Š
 
 git rm --cached filename 
 git commit -m "delete"
 git push origin branch
 
---cached µÄÖ¸Áî ¶¼ÊÇºÍstaging area»òÕß½ĞindexÓĞ¹ØµÄ£¬¾ÍÊÇgit addÁËµ«»¹Ã»ÓĞcommit³öÈ¥µÄ×´Ì¬¡£
+--cached çš„æŒ‡ä»¤ éƒ½æ˜¯å’Œstaging areaæˆ–è€…å«indexæœ‰å…³çš„ï¼Œå°±æ˜¯git addäº†ä½†è¿˜æ²¡æœ‰commitå‡ºå»çš„çŠ¶æ€ã€‚
 
-git rm --cached filename °ÑÎÄ¼ş´Óstaging areaÖĞÉ¾ÁË£¬ÔÙcommit£¬push£¬¾Í°ÑgithubÀïÃæÄÇ·İÒ²É¾ÁË¡£
+git rm --cached filename æŠŠæ–‡ä»¶ä»staging areaä¸­åˆ äº†ï¼Œå†commitï¼Œpushï¼Œå°±æŠŠgithubé‡Œé¢é‚£ä»½ä¹Ÿåˆ äº†ã€‚
