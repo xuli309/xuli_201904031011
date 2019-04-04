@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+
+    <script src="js/vue.js"></script>
+   
+</head>
+
+<body>
+    <div id="app">
+       <p v-if="flag">nihao</p>
+       <P v-else>nihenhao</P> <hr>
+
+       <template v-if="flag">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+       </template> <hr>
+
+       <div v-if="Math.random() > 0.5">Now you see me</div>
+       <div v-else>Now you don't see me</div> <hr>
+
+       <div v-if="type==='A'">我是A</div>
+       <div v-else-if="type==='B'">我是B</div>
+       <div v-else-if="type==='C'">我是c</div>
+       <div v-else>Not A/B/C</div><hr><br>
+
+       <template v-if="loginType === 'username'">
+           <label>username</label>
+           <input type="text" placeholder="请输入您的姓名" key="username">
+       </template>
+       <template v-else>
+           <label>email</label>
+           <input type="text" placeholder="请输入您的EMail" key="email">
+       </template>
+       <button type="button" v-on:click="changeType">切换email方式</button> <hr>
+
+       <!-- 注意，v-show 不支持 <template> 元素，也不支持 v-else。 -->
+       <h1 v-show="ok">Hello!</h1>
+    </div>
+    <script>
+        
+          var vue = new Vue({
+             el: '#app',
+             data: {
+                 flag: true,
+                 type: 'D',
+                 loginType: 'username',
+                 ok:true
+             },
+             methods:{
+                changeType:function(){
+                    return this.loginType === 'username' ? this.loginType = 'email' : this.loginType = 'username';
+                }
+             }
+         })     
+    </script>
+</body>
+
+</html>

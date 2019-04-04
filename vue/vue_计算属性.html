@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue_组件化</title>
+
+    <script src="js/vue.js"></script>
+   
+</head>
+
+<body>
+    <div id="app">
+        <p>Original message: "{{ message }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+    <script>
+       var vue = new Vue({
+           el: '#app',
+           data: {
+               message: 'hello',
+               firstName: 'tom',
+               lastName: 'cruise'
+           },
+           computed: {
+               reversedMessage: function(){
+                   return this.message.split('').reverse().join('');
+               },
+               now: function(){
+                   return Date.now();
+               },
+               fullName: {
+                   get: function(){// getter
+                       return  this.firstName + ' ' + this.lastName;
+                   },
+                   set: function(nameValue) {// setter
+                        var names = nameValue.split(' ');
+                        this.firstName = names[0];
+                        this.lastName = names[names.length-1];
+
+                   }
+               }
+           },
+       });
+       console.log(vue.reversedMessage);
+       vue.message = "goodby";
+       console.log(vue.reversedMessage);
+
+       vue.fullName = 'Jerry Cruise';
+       console.log(vue.firstName);
+       console.log(vue.lastName);
+
+    </script>
+</body>
+
+</html>
