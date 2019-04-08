@@ -37,6 +37,9 @@
             </li>
         </ul>
     </div>
+    <div id="app1">
+
+    </div>
     <script>
         
           var vue = new Vue({
@@ -55,7 +58,23 @@
                
              },
             
-         })     
+         }) 
+
+         var vm = new Vue({
+            el: '#app1',
+            data: {
+                items: ['a', 'b', 'c']
+            }
+        })
+        vm.items[1] = 'x' // 不是响应性的
+        vm.items.length = 2 // 不是响应性的 
+        //以下两种等同于  vm.items[1] = 'x'
+        // vm.set(vm.items, indexOfItem, newValue);
+        // vm.$set(vm.items, indexOfItem, newValue)
+        // vm.items.splice(indexOfItem, 1, newValue)
+
+        // 以下等同于 vm.items.length = 2
+        // vm.items.splice(newLength)
     </script>
 </body>
 
