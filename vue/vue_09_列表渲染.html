@@ -37,8 +37,22 @@
             </li>
         </ul>
     </div>
+    <hr>
     <div id="app1">
-
+    </div>
+    <hr>
+    <div id="app2"></div>
+    <hr>
+    <div id="app3">
+        <ul>
+            <li v-for="number in evenNumbers">{{number}}</li>
+        </ul>
+    </div>
+    <hr>
+    <div id="app4">
+        <ul>
+            <li v-for="number in even(numbers)">{{number}}</li>
+        </ul>
     </div>
     <script>
         
@@ -69,12 +83,61 @@
         vm.items[1] = 'x' // 不是响应性的
         vm.items.length = 2 // 不是响应性的 
         //以下两种等同于  vm.items[1] = 'x'
-        // vm.set(vm.items, indexOfItem, newValue);
+        // Vue.set(vm.items, indexOfItem, newValue)
         // vm.$set(vm.items, indexOfItem, newValue)
         // vm.items.splice(indexOfItem, 1, newValue)
 
         // 以下等同于 vm.items.length = 2
         // vm.items.splice(newLength)
+
+        var vm1 = new Vue({
+            el: '#app2',
+            data: {
+                userProfile:{
+                    name: 'tom'
+                }
+            }
+        });
+        //添加一个属性，以下两种方法都可以
+        // vm1.$set(vm1.userProfile, 'age', 27);
+        // console.log(vm1.userProfile);
+        // Vue.set(vm1.userProfile, 'age',30);
+        // console.log(vm1.userProfile);
+
+        //添加多个属性
+        vm1.userProfile = Object.assign({},vm1.userProfile,{
+            age: 27,
+            color: 'red'
+        });
+        console.log(vm1.userProfile);
+
+        var vm3 = new Vue({
+            el: '#app3',
+            data: {
+                numbers: [1,2,3,4,5,6],
+            },
+            computed: {
+                evenNumbers: function(){
+                    return this.numbers.filter(function(number){
+                        return number%2 === 0;
+                    })
+                }
+            },
+        })
+
+        var vm4 = new Vue({
+            el: '#app4',
+            data: {
+                numbers: [1,2,3,4,5,6],
+            },
+            methods: {
+                even: function(){
+                    return this.numbers.filter(function(number){
+                        return number%2 === 0;
+                    })
+                }
+            },
+        })
     </script>
 </body>
 
