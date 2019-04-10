@@ -8,28 +8,26 @@
     <title>vue</title>
 
     <script src="js/vue.js"></script>
-   
+
 </head>
 
 <body>
+
     <div id="app">
         <button-counter></button-counter>
         <button-counter></button-counter>
-        <button-counter></button-counter><hr>
+        <button-counter></button-counter>
+        <hr>
         <blog-post title="aaaaa"></blog-post>
         <blog-post title="bbbbb"></blog-post>
-        <blog-post title="ccccc"></blog-post><hr>
+        <blog-post title="ccccc"></blog-post>
+        <hr>
 
         <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
         <hr>
 
         <div :style="{ fontSize: postFontSize + 'em'}">
-            <blog-post-new 
-                v-for="post in posts" 
-                v-bind:id="post.id" 
-                v-bind:post="post"
-                v-on:enlarge-text="postFontSize += $event"
-            ></blog-post-new>
+            <blog-post-new v-for="post in posts" v-bind:id="post.id" v-bind:post="post" v-on:enlarge-text="postFontSize += $event"></blog-post-new>
         </div>
         <hr>
 
@@ -44,8 +42,8 @@
     </div>
     <script>
         // 定义一个名为 button-counter 的新组件
-        Vue.component('button-counter',{
-            data: function() {
+        Vue.component('button-counter', {
+            data: function () {
                 return {
                     count: 0
                 }
@@ -70,7 +68,7 @@
         })
 
         Vue.component('costom-input', {
-            props:['value'],
+            props: ['value'],
             template: `
                 <input v-bind:value="value" v-on:input="$emit('input', $event.target.value)" >
             `
@@ -96,10 +94,14 @@
                 ],
                 postFontSize: 1,
                 searchText: ''
-           }
+            }
         })
 
+        
+
     </script>
+
+    
 </body>
 
 </html>

@@ -8,7 +8,7 @@
     <title>vue</title>
 
     <script src="js/vue.js"></script>
-   
+
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     <hr>
     <div id="app2">
         <!-- `greet` 是在下面定义的方法名 -->
-        <button v-on:click="greet">Greet</button>        
+        <button v-on:click="greet">Greet</button>
     </div>
     <hr>
     <div id="app3">
@@ -51,7 +51,7 @@
         <!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
         <!-- 即事件不是从内部元素触发的 -->
         <div v-on:click.self="doThat">...</div>
-        
+
         <!-- 点击事件将只会触发一次 -->
         <a v-on:click.once="doThis"></a>
 
@@ -69,7 +69,7 @@
         <!-- 使用 keyCode 特性也是允许的 已经被废弃-->
         <input v-on:keyup.13="submit">
         <!-- // 可以使用 `v-on:keyup.f1`
-        Vue.config.keyCodes.f1 = 112 --> 
+        Vue.config.keyCodes.f1 = 112 -->
 
         <!-- Alt + C -->
         <input @keyup.alt.67="clear">
@@ -98,27 +98,27 @@
 
         var vm2 = new Vue({
             el: '#app2',
-            data:{
+            data: {
                 name: 'vue.js'
             },
             // 在 `methods` 对象中定义方法
             methods: {
-                greet: function(event){
+                greet: function (event) {
                     alert('hello ' + this.name); // `this` 在方法里指向当前 Vue 实例
                     // `event` 是原生 DOM 事件
-                    if(event){ 
+                    if (event) {
                         alert(event.target.tagName);
                     }
                 }
-            },  
+            },
         });
         // 也可以用 JavaScript 直接调用方法
         // vm2.greet() // => 'Hello Vue.js!'
 
         var vm3 = new Vue({
-            el: '#app3',           
+            el: '#app3',
             methods: {
-                say: function(message){
+                say: function (message) {
                     alert(message);
                 }
             }
@@ -127,9 +127,9 @@
         var vm4 = new Vue({
             el: '#app4',
             methods: {
-                warn: function(message, event){
+                warn: function (message, event) {
                     // 现在我们可以访问原生事件对象
-                    if(event) event.preventDefault();
+                    if (event) event.preventDefault();
                     alert(message);
                 }
             }

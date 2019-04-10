@@ -8,7 +8,7 @@
     <title>vue</title>
 
     <script src="js/vue.js"></script>
-   
+
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <hr>
 
         <!-- 在“change”时而非“input”时更新 -->
-        change:<input v-model.lazy="msg" id="msg" v-bind:change="show" >
+        change:<input v-model.lazy="msg" id="msg" v-bind:change="show">
         <input v-model="msg" @change="show">
         <span>{{msg}}</span>
         <hr>
@@ -58,10 +58,10 @@
 
         <hr>
 
-        <input type="radio"  id="one" value="One" v-model="picked">
+        <input type="radio" id="one" value="One" v-model="picked">
         <label for="one">One</label>
         <br>
-        <input type="radio"  id="two" value="Two" v-model="picked">
+        <input type="radio" id="two" value="Two" v-model="picked">
         <label for="two">Two</label>
         <br>
         <span>Picked: {{ picked }}</span>
@@ -93,7 +93,7 @@
         <hr>
 
         <select name="select2" id="select2" v-model="select2">
-            <option v-for="(item, index) in select2eds" :key="index" v-bind:value="item.value" >{{item.text}}</option>
+            <option v-for="(item, index) in select2eds" :key="index" v-bind:value="item.value">{{item.text}}</option>
         </select>
         <br>
         <span>select2: {{ select2 }}</span>
@@ -103,15 +103,15 @@
         var app1 = new Vue({
             el: '#app',
             data: {
-               message: '',
-               msg:'aaa',
-               age: 20
-           },
-           methods: {
-                show: function(){
-                   console.log(this.msg)
+                message: '',
+                msg: 'aaa',
+                age: 20
+            },
+            methods: {
+                show: function () {
+                    console.log(this.msg)
                 }
-           },
+            },
         });
 
         var app2 = new Vue({
@@ -127,11 +127,11 @@
                 checked: false,
                 checkedNames: [],
                 picked: '',
-                a:'',
+                a: '',
                 select: '',
                 select1: [],
                 select2: 'A',
-                select2eds:[
+                select2eds: [
                     { text: 'One', value: 'A' },
                     { text: 'Two', value: 'B' },
                     { text: 'Three', value: 'C' }
