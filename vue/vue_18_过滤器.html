@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        
+    </div>
+    <script>
+
+        var App = {
+            template:`
+                <div>
+                    <input type="text" v-model="myText"> <br /><br />
+                    {{ myText | reverse('输入看到变化', '：') }}<br /><br />
+                    {{ myText | myreverse('输入看到变化', '：') }}<br /><br />
+                    
+                </div>
+            `,
+            data:function(){
+                return {
+                    myText: ''
+                }
+            },
+            //组件内部过滤器
+            filters:{
+                reverse:function(dataStr,arg1,arg2){
+                    return arg1+arg2+dataStr.split('').reverse().join('')
+                }
+            }
+        }
+
+        //全局过滤器
+        Vue.filter('myreverse', function(dataStr, arg1, arg2){
+            return arg1+arg2+dataStr.split('').reverse().join('')
+        })
+
+
+        new Vue({
+            el: '#app',
+            components: {
+                app: App
+            },
+            template:`<app />`
+        })
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

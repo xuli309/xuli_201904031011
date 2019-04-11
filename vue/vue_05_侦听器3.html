@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        
+    </div>
+    <script>
+
+        var App = {
+            template:`
+                <div>
+                    <input type="text" v-model="n1"> + 
+                    <input type="text" v-model="n2"> *
+                    <input type="text" v-model="rate">
+                    = {{result}}
+                   
+                </div>
+            `,
+            data:function(){
+                return {
+                  n1:0,
+                  n2:0,
+                  rate:0
+                }
+            },
+            computed:{//包含原值不变，缓存不调用函数优化机制
+                result: function(){
+                    console.log(this.n1,this.n2,this.rate)
+                    return ((this.n1-0) + (this.n2-0) )* this.rate
+                }
+            }        
+        }
+
+        new Vue({
+            el: '#app',
+            components: {
+                app: App
+            },
+            template:`<app />`
+        })
+        
+
+
+    </script>
+
+
+</body>
+
+</html>

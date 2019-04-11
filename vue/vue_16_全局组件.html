@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app"></div>
+    <script>
+       
+       Vue.component('my-button', {
+           template: `<button>我是按钮</button>`
+       })
+
+       var MyHeader = {
+            template: `
+                <div>我是header <my-button /></div>
+                
+            `
+        }
+
+        var MyFooter = {
+            template: `
+                <div>我是footer <my-button /></div>
+            `
+        }
+
+        var App = {
+            components: {
+                'my-header': MyHeader,
+                'my-footer': MyFooter,
+            },
+            template: `<div>
+                <my-header /><hr/>
+                <my-footer /><hr/>
+                我是app <my-button />
+            </div>`
+        }
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                app: App
+            },
+            template: `<app />`
+            
+        })
+
+        
+
+    </script>
+
+    
+</body>
+
+</html>

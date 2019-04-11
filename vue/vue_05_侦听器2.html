@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+
+    <script src="./node_modules/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+
+    <div id="app">
+        
+    </div>
+    <script>
+
+        var App = {
+            template:`
+                <div>
+                    <input type="text" v-model="myText"> <br /><br />
+                    {{ myText }}<br /><br />
+
+                    <button @click="stus[0].name='rose';">改变stus[0].name属性</button>
+                </div>
+            `,
+            data:function(){
+                return {
+                    myText: '111',
+                    stus:[{name: 'jack'}]
+                }
+            },
+            //监视单个
+            watch:{
+                //监视简单数据类型
+                myText:function(newV, oldV){
+                    console.log(newV, oldV);
+                    if(newV === 'iloveyou'){
+                        alert('我不爱你');
+                    }
+                },
+                // 监视复杂数据类型
+                // stus: function(){
+                //     console.log('监视成功，不可能！')
+                // },
+                //监视复杂数据类型 深度监视
+                stus: {
+                    deep:true,//深度
+                    handler:function(newV, oldV){
+                        console.log('监视复杂类型成功')
+                    }
+                }
+            }
+           
+        }
+
+        new Vue({
+            el: '#app',
+            components: {
+                app: App
+            },
+            template:`<app />`
+        })
+        
+
+
+    </script>
+
+
+</body>
+
+</html>
