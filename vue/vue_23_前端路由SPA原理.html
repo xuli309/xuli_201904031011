@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+
+<body>
+    <a href="#/login">点我登录</a>
+    <a href="#/register">点我注册</a>
+
+    <div id="content"></div>
+    <script>
+        var div = document.getElementById("content");
+        window.addEventListener('hashchange', function(){
+            switch (location.hash) {
+                case '#/login':
+                    div.innerHTML = '<h1>我是登录页面</h1>';
+                    break;
+                case '#/register':
+                    div.innerHTML = '<h1>我是注册页面</h1>';
+                    break;
+                default:
+                    break;
+            }
+        })
+    
+    </script>
+
+
+</body>
+
+</html>
