@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue</title>
+</head>
+
+<body>
+
+    <div id="app"></div>
+
+    <script src="js/vue.js"></script>
+    <script src="js/vue-router.js"></script>
+    <script>
+        var isLogin = false;
+        var LoginTemp = {
+            template: `<div>
+                我是login显示的内容，下面是子路由显示的内容
+                <router-view></router-view>
+            </div>`,
+            created: function(){
+                isLogin = true;
+            }
+        };
+        var Music = {
+            template: `<div>
+                我是music页面
+                <router-view></router-view>
+            </div>`
+        };
+        var router = new VueRouter();
+        router.addRoutes([
+            // 默认的重定向路由
+            { path: '/', redirect:{name:'login'} },
+            { name: 'login', path: '/login', component: LoginTemp },
+            { 
+                name: 'music', path: '/music', component: Music,
+                meta:{ isChecked:true } // 给未来路由的权限控制，全局路由守卫，来做参照条件
+            }
+                   
+        ]);
+        router.beforeEach(function(to,from,next){
+            console.log(to);
+            console.log(from);
+            if(!to.meta.isChecked){
+            // if(to.name === 'login' || to.path === '/'){
+                next();// 不调用就会卡掉 放行 
+                // next(false);// 取消用户的行为
+            }else{
+                if(isLogin){
+                    next();
+                }else{
+                    alert("请登录");
+                    next({name:'login'}); // 重定向
+                }
+                
+            }
+          
+        })
+
+        // 6. 指定路由改变局部位置
+        var App = {
+            template: `
+                <div>
+                    <router-link :to="{name:'login'}">登录</router-link>
+                    <router-link :to="{name:'music'}">音乐</router-link>
+                    <router-view></router-view>
+                </div>
+            `
+        }
+
+        // 5. 将配置好的路由对象关联到vue中
+        var vm = new Vue({
+            el: '#app',
+            router: router,
+            components: {
+                app: App
+            },
+            template: '<app />'
+        })
+
+    </script>
+
+
+</body>
+
+</html>
