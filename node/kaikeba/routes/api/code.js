@@ -78,6 +78,6 @@ router.post('/',async (req,res)=>{
     }catch (e) {
         res.json({success:false,message:'请稍后重试'});
     }
-})
+});
 
 module.exports = router;

@@ -2,46 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3e641f3-acfe-413f-bd68-2dd44e25b96f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/proxy.conf.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/app-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/common/results.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/comp-communicate/comp-communicate-routing.module.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/main/main.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/main/main.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/myModule.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/app/user/register/captcha-validator.directive.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../kaikeba-student/src/assets/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T035013.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T035143.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T035610.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T035739.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T103202.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T103231.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-25T103406.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-26T043830.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-26T053633.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-26T053638.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-28T053704.404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2019-03-28T053749.200.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/es2015-polyfills.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/es2015-polyfills.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/main.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/polyfills.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/polyfills.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/runtime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/runtime.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/styles.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/styles.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/vendor.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/kaikeba-student/vendor.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api/course.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/admin/stage.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/code.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/code.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../vue/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../vue/package-lock.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,11 +18,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="3591">
+              <caret line="189" column="6" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/api/code.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -67,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="194" column="9" lean-forward="true" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+            <state relative-caret-position="3686">
+              <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -76,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/db.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="1159">
               <caret line="61" column="20" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="20" />
             </state>
           </provider>
@@ -86,7 +58,7 @@
         <entry file="file://$PROJECT_DIR$/views/admin/stage.hbs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+              <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -129,7 +101,6 @@
         <option value="$PROJECT_DIR$/routes/open-courses.js" />
         <option value="$PROJECT_DIR$/routes/code.js" />
         <option value="$PROJECT_DIR$/views/open-courses.hbs" />
-        <option value="$PROJECT_DIR$/routes/api/code.js" />
         <option value="$PROJECT_DIR$/public/kaikeba-student/index.html" />
         <option value="$PROJECT_DIR$/models/index.js" />
         <option value="$PROJECT_DIR$/views/layout.hbs" />
@@ -141,6 +112,7 @@
         <option value="$PROJECT_DIR$/models/db.js" />
         <option value="$PROJECT_DIR$/routes/admin.js" />
         <option value="$PROJECT_DIR$/routes/api/users.js" />
+        <option value="$PROJECT_DIR$/routes/api/code.js" />
       </list>
     </option>
   </component>
@@ -167,17 +139,6 @@
               <item name="kaikeba" type="b2602c69:ProjectViewProjectNode" />
               <item name="kaikeba" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaikeba" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaikeba" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kaikeba" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kaikeba" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="kaikeba" type="b2602c69:ProjectViewProjectNode" />
@@ -581,11 +542,12 @@
       <workItem from="1553588729022" duration="4151000" />
       <workItem from="1553647731854" duration="21203000" />
       <workItem from="1554083145562" duration="12685000" />
+      <workItem from="1555295260890" duration="1504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69299000" />
+    <option name="totallyTimeSpent" value="70803000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -626,37 +588,10 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/aaa.http" />
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1188">
-          <caret line="490" column="14" lean-forward="true" selection-start-line="490" selection-start-column="14" selection-end-line="490" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="27" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cors/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="190">
-            <caret line="94" column="26" lean-forward="true" selection-start-line="94" selection-start-column="26" selection-end-line="94" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/cors/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="191" column="11" selection-start-line="191" selection-start-column="11" selection-end-line="191" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/response.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js" />
+    <entry file="file://$PROJECT_DIR$/node_modules/cors/README.md" />
+    <entry file="file://$PROJECT_DIR$/node_modules/cors/lib/index.js" />
     <entry file="file://$PROJECT_DIR$/../08课 kaikeba（2018.11.19）/views/open-courses.hbs" />
     <entry file="file://$PROJECT_DIR$/../08课 kaikeba（2018.11.19）/public/stylesheets/open-courses.css" />
     <entry file="file://$PROJECT_DIR$/public/stylesheets/open-courses.css">
@@ -678,20 +613,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/code.js" />
     <entry file="file://$PROJECT_DIR$/../08课 kaikeba（2018.11.19）/package.json" />
-    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.d.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.d.ts" />
     <entry file="file://$PROJECT_DIR$/views/open-courses.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2090">
           <caret line="110" column="44" selection-start-line="110" selection-start-column="37" selection-end-line="110" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/code.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-836">
-          <caret line="1" column="33" lean-forward="true" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -719,20 +645,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="46" column="30" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Auth.js" />
+    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/models/db.js" />
     <entry file="file://$PROJECT_DIR$/public/kaikeba-student/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -754,13 +668,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/mysql/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/index.js" />
     <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa0.229/models/db.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -782,16 +690,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/trek-captcha/lib/captcha.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="37" column="39" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/trek-captcha/lib/captcha.js" />
+    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/app.js" />
     <entry file="file://$PROJECT_DIR$/views/layout.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -823,20 +723,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="45" column="39" lean-forward="true" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/routes/api/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="197" column="1" lean-forward="true" selection-start-line="177" selection-end-line="197" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/routes/users.js" />
+    <entry file="file://$PROJECT_DIR$/../../kaikeba/trunk/routes/api/users.js" />
     <entry file="file://$PROJECT_DIR$/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -844,13 +732,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/multer/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/multer/index.js" />
     <entry file="file://$PROJECT_DIR$/views/admin/open-courses.hbs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -868,27 +750,6 @@
     <entry file="file://$PROJECT_DIR$/views/admin/vip-courses.hbs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin/stage.hbs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/db.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="61" column="20" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="194" column="9" lean-forward="true" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -898,8 +759,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="3591">
+          <caret line="189" column="6" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3686">
+          <caret line="194" column="9" selection-start-line="194" selection-start-column="9" selection-end-line="194" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/db.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1159">
+          <caret line="61" column="20" selection-start-line="61" selection-start-column="4" selection-end-line="61" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin/stage.hbs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/code.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
         </state>
       </provider>
     </entry>

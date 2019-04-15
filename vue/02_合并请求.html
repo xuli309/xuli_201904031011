@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="./js/vue.js"></script>
+    <script src="./js/axios.js"></script>
+    <script>
+        var App = {
+            template: `<div>
+                响应1： {{res1}} <br/>
+                响应2： {{res2}}
+                <button @click="sendAjax">发起请求</button>
+            </div>`,
+            data:function(){
+                return {
+                    res1:'',
+                    res2: ''
+                }
+            },
+            methods:{
+                sendAjax: function(){
+                    var q1 = this.$axios.get('http://127.0.0.1:8888');
+                    var q2 = this.$axios.post('http://127.0.0.1:8888/add', 'a=1');
+
+                    //合并这两个请求，并处理其成功和失败
+                    this.$axios.all([q1,q2])
+                    .then(this.$axios.spread((res1,res2)=>{
+
+                        //全成功
+                        console.log(res1,res2);
+                        this.res1 = res1.data;
+                        this.res2 = res2.data;
+                    })
+                    .catch(err =>{
+                        // 1失败
+                        console.log(err);
+                    })
+
+                }
+            }
+        }
+
+        Vue.prototype.$axios = axios;
+
+        new Vue({
+            el: '#app',
+            components:{
+                app: App
+            },
+            template:`<app />`
+        })
+    </script>
+</body>
+</html>
