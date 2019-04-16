@@ -11,6 +11,13 @@ module.exports = {
                             {text:'python', price:90},
                         ]
                     })
+                }).post('/add',function(req,res){
+
+                    res.json({
+                        list: [
+                            {text:'架构师', price:100},
+                        ]
+                    })
                 })
             }
         }

@@ -14,7 +14,7 @@
                     <input type="checkbox" v-model="c.active">
                 </td>
                 <td>{{c.text}}</td>
-                <td>{{c.price}}</td>
+                <td>￥{{c.price}}</td>
                 <td>
                     <button @click="minus(i)">-</button>
                     <span> {{c.count}} </span>

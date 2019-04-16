@@ -1,80 +1,47 @@
 <template>
-  <div v-if="showName">
-    <!--{{name}}
-    <input type="text" v-model="text"  /><button @click="addGoods">添加</button>-->
-    <ul>
-      <li v-for="(good,index) in goods" :key="good.text">
-        {{good.text}}
-        <button @click="addCart(index)">添加购物车</button>
-      </li>
-    </ul>
-    <hr>
-    <Cart :name="name"></Cart>
-  </div>
-  
+    <div>
+        <button @click="sendAjax">发起请求</button><br>
+
+        响应1：{{res1}} <br>
+        响应2：{{res2}} <br>
+        <button @click="sendAjaxHB">合并请求</button>
+    </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Cart from './components/Cart'
+
 export default {
-  name:"app",
-  components:{
-    Cart
-  },
-  data(){
-    return {
-      name: 'ddddd',
-      showName:true,
-      goods:[],
-      text:'',
-      // cart:[],
-    }
-  },
-  async created(){
-   try {
-     const res = await axios.get('/api/goods');
-     this.goods = res.data.list;
-   } catch (error) {
-      console.log(error);
-   }
-    // axios.get('/api/goods').then(res => {
-    //   this.goods = res.data.list
-    // }).catch(err => {
-    //   console.log(err);
-    // })
-    // setTimeout(() => {
-    //   this.showName = false;
-    // },2000)
-  },
-    methods:{
-    addCart(index){
-      const good = this.goods[index];
-      this.$bus.$emit('addCart', good);//触发一个事件
-    },
-    // addCart(index){
-    //   const good = this.goods[index];
-    //   const ret = this.cart.find(v=>v.text === good.text);
-    //   if(ret){
-    //     ret.count += 1;
-    //   }else{
-    //     this.cart.push({
-    //       ...good, //继承属性
-    //       // text: good.text,
-    //       // price: good.price,
-    //       active: true,
-    //       count: 1
-    //     })
-    //   }
-    // },
-    addGoods(){
-      if(this.text){
-        this.goods.push({text:this.text});
-        this.text = "";
+    name:'app',
+    data(){
+      return {
+        res1:'',
+        res2:''
       }
     },
-    
-  }
+    methods:{
+       sendAjax(){
+          this.$axios.get('http://127.0.0.1:8080/api/goods')
+          .then((result) => {
+              console.log(result)
+          }).catch((err) => {
+              console.log(err)
+          });
+      },
+      sendAjaxHB(){
+          const res1 = this.$axios.get('http://127.0.0.1:8080/api/goods');
+          const res2 = this.$axios.post('http://127.0.0.1:8080/add', 'a=1');
+
+          this.$axios.all([res1, res2])
+          .then(this.$axios.spread((req1,req2)=> {
+              this.res1 = req1.data.list;
+              this.res2 = req2.data.list;
+
+          })).catch((err) => {
+              console.log(err)
+          });
+
+      }
+    }
 }
 </script>
 
