@@ -14,3 +14,6 @@ vue ui
 
 npm run serve
 
+
+npm install -g @vue/cli-init
+
