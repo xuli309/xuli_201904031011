@@ -1,6 +1,6 @@
 <template>
     <div class="cms-s-header">
-        <h1 @click="goBack"><</h1>
+        <h1 @click="goBack">&lt;</h1>
         <h1 class="page-title">{{title}}</h1>
     </div>
 </template>

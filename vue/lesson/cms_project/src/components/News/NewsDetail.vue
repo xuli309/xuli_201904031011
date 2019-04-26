@@ -9,7 +9,7 @@
                 <span>添加时间：{{ newsDetail.add_time | convertTime('YYYY-MM-DD')}}</span>
             </div>
         </div>
-        <div class="news-content">{{ newsDetail.content }}</div>
+        <div class="news-content" v-html="newsDetail.content"></div>
     </div>
 </template>
 
@@ -21,13 +21,11 @@ export default {
         }
     },
    created () {
-       let id = this.$route.query.id
-      this.$axios.get('http://rap2api.taobao.org/app/mock/166270/getNewsDetail')
-      .then((result) => {
-          console.log(result.data.message)
+        let id = this.$route.query.id
+        this.$axios.get('http://rap2api.taobao.org/app/mock/166270/getNewsDetail')
+        .then((result) => {
             this.newsDetail = result.data.message[0];
-       
-      }).catch((err) => console.log(err))
+        }).catch((err) => console.log(err))
     },
 }
 </script>
@@ -49,5 +47,8 @@ export default {
     }
     .news-content{
         padding:5px;
+    }
+    .news-content img{
+        width:100%;
     }
 </style>

@@ -9,6 +9,9 @@ import Shopcart from '@/components/Shopcart/Shopcart'
 import NewsList from '@/components/News/NewsList'
 import NewsDetail from '@/components/News/NewsDetail'
 
+import PhotoList from '@/components/photo/PhotoList'
+import PhotoDetail from '@/components/photo/PhotoDetail'
+
 Vue.use(Router)
 // 注册全局组件 router-view router-link
 // 挂载Vue.prototype.$router||$route
@@ -22,6 +25,8 @@ export default new Router({
     { path: '/search', name: 'search', component: Search },
     { path: '/shopcart', name: 'shopcart', component: Shopcart },
     { name: 'news.list', path: '/news/list', component:NewsList},
-    { name: 'news.detail', path: '/news/detail', component:NewsDetail}
+    { name: 'news.detail', path: '/news/detail', component:NewsDetail},
+    { name: 'photo.list', path: '/photo/list/:categoryId', component:PhotoList},
+    { name: 'photo.detail', path: '/photo/detail', component:PhotoDetail}
   ]
 })

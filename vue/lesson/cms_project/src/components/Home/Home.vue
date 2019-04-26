@@ -26,7 +26,7 @@ export default {
         imgs: [],
         grids: [
             {className:'div1', title:'新闻资讯', router:{name:'news.list'}},
-            {className:'div2', title:'图文分享', router:{name:'news.list'}},
+            {className:'div2', title:'图文分享', router:{name:'photo.list',params:{categoryId:0}}},
             {className:'div3', title:'商品展示', router:{name:'news.list'}},
             {className:'div4', title:'留言反馈', router:{name:'news.list'}},
             {className:'div5', title:'搜索资讯', router:{name:'news.list'}},
@@ -37,7 +37,7 @@ export default {
   created () {
       this.$axios.get('http://rap2api.taobao.org/app/mock/166270/getlunbo')
       .then((result) => {
-            console.log(result.data)
+            // console.log(result.data)
             this.imgs = result.data.message;
        
       }).catch((err) => console.log(err))

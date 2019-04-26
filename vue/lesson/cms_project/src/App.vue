@@ -33,10 +33,10 @@ export default {
   methods:{
      changeHash(){
         this.$nextTick(function(){
-          // console.log(this.selected)
-          this.$router.push({
-            name: this.selected
-          })
+            console.log(this.$router)
+            this.$router.push({
+              name: this.selected
+            })
        })
      }
   },
