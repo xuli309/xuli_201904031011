@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #tab .active{
+           background:red 
+        }
+        #tab div {
+            border:1px solid #999;
+            width:200px;
+            height:200px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var aTab = document.getElementById("tab");
+            var aButton = aTab.getElementsByTagName("input");
+            var aDiv = aTab.getElementsByTagName("div");
+
+            for (var i=0;i<aButton.length;i++) {
+
+                aButton[i].index = i;
+                aButton[i].onclick = function(){
+                    for (var i=0;i<aButton.length;i++) {
+                        aButton[i].className = '';
+                        aDiv[i].style.display = 'none';
+                    }
+                    this.className = 'active';
+                    aDiv[this.index].style.display = 'block';
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <input type="button" value="tab1" class="active" >
+        <input type="button" value="tab2" >
+        <input type="button" value="tab3" >
+        <div id="div1" style="display:block">111111</div>
+        <div id="div2">2222</div>
+        <div id="div3">3333</div>
+    </div>
+</body>
+</html>

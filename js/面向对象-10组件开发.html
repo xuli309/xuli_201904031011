@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{background:red;width:100px; height:100px;position:absolute;top:0;left:0;}
+        #div2{background:yellow;left:100px;}
+        #div3{background:blue;left:200px;}
+        #div4{background:green;left:300px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var drag = new Drag();
+            drag.init('div1');
+
+            var drag2 = new Drag();
+            drag2.init('div2',function(){
+                document.title = 'hello';
+            });
+
+            var drag3 = new Drag();
+            drag3.init('div3',function(){
+                document.title = 'miaowei';
+            },function(){
+                document.title = 'ketang';
+            });
+
+            var drag4 = new Drag();
+            drag4.init('div4',function(){},function(){
+                document.title = 'byebye';
+            });
+         
+        }
+
+        function Drag(){
+            this.div1 = null;
+            this.disX = 0;
+            this.disY = 0;
+        }
+
+        Drag.prototype.init = function(id,toDown,toUp){
+            this.div1 = document.getElementById(id);
+
+            var _this = this;
+            this.div1.onmousedown = function(ev){
+                var ev = ev || window.event;
+                _this.fnDown(ev); 
+
+                toDown();
+
+                document.onmousemove = function(ev){
+                    var ev = ev || window.event;
+                    _this.fnMove(ev);
+                };
+
+                document.onmouseup  = function(){
+                    _this.fnUp();
+
+                    toUp();                
+                };
+
+                return false;
+            } 
+
+           
+        }
+
+        Drag.prototype.fnDown = function(ev){
+            this.disX = ev.clientX - this.div1.offsetLeft;
+            this.disY = ev.clientY - this.div1.offsetTop;
+        }
+
+        Drag.prototype.fnMove= function(ev){
+            this.div1.style.left = ev.clientX -this.disX + 'px';
+            this.div1.style.top = ev.clientY - this.disY + 'px';
+        }
+
+        Drag.prototype.fnUp = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+        // 方法继承： for in ： 拷贝继承（jquery中也是采用拷贝继承）
+        function extend(obj1, obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>

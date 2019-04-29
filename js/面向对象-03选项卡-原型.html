@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #tab .active{
+           background:red 
+        }
+        #tab div {
+            border:1px solid #999;
+            width:200px;
+            height:200px;
+            display: none;
+        }
+    </style>
+    <script>
+        // var aTab = null;
+        // var aButton = null;
+        // var aDiv = null;
+        // window.onload = function(){
+        //     aTab = document.getElementById("tab");
+        //     aButton = aTab.getElementsByTagName("input");
+        //     aDiv = aTab.getElementsByTagName("div");
+            
+        //     init();
+            
+        // }
+
+        // function init() {
+        //     for (var i=0;i<aButton.length;i++) {
+        //         aButton[i].index = i;
+        //         aButton[i].onclick = function(){
+        //             tabActive();
+        //         }
+        //     }
+        // }
+
+        // function tabActive(){
+        //     for (var i=0;i<aButton.length;i++) {
+        //         aButton[i].className = '';
+        //         aDiv[i].style.display = 'none';
+        //     }
+        //     this.className = 'active';
+        //     aDiv[this.index].style.display = 'block';
+        // }
+
+        //全局变量就是属性
+        //函数就是方法
+        //onload中创建对象
+        window.onload = function(){
+            var t1 = new Tab();
+            t1.init();
+        }
+        function Tab(){
+            this.aTab = document.getElementById("tab");
+            this.aButton = this.aTab.getElementsByTagName("input");
+            this.aDiv = this.aTab.getElementsByTagName("div");
+        }
+        Tab.prototype.init = function(){
+            var _this = this;
+            for (var i=0;i<this.aButton.length;i++) {
+                this.aButton[i].index = i;
+                this.aButton[i].onclick = function(){
+                    _this.tabActive(this);
+                }
+            }
+        }
+        Tab.prototype.tabActive = function(obj){
+            for (var i=0;i<this.aButton.length;i++) {
+                this.aButton[i].className = '';
+                this.aDiv[i].style.display = 'none';
+            }
+            obj.className = 'active';
+            this.aDiv[obj.index].style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <input type="button" value="tab1" class="active" >
+        <input type="button" value="tab2" >
+        <input type="button" value="tab3" >
+        <div id="div1" style="display:block">111111</div>
+        <div id="div2">2222</div>
+        <div id="div3">3333</div>
+    </div>
+</body>
+</html>

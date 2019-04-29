@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #tab .active, #tab2 .active{
+           background:red 
+        }
+        #tab div, #tab2 div{
+            border:1px solid #999;
+            width:200px;
+            height:200px;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var t1 = new Tab("tab");
+            t1.init();
+
+            var t2 = new Tab("tab2");
+            t2.init();
+            t2.autoPlay();
+        }
+        function Tab(id){
+            this.aTab = document.getElementById(id);
+            this.aButton = this.aTab.getElementsByTagName("input");
+            this.aDiv = this.aTab.getElementsByTagName("div");
+            this.iNow = 0;
+        }
+        Tab.prototype.init = function(){
+            var _this = this;
+            for (var i=0;i<this.aButton.length;i++) {
+                this.aButton[i].index = i;
+                this.aButton[i].onclick = function(){
+                    _this.tabActive(this);
+                }
+            }
+        }
+        Tab.prototype.tabActive = function(obj){
+            for (var i=0;i<this.aButton.length;i++) {
+                this.aButton[i].className = '';
+                this.aDiv[i].style.display = 'none';
+            }
+            obj.className = 'active';
+            this.aDiv[obj.index].style.display = 'block';
+        }
+
+        Tab.prototype.autoPlay = function(){
+            var _this = this;
+            
+            window.setInterval(function(){
+                if(_this.iNow == _this.aButton.length-1){
+                    _this.iNow = 0;
+                }else{
+                    _this.iNow++;
+                }
+
+                for (var i=0;i<_this.aButton.length;i++) {
+                    _this.aButton[i].className = '';
+                    _this.aDiv[i].style.display = 'none';
+                }
+                _this.aButton[_this.iNow].className = 'active';
+                _this.aDiv[_this.iNow].style.display = 'block';
+            },2000)
+        }
+    </script>
+</head>
+<body>
+    <div id="tab">
+        <input type="button" value="tab1" class="active" >
+        <input type="button" value="tab2" >
+        <input type="button" value="tab3" >
+        <div id="div1" style="display:block">111111</div>
+        <div id="div2">2222</div>
+        <div id="div3">3333</div>
+    </div>
+
+    <div id="tab2">
+        <input type="button" value="tab1" class="active" >
+        <input type="button" value="tab2" >
+        <input type="button" value="tab3" >
+        <div id="div1" style="display:block">111111</div>
+        <div id="div2">2222</div>
+        <div id="div3">3333</div>
+    </div>
+</body>
+</html>

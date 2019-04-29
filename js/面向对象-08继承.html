@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // 继承： 子类不影响父类，子类可以继承父类的一些功能（代码复用）
+
+        function CreatePerson(name, sex){
+            this.name = name;
+            this.sex = sex;
+            this.numArr = [1,2,3];
+        }
+        CreatePerson.prototype.showName = function() {
+            alert(this.name);
+        }
+
+        var person = new CreatePerson('小明','男');
+        // person.showName(); // 小明
+        // person.showJob(); // 错误
+
+        // 属性继承：调用父类的构造函数 call
+        function CreateStar(name,sex,job){
+            CreatePerson.call(this,name,sex);
+            this.job = job;
+        }
+        // CreateStar.prototype = CreatePerson.prototype;//对象的引用，会影响原有对象构造
+        extend(CreateStar.prototype, CreatePerson.prototype);
+
+        CreateStar.prototype.showJob = function(){
+            alert(this.job)
+        }
+
+        var star = new CreateStar('黄晓明','男','演员');
+        // star.showName(); // 黄晓明
+        // star.showJob(); // 演员
+
+        // 继承方式一： 方法继承： for in ： 拷贝继承（jquery中也是采用拷贝继承）
+        function extend(obj1, obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr];
+            }
+        }
+        
+
+
+        function Bbb(name){// 子类
+            CreatePerson.call(this,name);
+        }
+        // 继承方式二： 类式继承： new构造函数
+        var F = function(){};
+        F.prototype = CreatePerson.prototype;
+        Bbb.prototype = new F();
+        Bbb.prototype.constructor=Bbb; //修正指向
+
+        var b1 = new Bbb('小强');
+        // alert(b1.constructor);
+        // b1.showName();// 小强
+        b1.numArr.push(4);
+        // alert(b1.numArr); // 1,2,3,4
+
+        var b2 = new Bbb('小鹏');
+        // alert(b2.numArr) // 1,2,3
+
+
+        // 继承方式三： 原型继承： 无new的对象
+        var a = { name: '小小'};
+        var b = cloneObj(a);
+        alert(b.name);
+        function cloneObj(obj){
+            var F = function(){};
+            F.prototype = obj;
+            return new F();
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

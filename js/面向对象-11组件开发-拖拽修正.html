@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基于面向对象的组件开发</title>
+    <style>
+        div{background:red;width:100px; height:100px;position:absolute;top:0;left:0;}
+        #div2{background:yellow;left:100px;}
+        #div3{background:blue;left:200px;}
+        #div4{background:green;left:300px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var drag = new Drag();
+            drag.init({ // 配置参数
+                id:'div1'
+            });
+
+            var drag2 = new Drag();
+            drag2.init({// 配置参数
+                id:'div2',
+                toDown:function(){
+                    document.title = 'hello';
+                }
+            })
+           
+            var drag3 = new Drag();
+            drag3.init({// 配置参数
+                id:'div3',
+                toDown:function(){
+                    document.title = 'miaowei';
+                },
+                toUp:function(){
+                    document.title = 'ketang';
+                }
+            })
+            
+            var drag4 = new Drag();
+            drag4.init({// 1.配置参数
+                id:'div4',
+                toUp:function(){
+                    document.title = 'byebye';
+                }
+            })
+         
+        }
+
+        function Drag(){
+            this.div1 = null;
+            this.disX = 0;
+            this.disY = 0;
+
+            this.settings = { // 2.默认参数
+                toDown: function(){},
+                toUp: function(){}
+            }
+        }
+
+        Drag.prototype.init = function(obj){
+            this.div1 = document.getElementById(obj.id);
+            extend(this.settings, obj); // 3.调用默认参数覆盖配置参数的方法
+
+            var _this = this;
+            this.div1.onmousedown = function(ev){
+                var ev = ev || window.event;
+                _this.fnDown(ev); 
+                _this.settings.toDown();
+
+                document.onmousemove = function(ev){
+                    var ev = ev || window.event;
+                    _this.fnMove(ev);
+                };
+
+                document.onmouseup  = function(){
+                    _this.fnUp();
+                    _this.settings.toUp();                
+                };
+                return false;
+            } 
+        }
+
+        Drag.prototype.fnDown = function(ev){
+            this.disX = ev.clientX - this.div1.offsetLeft;
+            this.disY = ev.clientY - this.div1.offsetTop;
+        }
+
+        Drag.prototype.fnMove= function(ev){
+            this.div1.style.left = ev.clientX -this.disX + 'px';
+            this.div1.style.top = ev.clientY - this.disY + 'px';
+        }
+
+        Drag.prototype.fnUp = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+        // 方法继承： for in ： 拷贝继承（jquery中也是采用拷贝继承）
+        function extend(obj1, obj2){
+            for(var attr in obj2){
+                obj1[attr] = obj2[attr];
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+</body>
+</html>
