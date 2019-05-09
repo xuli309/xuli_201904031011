@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; list-style: none;}
+        div{position: absolute;top:10px;width:30px;height:30px;line-height: 30px; background:red;color:#fff;text-align: center;}
+    </style>
+    <script>
+        window.onload = function(){
+            var aDiv = document.getElementsByTagName('div');
+
+            for(var i=0;i<100;i++){
+                document.body.innerHTML+= '<div>'+i+'</div>';
+            }
+
+            // 逢10 换行
+            for(var i=0; i<aDiv.length;i++){
+                aDiv[i].style.left= 10 + (i%10)*40+"px";
+                aDiv[i].style.top= 10 +  Math.floor(i/10)*40+"px";
+            }
+        }
+    </script>
+</head>
+<body>
+   
+</body>
+</html>

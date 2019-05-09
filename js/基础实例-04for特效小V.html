@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; list-style: none;}
+        div{position: absolute;width:30px;height:30px;line-height: 30px; background:red;color:#fff;text-align: center;}
+    </style>
+    <script>
+        window.onload = function(){
+            var aDiv = document.getElementsByTagName('div');
+            
+            //实现一个小V
+            for(var i=0;i<11;i++){
+                document.body.innerHTML+= '<div>'+i+'</div>';
+            }
+
+            var m = 2;
+            for(var i=0; i<aDiv.length;i++){
+                if(i>5){
+                    aDiv[i].style.left = 10+i*30 + 'px';
+                    aDiv[i].style.top = 10+(i-m)*30 + 'px';
+                    m+=2;
+                }else{
+                    aDiv[i].style.left = 10+i*30 + 'px';
+                    aDiv[i].style.top = 10+i*30 + 'px';
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+   
+</body>
+</html>
