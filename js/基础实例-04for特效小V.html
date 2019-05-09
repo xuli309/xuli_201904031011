@@ -19,12 +19,11 @@
 
             var m = 2;
             for(var i=0; i<aDiv.length;i++){
+                aDiv[i].style.left = 10+i*30 + 'px';
                 if(i>5){
-                    aDiv[i].style.left = 10+i*30 + 'px';
                     aDiv[i].style.top = 10+(i-m)*30 + 'px';
                     m+=2;
                 }else{
-                    aDiv[i].style.left = 10+i*30 + 'px';
                     aDiv[i].style.top = 10+i*30 + 'px';
                 }
                 
