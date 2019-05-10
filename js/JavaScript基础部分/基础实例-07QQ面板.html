@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0; list-style: none}
+        #list{width:200px; margin:0 auto;}
+        #list h2{height:30px;line-height: 30px;font-size:16px;border:1px solid #999;background:url(images/btn_right.png) paleturquoise no-repeat 2px;padding-left:10px;}
+        #list ul { display: none;}
+        #list ul li{border:1px solid #999;height:30px;line-height: 30px;font-size:14px;}
+        #list ul .active{background:pink}
+    </style>
+    <script>
+        window.onload = function(){
+            var oUl = document.getElementById("list");
+            var oUl2 = oUl.getElementsByTagName("ul");
+            var aH2 = oUl.getElementsByTagName('h2');
+
+            var aLi = [];
+
+            for(var i=0;i<aH2.length;i++){
+                aH2[i].index = i;
+                aH2[i].flag = true;
+                aH2[i].onclick = function(){
+                    
+                    if(this.flag){
+                        oUl2[this.index].style.display = 'block';
+                        this.style.background='url(images/btn_down.png) paleturquoise no-repeat 2px';
+                        this.flag=false;
+                    }else{
+                        oUl2[this.index].style.display = 'none';
+                        this.style.background='url(images/btn_right.png) paleturquoise no-repeat 2px';
+                        this.flag = true;
+                    }
+                    
+                }
+
+                var aLis = oUl2[i].getElementsByTagName('li');
+                for(var j=0;j<aLis.length;j++){
+                    aLi.push(aLis[j]);
+                }
+              
+            }
+
+            var len = aLi.length;
+            for(var i=0;i<len;i++){
+                aLi[i].index = i;
+                aLi[i].flag = true;
+                aLi[i].onclick = function(){
+
+                    for(var i=0;i<len;i++){
+                        aLi[i].style.background = '';
+                    }
+                    this.style.background = 'orange';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+   <ul id="list">
+       <li class="lis">
+           <h2>我的好友</h2>
+           <ul>
+               <li>张三</li>
+               <li>张三</li>
+               <li>张三</li>
+               <li>张三</li>
+               <li>张三</li>
+               <li>张三</li>
+           </ul>
+       </li>
+       <li class="lis">
+            <h2>我的朋友</h2>
+            <ul>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+            </ul>
+        </li>
+        <li class="lis">
+           <h2>陌生人</h2>
+           <ul>
+               <li>王五</li>
+               <li>王五</li>
+               <li>王五</li>
+               <li>王五</li>
+               <li>王五</li>
+               <li>王五</li>
+           </ul>
+       </li>
+   </ul>
+</body>
+</html>
