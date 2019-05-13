@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         *{margin:0;padding:0;list-style: none;}
+        .div1{width:500px;margin:100px; position: relative;}
+        .div1 li{ float:left;position: relative; margin-right: 10px;width: 100px;}
+        .div1 li img{width:100px; height: 100px;}
+        .div1 li p{text-align: center;}
+        .div1 li .alert_con{position:absolute; top:-38px;left:0;width:100px;border:1px solid #000; display: none;}
+        .div1 li .alert_con .title{background: #f1f1f1;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oUl = document.getElementById("ul1");
+            var aLi = oUl.getElementsByTagName("li");
+            var arr = [
+                {"img":"../../images/1.jpg","type":"娱乐观","ntype":"新闻类","title":"标题","content":"具体内容"},
+                {"img":"../../images/2.jpg","type":"封面人物","ntype":"新闻类","title":"标题","content":"具体内容"},
+                {"img":"../../images/3.jpg","type":"酷客天气","ntype":"新闻类","title":"标题","content":"具体内容"}
+            ]
+
+            var str = '';
+            for(var i=0;i<arr.length;i++){
+                str += `<li>
+                            <img src="${arr[i].img}" >
+                            <p>${arr[i].type}</p>
+                            <p>${arr[i].ntype}</p>
+                            <div class="alert_con">
+                                <p class="title">${arr[i].title}</p>
+                                <p class="content">${arr[i].content}</p>
+                            </div>
+                        </li>`;
+            }
+            oUl.innerHTML = str;
+
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onmouseover = function(){
+                    this.getElementsByTagName("div")[0].style.display='block';
+                }
+
+                aLi[i].onmouseout = function(){
+                    this.getElementsByTagName("div")[0].style.display='none';
+                }
+            }
+        
+        }
+    </script>
+</head>
+<body>
+    <div class="div1">
+        <ul id="ul1">
+            <!-- <li>
+                <img src="../../images/1.jpg" >
+                <p>娱乐观</p>
+                <p>新闻类</p>
+                <div class="alert_con">
+                    <div class="title">标题</div>
+                    <div class="content">具体内容</div>
+                </div>
+            </li> -->
+        </ul>
+    </div>
+</body>
+</html>

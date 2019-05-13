@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; list-style: none;}
+        ul{margin:10px;position: relative;display: none}
+        li{position: absolute;width:30px;height:30px;line-height: 30px; background:red;color:#fff;text-align: center;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            var oUl = document.getElementById("ul1");
+            var aLi = document.getElementsByTagName('li');
+
+            var str = "";
+            for(var i=0;i<5;i++){
+                str += "<li>" + i + "</li>";
+            }
+            oUl.innerHTML = str;
+
+            var flag = true;
+            oBtn.onclick = function(){
+                oUl.style.display = 'block';
+                if(flag){
+                    for (var i = 0; i < aLi.length; i++) {
+                        aLi[i].style.left = 10 + 30 * i + "px";
+                        if (i > 2) {
+                            aLi[i].style.top = (aLi.length - (i + 1)) * 30 + "px";
+                        } else {
+                            aLi[i].style.top = i * 30 + "px";
+                        }
+                    }
+                    flag = false;
+                }
+                
+            }
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="自动生成一个V字型" id="btn1">
+    <ul id="ul1">
+
+    </ul>
+</body>
+</html>

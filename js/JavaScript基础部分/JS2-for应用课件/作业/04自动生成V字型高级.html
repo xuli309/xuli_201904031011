@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; list-style: none;}
+        ul{margin:10px;position: relative; display: none;}
+        li{position: absolute;width:30px;height:30px;line-height: 30px; background:red;color:#fff;text-align: center;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn1");
+            var oUl = document.getElementById("ul1");
+            var aLi = oUl.getElementsByTagName("li");
+
+            var str = "";
+            for(var i=0;i<5;i++){
+                str += "<li>" + i + "</li>";
+            }
+            oUl.innerHTML = str;
+
+            var flag = true;
+            var type = 1;
+            oBtn.onclick = function(){
+                oUl.style.display = 'block';
+                switch (type) {
+                    case 1:
+                        for(var i=0;i<aLi.length;i++){
+                            aLi[i].style.left = 10 + 30*i +"px";
+                            aLi[i].style.top = 10 + Math.abs(i- parseInt(aLi.length / 2 )) *30 + "px";
+                        }
+                        type++;
+                        break;
+                    case 2:
+                        for (var i = 0; i < aLi.length; i++) {
+                            aLi[i].style.top = 10 + 30 * i + "px";
+                            if (i > 2) {
+                                aLi[i].style.left = (aLi.length - (i + 1)) * 30 + "px";
+                            } else {
+                                aLi[i].style.left = i * 30 + "px";
+                            }
+                        }
+                        type++;
+                        break;
+                        case 3:
+                            for (var i = 0; i < aLi.length; i++) {
+                                aLi[i].style.left = 10 + 30 * i + "px";
+                                if (i > 2) {
+                                    aLi[i].style.top = (aLi.length - (i + 1)) * 30 + "px";
+                                } else {
+                                    aLi[i].style.top = i * 30 + "px";
+                                }
+                            }
+                            type++;
+                            break;
+                        case 4:
+                            for (var i = 0; i < aLi.length; i++) {
+                                aLi[i].style.top = 10 + 30 * i + "px";
+                                aLi[i].style.left = Math.abs(i- parseInt(aLi.length / 2 )) *30 + "px";
+                            }
+                            type=1;
+                            break;
+                        }
+            }  
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn1">
+    <ul id="ul1">
+
+    </ul>
+</body>
+</html>
