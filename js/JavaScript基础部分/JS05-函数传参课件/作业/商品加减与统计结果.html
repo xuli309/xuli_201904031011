@@ -7,18 +7,25 @@
 window.onload = function () {
 	var oUl = document.getElementById('list');
 	var aLi = oUl.getElementsByTagName('li');
+
+	var oSpan1 = document.getElementById("span1");
+	var oSpan2 = document.getElementById("span2");
+	var oSpan3 = document.getElementById("span3");
 	
+	var totalNum = 0;//共多少件商品
+	var totalPrize = 0;//共多少钱
+
 	// fnCount ( aLi[0] );
 	for ( var i=0; i<aLi.length; i++ ) {
 		fnCount ( aLi[i] );
 	}
-	
+
 	function fnCount ( li ) {
 		var aBtn = li.getElementsByTagName ('input');
 		var oStrong = li.getElementsByTagName ('strong')[0];
 		var oEm = li.getElementsByTagName ('em')[0];
 		var oSpan = li.getElementsByTagName ('span')[0];
-		var n = oStrong.innerHTML;			// '0'
+		var n = Number(oStrong.innerHTML);			// '0'
 		var price = parseFloat(oEm.innerHTML);			// 12.5
 		
 		aBtn[0].onclick = function () {
@@ -27,11 +34,22 @@ window.onload = function () {
 			}
 			oStrong.innerHTML = n;
 			oSpan.innerHTML = n*price + '元';
+			totalNum -= n;
+			totalPrize -= n*price;
+			oSpan1.innerHTML = totalNum;
+			oSpan2.innerHTML = totalPrize;
 		};
+		
 		aBtn[1].onclick = function () {
 			n++;
 			oStrong.innerHTML = n;
 			oSpan.innerHTML = n*price + '元';
+
+			totalNum += n;
+			totalPrize += n*price;
+			
+			oSpan1.innerHTML = totalNum;
+			oSpan2.innerHTML = totalPrize;
 		};
 	}
 };
@@ -79,8 +97,8 @@ window.onload = function () {
 </ul>
 
 <p>
-商品合计共：0件，共花费了：0元<br />
-其中最贵的商品单价是：0元
+商品合计共：<span id="span1">0</span>件，共花费了：<span id="span2">0</span>元<br />
+其中最贵的商品单价是：<span id="span3">0</span>元
 </p>
 
 </body>
