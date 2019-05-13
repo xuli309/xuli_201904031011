@@ -16,8 +16,9 @@
         #header,#footer{position: absolute;top:0;z-index: 1;width:100%;height:25px;line-height: 25px; text-align: center;background:#000;color:#fff;}
         #footer{bottom:0;top:auto;}
         .page{width:400px;position:absolute;bottom:0;margin-left: -200px;left:50%;text-align: center}
-        .page span{width: 8px;height: 8px;display: inline-block;border-radius: 100%;background: rgba(0, 0, 0, 0.2);}
+        .page span{width: 8px;height: 8px;display: inline-block;border-radius: 100%;background: rgba(0, 0, 0, 0.2);position: relative;cursor: pointer;}
         .page .bullet{background: rgba(2, 60, 248, 0.2);}
+        .page span img{border:1px solid #000;width:80px;height:80px;position: absolute;top:-85px;left:-20px;z-index: 2;display: none;}
     </style>
     <script>
         window.onload = function(){
@@ -27,9 +28,15 @@
             var oHeader = document.getElementById("header");
             var oFooter = document.getElementById("footer");
 
+            var oPage = document.getElementById('page');
+            var aSpan = oPage.getElementsByTagName('span');
+
             var imgArr = ['../../images/1.jpg','../../images/2.jpg','../../images/3.jpg','../../images/4.jpg'];
             var oNum = 1;
+
+            init();
             draw(oNum);
+            
 
             oPre.onclick = function(){
                 oNum--;
@@ -52,6 +59,41 @@
                 oImg.src = imgArr[oNum-1];
                 oHeader.innerHTML = oNum + ' / ' + imgArr.length;
                 oFooter.innerHTML = '第 ' + oNum + ' 张图';
+
+                for(var i=0;i<aSpan.length;i++){
+                    aSpan[i].className = '';
+                }
+                aSpan[oNum-1].className = 'bullet';
+            }
+
+            function init(){
+                var str = '';
+                for(var i=0;i<imgArr.length;i++){
+                    if(i==0)
+                    str += '<span class="bullet"><img src="'+imgArr[i]+'" /></span> ';
+                    else
+                    str += '<span><img src="'+imgArr[i]+'" /></span> ';
+                }
+                oPage.innerHTML = str;
+            }
+
+            for(var i=0;i<aSpan.length;i++){
+                aSpan[i].index = i+1;
+                aSpan[i].onmouseover = function(){
+                    this.getElementsByTagName('img')[0].style.display="block";
+                }
+
+                aSpan[i].onmouseout = function(){
+                    this.getElementsByTagName('img')[0].style.display="none";
+                }
+
+                aSpan[i].onclick = function(){
+                    draw(this.index);
+                    for(var i=0;i<aSpan.length;i++){
+                        aSpan[i].className = '';
+                    }
+                    this.className = 'bullet';
+                }
             }
 
         }
@@ -66,11 +108,13 @@
             <p id="header"></p>
             <p id="footer"></p>
         </div>
-        <div class="page">
+        <div class="page" id="page">
+            <!-- <span class="page-bullet">
+               <img src="../../images/1.jpg" />
+            </span>
             <span class="page-bullet"></span>
             <span class="page-bullet"></span>
-            <span class="page-bullet"></span>
-            <span class="page-bullet"></span>
+            <span class="page-bullet"></span> -->
         </div>
     </div>
 </body>
