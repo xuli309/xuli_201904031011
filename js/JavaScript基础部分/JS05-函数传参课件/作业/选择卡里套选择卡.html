@@ -15,7 +15,8 @@
         .right{width:600px;float: right;}
         .right .div-img{ width:600px; height:405px;background:url(../../images/1.jpg) no-repeat;background-size: 600px 405px; position: relative;}
         .right .div-img ul{position: absolute;bottom:0;left:0;}
-        .right .div-img li{width:199px;height:25px; line-height: 25px; text-align: center;color:#fff;font-size:12px;background:rgba(0,0,0,0.5);float: left;border-right:1px solid #fff;}
+        .right .div-img li{width:199px;height:25px; line-height: 25px; text-align: center;color:#fff;font-size:12px;
+            background:rgba(0,0,0,0.5);float: left;border-right:1px solid #fff;cursor: pointer;}
         .right .div-img li.active{background:rgba(247,3,237,0.5)}
         .right .div-img li:last-child{width:200px;border-right:none;}
     </style>
@@ -23,7 +24,7 @@
         window.onload = function(){
             
             var oUl = document.getElementById("left");
-            var aLi = document.getElementsByTagName("li");
+            var aLi = oUl.getElementsByTagName("li");
 
             for(var i=0;i<aLi.length;i++){
                 aLi[i].index = i;
@@ -46,36 +47,82 @@
                 {
                     "name":"商城特惠",
                     "list":[
-                        {"name":"aaa","img":"../../images/1.jpg"},
-                        {"name":"bbb","img":"../../images/2.jpg"},
-                        {"name":"ccc","img":"../../images/3.jpg"}
+                        {"name":"ddd","img":"../../images/4.jpg"},
+                        {"name":"bbeeeb","img":"../../images/1.jpg"},
+                        {"name":"ccfffc","img":"../../images/2.jpg"}
+                    ]
+                },
+                {
+                    "name":"名品推荐",
+                    "list":[
+                        {"name":"dddddaaaad","img":"../../images/3.jpg"},
+                        {"name":"bbeeeb","img":"../../images/4.jpg"},
+                        {"name":"ccfffc","img":"../../images/1.jpg"},
+                        {"name":"nihao","img":"../../images/2.jpg"},
+                    ]
+                },
+                {
+                    "name":"缤纷活动",
+                    "list":[
+                        {"name":"dddfffffd","img":"../../images/2.jpg"},
+                        {"name":"bbeeeb","img":"../../images/3.jpg"},
+                        {"name":"ccfffc","img":"../../images/4.jpg"},
+                        {"name":"999","img":"../../images/1.jpg"},
+                        {"name":"dafdfafdd","img":"../../images/4.jpg"}
+                        
                     ]
                 }
             ]
 
+            function fn(index){
+
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].className = '';
+                }
+                this.className = 'active';
+
+                var str = '';
+                var list = jsonArr[index].list;
+                oDiv.style.background = 'url('+list[0].img+')';
+                oDiv.style.backgroundSize = '600px 405px';
+                
+                for(var j =0;j<list.length;j++){
+
+                    var w = (600-list.length-1)/list.length;
+                    if(j==0){
+                        str += '<li class="active" img='+ list[j].img+' style="width:'+w+'px">'+list[j].name+'</li>';
+                    }else{
+                        str += '<li img='+ list[j].img+' style="width:'+w+'px">'+list[j].name+'</li>';
+                    }
+                }
+                oUl.innerHTML = str;
+
+                for(var i=0;i<aLi2.length;i++){
+                    fn2( aLi2[i] );
+                }
+            }
+
             function fn1(li){
 
                 li.onclick = function(){
-                    for(var i=0;i<aLi.length;i++){
-                        aLi[i].className = '';
+                    fn(this.index);
+                }
+            }
+
+            function fn2(li){
+                li.onclick = function(){
+                    for(var i=0;i<aLi2.length;i++){
+                        aLi2[i].className = '';
                     }
                     this.className = 'active';
 
-                    var str = '';
-                    var list = jsonArr[this.index].list;
-                    oDiv.style.background = 'url('+list[0].img+')';
+                    oDiv.style.background = 'url(' + this.getAttribute("img") + ')';
                     oDiv.style.backgroundSize = '600px 405px';
-                   
-                    for(var j =0;j<list.length;j++){
-                        if(j==0){
-                            str += '<li class="active">'+list[j].name+'</li>';
-                        }else{
-                            str += '<li>'+list[j].name+'</li>';
-                        }
-                    }
-                    oUl.innerHTML = str;
+                    
                 }
             }
+
+            fn(0);
 
         }
         
@@ -92,9 +139,9 @@
         <div class="right">
             <div class="div-img" id="right">
                 <ul>
-                    <li class="active">aaa</li>
+                    <!-- <li class="active">aaa</li>
                     <li>bbb</li>
-                    <li>ccc</li>
+                    <li>ccc</li> -->
                 </ul>
             </div>
         </div> 
