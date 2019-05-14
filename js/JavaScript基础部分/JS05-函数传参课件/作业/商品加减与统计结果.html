@@ -11,9 +11,6 @@ window.onload = function () {
 	var oSpan1 = document.getElementById("span1");
 	var oSpan2 = document.getElementById("span2");
 	var oSpan3 = document.getElementById("span3");
-	
-	var totalNum = 0;//共多少件商品
-	var totalPrize = 0;//共多少钱
 
 	// fnCount ( aLi[0] );
 	for ( var i=0; i<aLi.length; i++ ) {
@@ -26,18 +23,16 @@ window.onload = function () {
 		var oEm = li.getElementsByTagName ('em')[0];
 		var oSpan = li.getElementsByTagName ('span')[0];
 		var n = Number(oStrong.innerHTML);			// '0'
-		var price = parseFloat(oEm.innerHTML);			// 12.5
-		
+		var price = parseFloat(oEm.innerHTML);	// 12.5
+
 		aBtn[0].onclick = function () {
-			if ( n > 0 ) {
-				n--;
-			}
-			oStrong.innerHTML = n;
-			oSpan.innerHTML = n*price + '元';
-			totalNum -= n;
-			totalPrize -= n*price;
-			oSpan1.innerHTML = totalNum;
-			oSpan2.innerHTML = totalPrize;
+				if ( n > 0 ) {
+					n--;
+				}
+				oStrong.innerHTML = n;
+				oSpan.innerHTML = n*price + '元';
+
+				total(0);
 		};
 		
 		aBtn[1].onclick = function () {
@@ -45,12 +40,25 @@ window.onload = function () {
 			oStrong.innerHTML = n;
 			oSpan.innerHTML = n*price + '元';
 
-			totalNum += n;
-			totalPrize += n*price;
-			
-			oSpan1.innerHTML = totalNum;
-			oSpan2.innerHTML = totalPrize;
+			total(1);
 		};
+	}
+
+	
+	function total(type){
+			var totalNum = 0;//共多少件商品
+			var totalPrize = 0;//共多少钱
+			for(var i=0;i<aLi.length;i++){
+					if(type == 1){
+						totalNum += parseInt(aLi[i].getElementsByTagName('strong')[0].innerHTML);
+						totalPrize += parseFloat(aLi[i].getElementsByTagName('span')[0].innerHTML);
+					}else{
+						totalNum -= parseInt(aLi[i].getElementsByTagName('strong')[0].innerHTML);
+						totalPrize -= parseFloat(aLi[i].getElementsByTagName('span')[0].innerHTML);
+					}
+			}
+			oSpan1.innerHTML = Math.abs(totalNum);
+			oSpan2.innerHTML = Math.abs(totalPrize);
 	}
 };
 </script>

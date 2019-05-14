@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        li{list-style: none;margin-bottom:10px;}
+        .text{display: none;}
+    </style>
+    <script>
+        window.onload = function(){
+            var oCon = document.getElementById("con");
+            var aLi = oCon.getElementsByTagName("li");
+
+            for(var i=0;i<aLi.length;i++){
+                fn1(aLi[i]);
+            }
+
+            function fn1 (li){
+                var oSpan = li.getElementsByTagName('span')[0];
+                var aInpu = li.getElementsByTagName('input');
+                var oText = aInpu[0];
+                var oUpdate = aInpu[1];
+                var oSave = aInpu[2];
+                var oCancel = aInpu[3];
+
+                oUpdate.onclick = function(){
+                    oText.style.display = 'inline-block';
+                    oSpan.style.display = 'none';
+                    oText.value = oSpan.innerHTML;
+                }
+
+                oSave.onclick = function(){
+                    oText.style.display = 'none';
+                    oSpan.style.display = 'inline-block';
+                    oSpan.innerHTML = oText.value;
+                }
+
+                oCancel.onclick = function(){
+                    oText.style.display = 'none';
+                    oSpan.style.display = 'inline-block';
+                    oSpan.innerHTML = oText.value;
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+   <div class="con">
+       <div class="title">分类名称</div>
+        <ul id="con">
+            <li>
+                <input type="text" class="text"  />
+                <span>你好啊！</span>
+                <input type="button" class="btn" value="修改" />
+                <input type="button" class="btn" value="保存" />
+                <input type="button" class="btn" value="取消" />
+            </li>
+            <li>
+                <input type="text" id="name2"  class="text"  />
+                <span>你好啊！</span>
+                <input type="button" class="btn" value="修改" />
+                <input type="button" class="btn" value="保存" />
+                <input type="button" class="btn" value="取消" />
+            </li>
+        </ul>
+           
+   </div> 
+</body>
+</html>

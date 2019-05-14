@@ -1,0 +1,205 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;list-style: none;}
+        .div1{background:#DEE7E7;width:300px;position:absolute;margin-left:-150px;left:50%;float:left;}
+        .div1 .header{width:280px;margin:0 auto;border-bottom:1px solid #94BDD6;height:40px;line-height: 40px;}
+        .div1 .header h3{color:#103142;float:left;width:186px;text-align: center;}
+        .div1 .header .right{float:left;}
+        .div1 .header .right li{float:left; height:25px; line-height:25px;width:30px;border:1px solid #94BDD6;border-bottom:none;border-right:none;
+        color:#185273; font-size:12px;text-align:center;margin-top:15px;cursor: pointer;}
+        .div1 .header .right li:last-child{border-right:1px solid #94BDD6}
+        .div1 .header .right li.active{background:#fff;color:#000;}
+
+        .div1 .div-con{width:280px;margin-left:10px;float:left;display: none;}
+        .div1 .div-con li{width:100%;border-bottom:1px dashed #fff;float:left;}
+        .div1 .div-con li strong{float:left;background:#21638C;width:20px;height:15px;line-height: 15px; text-align: center;color:#fff;margin:8px 10px 0px;}
+        .div1 .div-con li .title{float:left;font-size:12px;line-height: 30px;height:30px;}
+        .div1 .div-con li .content{background:#fff;display:none;float:left;width:100%;position: relative;padding:5px 0;height:60px;}
+        .div1 .div-con li .content strong{float:left;margin:0 10px;}
+        .div1 .div-con li .content img{float:left; border:1px solid #94BDD6;width:80px;height:60px;margin-right:10px;}
+        .div1 .div-con li .content div{float:left; width:140px;}
+        .div1 .div-con li .content div span{
+            line-height:18px;
+            color:#21638C;
+            font-size:8px;
+            display:-webkit-box;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;
+        }
+        .div1 .div-con li .content input{
+            background:url("../../images/btn_right.png") no-repeat #21638C 3px;
+            color:#fff;
+            border:none;
+            width:40px;
+            height:20px;
+            line-height: 20px;
+            border-radius: 3px;
+            margin:5px 0;
+            float:right;
+        }
+        .div1 .footer{float:left;text-align: right;height:30px;font-size:12px;padding:10px 10px;width:280px;}
+    </style>
+    <script>
+        window.onload = function(){
+            var jsonArr = [
+                {   
+                    "name":"每日",
+                    "list":[
+                        {"img":"../../images/1.jpg","title":"1解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度解析人类与地球的深度解析人类与地球的"},
+                        {"img":"../../images/2.jpg","title":"2解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度"},
+                        {"img":"../../images/3.jpg","title":"3解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"4解密：关于人类与地球的一千零一问","content":"dddddddddddddddd"},
+                        {"img":"../../images/1.jpg","title":"5解密：关于人类与地球的一千零一问","content":"d球的深度球的深度球的深度"},
+                        {"img":"../../images/3.jpg","title":"6解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"7解密：关于人类与地球的一千零一问","content":"球的深度球的深度"},
+                        {"img":"../../images/1.jpg","title":"8解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"},
+                        {"img":"../../images/2.jpg","title":"9解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/3.jpg","title":"10解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"}
+                    ]
+                },
+                {   
+                    "name":"每周",
+                    "list":[
+                        {"img":"../../images/1.jpg","title":"每周解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度解析人类与地球的深度解析人类与地球的"},
+                        {"img":"../../images/2.jpg","title":"2每周解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度"},
+                        {"img":"../../images/3.jpg","title":"3每周解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"4每周解密：关于人类与地球的一千零一问","content":"dddddddddddddddd"},
+                        {"img":"../../images/1.jpg","title":"5每周解密：关于人类与地球的一千零一问","content":"d球的深度球的深度球的深度"},
+                        {"img":"../../images/3.jpg","title":"6每周解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"7每周解密：关于人类与地球的一千零一问","content":"球的深度球的深度"},
+                        {"img":"../../images/1.jpg","title":"8每周解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"},
+                        {"img":"../../images/2.jpg","title":"9每周解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/3.jpg","title":"10每周解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"}
+                    ]
+                },
+                {   
+                    "name":"全部",
+                    "list":[
+                        {"img":"../../images/1.jpg","title":"全部解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度解析人类与地球的深度解析人类与地球的"},
+                        {"img":"../../images/2.jpg","title":"2全部解密：关于人类与地球的一千零一问","content":"深度解析人类与地球的深度"},
+                        {"img":"../../images/3.jpg","title":"3全部解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"4全部解密：关于人类与地球的一千零一问","content":"dddddddddddddddd"},
+                        {"img":"../../images/1.jpg","title":"5全部解密：关于人类与地球的一千零一问","content":"d球的深度球的深度球的深度"},
+                        {"img":"../../images/3.jpg","title":"6全部解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/4.jpg","title":"7全部解密：关于人类与地球的一千零一问","content":"球的深度球的深度"},
+                        {"img":"../../images/1.jpg","title":"8全部解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"},
+                        {"img":"../../images/2.jpg","title":"9全部解密：关于人类与地球的一千零一问","content":"球的深度"},
+                        {"img":"../../images/3.jpg","title":"10全部解密：关于人类与地球的一千零一问","content":"球的深度球的深度球的深度"}
+                    ]
+                }
+            ]
+
+            var oHeader = document.getElementById("header");
+            var oUl = oHeader.getElementsByTagName("ul")[0];
+            var aLi1 = oUl.getElementsByTagName("li");
+            
+            var oDiv = document.getElementById("center");
+            var aUl = oDiv.getElementsByTagName("ul");
+            var aLi2 = oDiv.getElementsByTagName("li");
+
+            var str = '';
+            var html = '';
+            for(var i=0;i<jsonArr.length;i++){
+                var obj= jsonArr[i];
+                if(i == 0){
+                    str += '<li class="active">' + obj.name + '</li>';
+                    html += '<ul class="div-con" style="display:block">';
+                }else{
+                    str += '<li>' + obj.name + '</li>';
+                    html += '<ul class="div-con">';
+                }
+                html+='</ul>';
+                oUl.innerHTML = str;
+                oDiv.innerHTML = html;
+            }
+
+            //tab 点击事件
+            for(var i=0;i<aLi1.length;i++){
+                aLi1[i].index = i;
+                aLi1[i].onclick = function(){
+                    for(var i=0;i<aUl.length;i++){
+                        aUl[i].style.display = '';
+                        aLi1[i].className = '';
+                    }
+                    aUl[this.index].style.display = 'block';
+                    this.className='active';
+                }
+            }
+           
+            for(var i=0;i<jsonArr.length;i++){
+                var obj= jsonArr[i];
+                var liHtml = '';
+                for(var j=0;j<obj.list.length;j++){
+                    var json = obj.list[j];
+                    liHtml+= '<li>'
+                        +'<strong>'+ (j+1) +'</strong>'
+                        +'<div class="title">'+json.title+'</div>'
+                        +'<div class="content">'
+                        +'    <strong>'+ (j+1) +'</strong>'
+                        +'    <img src="'+json.img+'">'
+                        +'    <div>'
+                        +'        <span>'+json.content+'</span>'
+                        +'        <input type="button" value="播放">'
+                        +'    </div>'
+                        +'</div>'
+                        +' </li>';
+                }
+                aUl[i].innerHTML = liHtml;
+            }
+
+            //鼠标移入事件
+            for(var i=0;i<aLi2.length;i++){
+                aLi2[i].index = i;
+                aLi2[i].onmouseover = function(){
+                    this.getElementsByTagName("strong")[0].style.display='none';
+                    this.getElementsByTagName("div")[0].style.display='none';
+                    this.getElementsByTagName("div")[1].style.display='block';
+                }
+
+                aLi2[i].onmouseout = function(){
+                    this.getElementsByTagName("strong")[0].style.display='block';
+                    this.getElementsByTagName("div")[0].style.display='block';
+                    this.getElementsByTagName("div")[1].style.display='none';
+                }
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="div1">
+        <div class="header" id="header">
+            <h3>观看排行榜</h3>
+            <ul class="right">
+                <li class="active">每日</li>
+                <li>每周</li>
+                <li>全部</li>
+            </ul>
+        </div>
+        <div id="center">
+        <!-- <ul class="div-con" id="con1" style="display:block">
+            <li>
+                <strong>1</strong>
+                <div class="title">解密：关于人类与地球的一千零一问</div>
+                <div class="content">
+                    <strong>1</strong>
+                    <img src="../../images/1.jpg">
+                    <div>
+                        <span>深度解析人类与地球的深度解析人类与地球的深度解析人类与地球的</span>
+                        <input type="button" value="播放">
+                    </div>
+                </div>
+            </li>
+        </ul>-->
+        </div>
+        <div class="footer">更多>></div>
+    </div>
+</body>
+</html>
