@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+
+<script>
+
+window.onload = function (){
+	var aLi = document.getElementsByTagName('li');
+	var arr = [ 'red', 'yellow','blue','green' ];
+	var str = '';
+	
+	for( var i=0; i<aLi.length; i++ ){
+		
+		aLi[i].index = i;
+		
+		aLi[i].style.background = arr[i%arr.length];
+		
+		aLi[i].onmouseover = function (){
+			str = this.style.background;						// 先存颜色
+			this.style.background = 'gray';
+		};
+		aLi[i].onmouseout = function (){
+			if(str != 'black')
+			this.style.background = arr[this.index%arr.length];
+			// this.style.background = str;
+		};
+
+		var flag = true;
+		aLi[i].onclick = function (){
+			for( var i=0; i<aLi.length; i++ ){
+				aLi[i].style.background = arr[i%arr.length];
+			}
+			
+			this.style.background = 'black';
+			str = this.style.background;
+			
+		}
+	}
+};
+</script>
+<style>
+li { height:24px; margin-bottom:3px; list-style:none; }
+</style>
+</head>
+
+<body>
+
+<ul id="ul1">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+
+</body>
+</html>
