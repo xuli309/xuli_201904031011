@@ -10,6 +10,7 @@ div { width:100px; height:120px; background:red; }
 <script>
 $(function(){
 	
+
 	// $('div1').style.width = '300px';
 	
 	
@@ -19,7 +20,7 @@ $(function(){
 		
 		// alert( getComputedStyle( $('div1') ).width );			// IE6 7 8 不兼容
 		
-		// alert( $('div1').currentStyle.width );										// 标准浏览器不兼容
+		// alert( $('div1').currentStyle.width );					// 标准浏览器不兼容
 		/*
 		if( $('div1').currentStyle ){
 			alert( $('div1').currentStyle.width );
@@ -38,7 +39,7 @@ $(function(){
 				获取到的是计算机（浏览器）计算后的样式
 				
 				background: url() red ……		复合样式（不要获取）
-				backgroundColor									单一样式（不要用来做判断）
+				backgroundColor					单一样式（不要用来做判断）
 				
 				不要有空格
 				
