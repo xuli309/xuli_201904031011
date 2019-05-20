@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;list-style: none;}
+        .fr{float: right;}
+        .con{width:300px;margin:0 auto;}
+        .con li{width:280px;height:35px;line-height: 35px; background:#fff;padding:0 10px;font-size:14px;border-bottom:1px solid #fff;}
+        .con li.active{background:#f1f1f1;border-bottom:1px solid #fff;}
+        .all{width:280px;padding:0 10px;border-top:1px solid #999;}
+    </style>
+    <script>
+        window.onload = function(){
+            var aLi = document.getElementsByTagName("li");
+            var all = document.getElementById('all');
+            var oUl = document.getElementsByTagName("ul")[0];
+            var aCheckbox = oUl.getElementsByTagName("input");
+
+            var checkflag = false;
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].onmouseover = function(){
+                    if(!checkflag)
+                    this.className = 'active';
+                }
+                aLi[i].onmouseout = function(){
+                    if(!checkflag)
+                    this.className = '';
+                }
+            }
+
+            for(var i=0;i<aCheckbox.length;i++){
+                aCheckbox[i].index = i;
+                aCheckbox[i].onchange = function(){
+
+                    for(var i=0;i<aCheckbox.length;i++){
+                        if(!aCheckbox[i].checked){
+                            all.checked = false;
+                            aLi[i].className = '';
+                        }else{
+                            checkflag = true;
+                            all.checked = true;
+                            aLi[i].className = 'active';
+                        }
+                        
+                    }
+                   
+                }
+            }
+
+            all.onchange = function(){
+                var flag = this.checked;
+                checkflag = flag;
+
+                for(var i=0;i<aCheckbox.length;i++){
+                    if(flag)
+                    aCheckbox[i].checked=true;
+                    else
+                    aCheckbox[i].checked=false;
+                }
+
+                for(var i=0;i<aLi.length;i++){
+                    if(flag)
+                        aLi[i].className = 'active';
+                    else
+                        aLi[i].className = '';
+                    
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="con">
+       <ul>
+            <li>
+               <label for="checkbox1"><input type="checkbox" name="checkbox1" />私奔</label>
+               <span class="fr">梁博</span>
+            </li>
+            <li>
+                <label for="checkbox2"><input type="checkbox" name="checkbox2" />北京北京</label>
+                <span class="fr">梁博 黄勇</span>
+            </li>
+            <li>
+                <label for="checkbox3"><input type="checkbox" name="checkbox3" />我爱你中国</label>
+                <span class="fr">梁博</span>
+            </li>
+            <li>
+                <label for="checkbox4"><input type="checkbox" name="checkbox4" />花火</label>
+                <span class="fr">梁博</span>
+            </li>
+            <li>
+                <label for="checkbox5"><input type="checkbox" name="checkbox5" />回来</label>
+                <span class="fr">梁博</span>
+            </li>
+            <li>
+                <label for="checkbox6"><input type="checkbox" name="checkbox6" />爱要有你才完美</label>
+                <span class="fr">梁博 那英</span>
+            </li>
+       </ul>
+       <div class="all"><label for="all"><input type="checkbox" name="all"  id="all" />全选</label></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .con .alert{display:inline-block; border:1px solid orange;width:200px;height:35px;line-height: 35px;font-size:12px;padding:0 10px;}
+        .font-red{color:red;}
+        .star{display:inline-block; width:19px; height:19px;background:url(../../images/stars.png) no-repeat center center;background-position: -39px 0;margin:0 1px;cursor: pointer;}
+        .off{background-position: -39px 0}
+        .on{background-position: -2px 0}
+    </style>
+    <script>
+        window.onload = function(){
+            var text = document.getElementById("text");
+
+            var arr = ['较差','很差','还行','推荐','力荐'];
+            var starArr = [];
+
+            var aI = document.getElementsByTagName("i");
+            for(var i=0;i<aI.length;i++){
+                aI[i].index = i;
+                aI[i].onmouseover = function(){
+                    text.innerHTML = arr[this.index];
+                    for(var i=0;i<aI.length;i++){
+                        if(i <= this.index){
+                            aI[i].className = 'star on';
+                        }else{
+                            aI[i].className = 'star off';
+                        }
+                    }
+                }
+
+                aI[i].onmouseout = function(){
+                    for(var i=0;i<starArr.length;i++){
+                        aI[i].className = 'star off';
+                    }
+                }
+
+                aI[i].onclick = function(){
+                    text.innerHTML = arr[this.index];
+
+                    for(var i=0;i<aI.length;i++){
+                        if(i <= this.index){
+                            aI[i].className = 'star on';
+                        }else{
+                            aI[i].className = 'star off';
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="con">
+        <span class="font-red">*</span>
+        总体评分:<i class="star off"></i><i class="star off"></i><i class="star off"></i><i class="star off"></i><i class="star off"></i>
+        <span id="text">较差</span>
+        <div class="alert">小提示：点击星星就能打分</div>
+    </div>
+</body>
+</html>
