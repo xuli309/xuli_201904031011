@@ -7,14 +7,14 @@
 <script>
 /*
 	定时器：时间概念
-		var timer = setInterval( 函数, 毫秒 );					重复执行（发动机）
-		clearInterval( timer );																	清除
+		var timer = setInterval( 函数, 毫秒 );	//重复执行（发动机）
+		clearInterval( timer );		// 清除
 		
-		var timer = setTimeout( 函数, 毫秒 );				执行一次（炸弹）
+		var timer = setTimeout( 函数, 毫秒 );	//执行一次（炸弹）
 		clearTimeout( timer );
 */
 
-// for(var i=0; i<3; i++){ document.title = i; }			// 瞬间完成，没有时间根据
+// for(var i=0; i<3; i++){ document.title = i; } // 瞬间完成，没有时间根据
 
 i = 0;
 
@@ -30,7 +30,7 @@ function fn1(){
 }
 timer = setInterval( fn1, 200 );
 // fn1();		// 直接调用
-// document.onclick = fn1;			// 事件调用
+// document.onclick = fn1;	// 事件调用
 </script>
 
 </head>
