@@ -1,0 +1,77 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+         *{margin:0;padding:0;list-style: none;color:#000;font-size:12px;}
+         .con{width:400px;border:1px solid #999;margin:10px auto;height:190px;padding:10px;}
+         .con .tab{width:200px;float:left;}
+         .con .tab li{float:left;width:100px;background:#f1f1f1;height:35px;text-align: center;line-height: 35px;}
+         .con .tab li.active{background:green;color:#fff;}
+
+         .con .footer{width:500px;float:left;}
+         .con .footer img{display:block;float: left;width:300px;height:150px;}
+         .con .footer ul{float:left;width:100px;}
+         .con .footer li{height:50px;background:#f1f1f1;text-align: center;line-height: 50px;}
+         .con .footer li.active{background:blue;color:#fff;}
+    </style>
+    <script src="../miaov.js"></script>
+    <script>
+        $(function(){
+            var arr = ['../../images/1.jpg','../../images/2.jpg','../../images/3.jpg','../../images/4.jpg','../../images/5.jpg','../../images/6.jpg'];
+            var aLi = $('tab').getElementsByTagName('li');
+            var aLi2 = $('footer').getElementsByTagName('li');
+            var n=0;
+            var m =0;
+            var timer = window.setInterval(function(){
+                n++;
+                $("img").src = arr[n%6];
+                if(n == arr.length){
+                    n=0;
+                }
+                if(n%3 == 0){
+                    for(var i=0;i<aLi.length;i++){
+                        aLi[i].className = '';
+                    }
+                    m++;
+                    if(m == aLi.length) m=0;
+                    aLi[m].className = 'active';
+                }
+
+                for(var i=0;i<aLi2.length;i++){
+                    aLi2[i].className = '';
+                    if(m ==0)
+                    aLi2[i].innerHTML = '图片'+(i+1);
+                    else
+                    aLi2[i].innerHTML = '图片'+(i+4);
+                }
+                aLi2[n%3].className = 'active';
+                
+            
+            },1000);
+        })
+
+    </script>
+</head>
+<body>
+    <div class="con">
+        <div class="tab" id="tab">
+            <ul>
+                <li class="active">菜单一</li>
+                <li>菜单二</li>
+            </ul>
+        </div>
+        <div class="footer" id="footer">
+            <img src="../../images/1.jpg" id="img">
+            <ul>
+                <li class="active">图片1</li>
+                <li>图片2</li>
+                <li>图片3</li>
+            </ul>
+            
+        </div>
+    </div>
+</body>
+</html>

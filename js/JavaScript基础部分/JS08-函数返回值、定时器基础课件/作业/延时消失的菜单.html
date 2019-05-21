@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;list-style: none;color:#000;font-size:12px;}
+        .con{margin:0 auto;width:480px;height:25px;padding:5px 10px;background:cornflowerblue;border-radius: 5px;}
+        .con .con-li{float: left;width:80px;height:25px;border-right:1px solid #fff;text-align: center}
+        .con .con-li:last-child{border-right:none;}
+        .con .con-li a{display:inline-block;width:50px;height:25px;line-height: 25px;margin:0px auto; text-align: center;font-size:12px;border-radius: 5px; }
+        .con .con-li a.active{background:darkgray;color:#fff;}
+
+        .hover {width:200px;background:#f1f1f1;height:30px;border-radius: 3px;padding:0 10px;margin-top:10px;display: none;}
+        .hover li{float:left;width:50px;text-align: center; line-height: 30px;}
+
+        .con p{float:right;font-size:12px;line-height: 25px;}
+    </style>
+    <script src="../miaov.js"></script>
+    <script>
+        $(function(){
+            var aLi = $("con-ul").getElementsByClassName('con-li');
+            for(var i=0;i<aLi.length;i++){
+
+                var timer = null;
+                aLi[i].onmouseover = function(){
+                    for(var i=0;i<aLi.length;i++){
+                        aLi[i].getElementsByTagName('div')[0].style.display='none';
+                    }
+                    clearTimeout(timer);
+                    this.getElementsByTagName('a')[0].className = 'active';
+                    this.getElementsByTagName('div')[0].style.display='block';
+                }
+
+                aLi[i].onmouseout = function(){
+                    var _this = this;
+                    this.getElementsByTagName('a')[0].className = '';
+                    timer = window.setTimeout(function(){
+                        _this.getElementsByTagName('div')[0].style.display='none';
+                    },200)
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="con">
+        <ul id="con-ul">
+            <li class="con-li">
+                <a href="javascript:;">首页</a>
+                <div class="hover">
+                    <ul>
+                        <li><a href="javascript:;">最新更新</a></li>
+                        <li><a href="javascript:;">活动</a></li>
+                        <li><a href="javascript:;">试听报名</a></li>
+                        <li><a href="javascript:;">学员反馈</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="con-li">
+                <a href="javascript:;">关于我们</a>
+                <div class="hover">
+                    <ul>
+                        <li><a href="javascript:;">最新更新</a></li>
+                        <li><a href="javascript:;">活动</a></li>
+                        <li><a href="javascript:;">试听报名</a></li>
+                        <li><a href="javascript:;">学员反馈</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="con-li">
+                <a href="javascript:;">作品</a>
+                <div class="hover">
+                    <ul>
+                        <li><a href="javascript:;">最新更新</a></li>
+                        <li><a href="javascript:;">活动</a></li>
+                        <li><a href="javascript:;">试听报名</a></li>
+                        <li><a href="javascript:;">学员反馈</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="con-li">
+                <a href="javascript:;">博客</a>
+                <div class="hover">
+                    <ul>
+                        <li><a href="javascript:;">最新更新</a></li>
+                        <li><a href="javascript:;">活动</a></li>
+                        <li><a href="javascript:;">试听报名</a></li>
+                        <li><a href="javascript:;">学员反馈</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <p>>>更多</p>
+    </div>
+</body>
+</html>

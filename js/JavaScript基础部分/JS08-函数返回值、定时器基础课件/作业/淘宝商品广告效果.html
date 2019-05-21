@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;list-style: none;font-size:12px;}
+        .content{width:500px;margin:0 auto;height:210px;border:1px solid violet; }
+        input{background:pink;width:50px;text-align: center;height:30px;line-height: 30px;border:1px solid #999;display:block;}
+        .fl{float: left;}
+        .fr{float: right;}
+        .active{background:plum; color:#fff;}
+        img{width:400px;height:210px;}
+    </style>
+    <script src="../miaov.js"></script>
+    <script>
+        $(function(){
+            var arr = ['../../images/1.jpg','../../images/2.jpg','../../images/3.jpg','../../images/4.jpg','../../images/5.jpg','../../images/6.jpg','../../images/1.jpg','../../images/2.jpg','../../images/3.jpg','../../images/4.jpg','../../images/5.jpg','../../images/6.jpg','../../images/1.jpg','../../images/2.jpg'];
+            var aBtn = $('con').getElementsByTagName("input");
+            for(var i=0;i<aBtn.length;i++){
+                aBtn[i].index = i;
+                aBtn[i].onmouseover = function(){
+                    $('img').src = arr[this.index];
+                    for(var i=0;i<aBtn.length;i++){
+                        aBtn[i].className = '';
+                    }
+                    this.className = 'active';
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="content" id="con">
+        <img src="../../images/1.jpg" id="img">
+        <div class="fl">
+            <input type="button" value="连衣裙" class="active" />
+            <input type="button" value="雪纺"  />
+            <input type="button" value="T恤"  />
+            <input type="button" value="铅笔裤"  />
+            <input type="button" value="婚纱"  />
+            <input type="button" value="外套"  />
+            <input type="button" value="连体裤"  />
+        </div>
+        <div class="fr">
+            <input type="button" value="包包" />
+            <input type="button" value="凉鞋" />
+            <input type="button" value="单鞋" />
+            <input type="button" value="太阳镜" />
+            <input type="button" value="丝袜" />
+            <input type="button" value="帆布鞋" />
+            <input type="button" value="情侣装" />
+        </div>
+    </div>
+</body>
+</html>

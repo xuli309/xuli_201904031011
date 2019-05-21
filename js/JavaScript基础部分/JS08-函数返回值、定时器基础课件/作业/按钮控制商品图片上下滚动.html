@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;list-style: none;}
+        div{width:320px;margin:0 auto;position: relative;height:500px;overflow: hidden;}
+        ul{position:absolute;top:30px;left:0;}
+        input{width:298px;height:30px; line-height: 30px;text-align: center; border:1px solid #000;background:#999;color:#fff;position: absolute;left:0;z-index: 1;}
+        .top{top:0;}
+        .bottom{bottom:0;}
+        li{width:296px;height:44px;background:#f1f1f1;text-align: center;line-height: 44px;border:1px solid #999;}
+    </style>
+    <script src="../miaov.js"></script>
+    <script>
+        $(function(){
+
+            var timer1 = null;
+            var timer2 = null;
+            $('top').onmousedown = function(){
+                timer1 = window.setInterval(function(){
+                    var dis = parseInt(getStyle($('scroll'),'top')) - 5;
+                    if(dis<-220){
+                        dis = -220;
+                    }
+                    $('scroll').style.top = dis +'px';
+                },30);
+            };
+
+            $('top').onmouseup= function(){
+                clearInterval(timer1);
+            }
+
+            $('bottom').onmousedown = function(){
+                timer2 = window.setInterval(function(){
+                    var dis = parseInt(getStyle($('scroll'),'top')) + 5;
+                    if(dis>30){
+                        dis = 30;
+                    }
+                    $('scroll').style.top = dis +'px';
+                },30);
+            };
+
+            $('bottom').onmouseup= function(){
+                clearInterval(timer2);
+            }
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="向上滚动" class="top" id="top" />
+        <ul id="scroll">
+            <li>aaaa</li>
+            <li>bbbb</li>
+            <li>cccc</li>
+            <li>dddd</li>
+            <li>eeee</li>
+            <li>aaaa</li>
+            <li>bbbb</li>
+            <li>cccc</li>
+            <li>dddd</li>
+            <li>eeee</li>
+            <li>eeee</li>
+            <li>aaaa</li>
+            <li>bbbb</li>
+            <li>333333</li>
+            <li>1111</li>
+        </ul>
+        <input type="button" value="向下滚动" class="bottom" id="bottom" />
+    </div>
+</body>
+</html>
