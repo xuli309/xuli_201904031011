@@ -10,9 +10,9 @@ img { width:100px; height:100px; position:absolute; top:200px; }
 
 function getStyle ( obj, attr ) { return obj.currentStyle?obj.currentStyle[attr] : getComputedStyle( obj )[attr]; }
 
-function shake ( obj, attr, endFn ) {
+function shake ( obj, attr,pos, endFn ) {
 	
-	var pos = parseInt( getStyle(obj, attr) );			// 有隐患的
+	// var pos = parseInt( getStyle(obj, attr) );			// 有隐患的
 	
 	var arr = [];			// 20, -20, 18, -18 ..... 0
 	var num = 0;
@@ -40,8 +40,9 @@ window.onload = function () {
 	for ( var i=0; i<aImg.length; i++ ) {
 		aImg[i].style.left = 80+i*110 + 'px';
 		
+		var pos = parseInt( getStyle(aImg[i], 'top') );
 		aImg[i].onmouseover = function () {
-			shake( this, 'top' );
+			shake( this, 'top', pos );
 		};
 	}
 };

@@ -1,0 +1,134 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            overflow: hidden;
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        #box ul li {
+            width: 600px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        #box img {
+            width: 600px;
+            height: 400px;
+        }
+
+        #box p {
+            background: rgba(0, 0, 0, 0.5);
+            width: 600px;
+            height:50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            bottom: -80px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id='box'>
+        <ul>
+            <li>
+                <img src='img/1.jpg'>
+                <p>111这里是简介这里是简介这里是简介是简介</p>
+            </li>
+            <li>
+                <img src='img/2.jpg'>
+                <p>2222这里是简介这里是简介这里里是简介</p>
+            </li>
+            <li>
+                <img src='img/3.jpg'>
+                <p>333333这里是简介这里是简介里是简介这里</p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script>
+    var box = document.getElementById('box');
+    var oUl = document.getElementsByTagName('ul')[0];
+    var oli = oUl.getElementsByTagName('li');
+    var len = oli.length;
+
+    window.onload = function () {
+        //oUl.style.width = oli.length * (parseFloat(getStyle(oli[0], "width"))) + 'px';
+        oUl.style.position = 'relative'
+        for (var i = 0; i < len; i++) {
+            oli[i].style.position = 'absolute';
+            oli[i].style.right = '-600px';
+            oli[i].style.top = 0;
+            // oli[i].style.display = 'none';
+            oli[i].index = i;
+        }
+        oli[0].style.display = 'block';
+        oli[0].style.right = '0';
+        oli[0].getElementsByTagName('p')[0].style.bottom = '0'
+        len = oli.length;
+        var wid = parseFloat(getStyle(oUl, 'width'))
+        var num = 0;
+        setInterval(hdp, 4000)
+
+        function hdp() {
+            // alert(wid)
+            doMove(oli[num % len], 'right', 30, wid, function () {
+                doMove(oli[num % len].getElementsByTagName('p')[0], 'bottom', 2, 0)
+            }, function () {
+                mov(oli[(num - 1) % len], wid)
+            })
+
+            doMove(oli[(num + 1) % len], 'right', 30, 0, doMove(oli[num % len].getElementsByTagName('p')[0], 'bottom', 2, -60))
+            num = num + 1;
+        }
+    }
+
+    function mov(obj, wid) {
+        obj.style.right = '-600px';
+    }
+
+    function getStyle(obj, attr) {
+        return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+    }
+
+    function doMove(obj, attr, dir, target, endFn2, endFn) {
+        var off = true;
+        dir = parseInt(getStyle(obj, attr)) < target ? dir : -dir;
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+            if (off) {
+                endFn2 && endFn2();
+                off = false;
+            }
+            var speed = parseInt(getStyle(obj, attr)) + dir; // 步长
+
+            if (speed > target && dir > 0 || speed < target && dir < 0) {
+                speed = target;
+            }
+
+            obj.style[attr] = speed + 'px';
+
+            if (speed == target) {
+                clearInterval(obj.timer);
+                endFn && endFn();
+            }
+
+        }, 30);
+    }
+</script>
+
+</html>
