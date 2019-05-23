@@ -80,15 +80,10 @@
                 var bStr = '<a href="javascript:;" class="prev"></a><a href="javascript:;" class="next"></a>';
                 var imgLen = arrImg.length;
                 for (var i = 0; i < imgLen; i++) {
-                    // Img = aLi[i].getElementsByTagName('img')[0];
-                    // Img.src = arrImg[i];
                     str += '<li><img src="'+arrImg[i]+'" /></li>';
-
                     if(i%3 == 0){
-                        if(i==0)
-                        bStr += '<b class="active"></b>';
-                        else
-                        bStr += '<b></b>';
+                        if(i==0)bStr += '<b class="active"></b>';
+                        else bStr += '<b></b>';
                     }
                     
                 };
@@ -101,11 +96,7 @@
                 oBtn_1.className = 'hover';
                 oBtn_2.className = '';
                 oBannerImg.src = bannerImg;
-                oUlWidth = parseInt(getStyle(obj, attr)) + 650;
-                if (oUlWidth === 1300) {
-                    obj.style.width = oUlWidth + "px";
-                }
-
+               
                 l=0;
                 oPrev = oP.getElementsByTagName('a')[0];
                 oNext = oP.getElementsByTagName('a')[1];
@@ -114,27 +105,25 @@
                     if(l <= 0){
                         l = 0;
                     }
-                    for(var i=0;i<aB.length;i++){
-                        aB[i].className = '';
-                        if(i == l){
-                            aB[i].className = 'active';
-                        }
-                    }
-                    doMove(oUl, 'left', 25, -654*l);
+                    scrollImg();
                 }
                 oNext.onclick = function () {
                     l++;
                     if(l == aB.length){
                         l = aB.length-1;
                     }
-                    for(var i=0;i<aB.length;i++){
-                        aB[i].className = '';
-                        if(i == l){
-                            aB[i].className = 'active';
-                        }
-                    }
-                    doMove(oUl, 'left', 25, -654*l);
+                    scrollImg();
                 }
+            }
+
+            function scrollImg(){
+                for(var i=0;i<aB.length;i++){
+                    aB[i].className = '';
+                    if(i == l){
+                        aB[i].className = 'active';
+                    }
+                }
+                doMove(oUl, 'left', 25, -654*l);
             }
 
             //按钮鼠标移入事件
