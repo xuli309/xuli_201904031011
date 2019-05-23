@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>5.新浪数码频道选项卡</title>
+    <style type="text/css">
+        /* 样式初始化 */
+        body { margin: 0; padding: 0; }
+        ul { margin: 0; padding: 0; list-style: none; }
+        h2, p { margin: 0; padding: 0; }
+
+        /* 最大的div样式 */
+        #wrap { width: 900px; height: 325px; border: 1px solid #d2eefb; margin: 100px auto; overflow: hidden; }
+
+        /* 顶部样式 */
+        #title { width: 898px; height: 50px; border: 1px solid #81c4f1; position: relative; background:#ade0f7}
+        #title h2 { text-indent: 20px; line-height: 50px; color: #08a8db;}
+        #title button, #btn_1, #btn_2 { 
+            width: 100px; height: 32px; border: 1px solid #ade0f7;border-bottom:none; 
+            background:#08a8db;color:#fff; position: absolute; top: 19px;
+            text-align: center; line-height: 32px; 
+            font-size: 18px; 
+            font-weight: bold; cursor: pointer; 
+        }
+        #title .hover { background: #fff; color: #52a34d; }
+        #btn_1 { left: 230px; }
+        #btn_2 { position: absolute; left: 355px; }
+
+        /* 内容区域样式 */
+        #content { width: 900px; height: 270px; overflow: hidden; position: relative;}
+        #content span { width: 234px; height: 224px; display: inline-block; margin: 10px 10px 0 10px; cursor: pointer; }
+        .list { width: 650px; height: 200px; position: relative; left: 250px; top: -226px; overflow: hidden; }
+        #content ul { width: 1308px; height: 200px; position: absolute; left: 0; top: 0; overflow: hidden;}
+        #content li { width: 218px; height: 200px; float: left; }
+        #content li img{width:200px;height:200px;}
+        #content p { height: 25px; position: absolute; left: 55%; bottom: 15px; text-align: center;}
+        #content p a { width: 15px; height: 15px; display: inline-block; margin-top: 2px;border:1px solid #5e98b1}
+        #content p b { width: 10px; height: 10px; border-radius: 10px; border: 1px solid #8d8d8d; margin: auto; display: inline-block; background-color: #aeb6b6; 
+                margin-bottom: 2px; cursor: pointer;margin-right:10px; }
+        #content p b:last-child{margin-right:0;}
+        #content .active { border: 1px solid #5e98b1; background-color: #d6eff7;  }
+        .prev { background: url(../../images/btn_left.png) no-repeat center center;margin-right:10px; }
+        .next { float: right; background: url(../../images/btn_right.png)  no-repeat  center center;margin-left:10px;}
+    </style>
+    <script src="../miaov.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //获取元素
+            var oBtn_1 = $('btn_1');
+            var oBtn_2 = $('btn_2');
+            var oContent = $('content');
+            var oSpan = oContent.getElementsByTagName('span')[0];
+            var oBannerImg = oSpan.getElementsByTagName('img')[0];
+            var oUl = oContent.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+            var oP = oContent.getElementsByTagName('p')[0];
+            var aB = oP.getElementsByTagName('b');
+            var oPrev = null;
+            var oNext = null;
+
+            //自定义变量
+            var arrImg1 = ['img/1.jpg', 'img/2.jpg', 'img/3.jpg','img/4.jpg', 'img/5.jpg', 'img/6.jpg','img/4.jpg', 'img/5.jpg', 'img/6.jpg'];
+            var arrImg2 = ['img/6.jpg', 'img/5.jpg', 'img/4.jpg','img/3.jpg', 'img/2.jpg', 'img/1.jpg','img/3.jpg', 'img/2.jpg', 'img/1.jpg','img/6.jpg', 'img/5.jpg', 'img/4.jpg'];
+            
+            var oUlWidth = 0;
+            var bannerImg = ['img/7.jpg', 'img/8.jpg'];
+            var width = 0;
+            var height = 0;
+            var onOff = false;
+
+            var l = 0;
+            var r = 0;
+
+            //初始化
+            fnInit(aLi, arrImg1, oBtn_1, oBtn_2, oUl, 'width', bannerImg[0], 10, 10);
+
+            function fnInit(arr, arrImg, oBtn_1, oBtn_2, obj, attr, bannerImg, width, height) {
+                var str = '';
+                var bStr = '<a href="javascript:;" class="prev"></a><a href="javascript:;" class="next"></a>';
+                var imgLen = arrImg.length;
+                for (var i = 0; i < imgLen; i++) {
+                    // Img = aLi[i].getElementsByTagName('img')[0];
+                    // Img.src = arrImg[i];
+                    str += '<li><img src="'+arrImg[i]+'" /></li>';
+
+                    if(i%3 == 0){
+                        if(i==0)
+                        bStr += '<b class="active"></b>';
+                        else
+                        bStr += '<b></b>';
+                    }
+                    
+                };
+                oUl.innerHTML = str;
+                oUl.style.width = parseInt(getStyle(aLi[0], attr))*imgLen + 'px';
+                oUl.style.left = 0 + "px";
+
+                oP.innerHTML = bStr;
+
+                oBtn_1.className = 'hover';
+                oBtn_2.className = '';
+                oBannerImg.src = bannerImg;
+                oUlWidth = parseInt(getStyle(obj, attr)) + 650;
+                if (oUlWidth === 1300) {
+                    obj.style.width = oUlWidth + "px";
+                }
+
+                l=0;
+                oPrev = oP.getElementsByTagName('a')[0];
+                oNext = oP.getElementsByTagName('a')[1];
+                oPrev.onclick = function () {
+                    l--;
+                    if(l <= 0){
+                        l = 0;
+                    }
+                    for(var i=0;i<aB.length;i++){
+                        aB[i].className = '';
+                        if(i == l){
+                            aB[i].className = 'active';
+                        }
+                    }
+                    doMove(oUl, 'left', 25, -654*l);
+                }
+                oNext.onclick = function () {
+                    l++;
+                    if(l == aB.length){
+                        l = aB.length-1;
+                    }
+                    for(var i=0;i<aB.length;i++){
+                        aB[i].className = '';
+                        if(i == l){
+                            aB[i].className = 'active';
+                        }
+                    }
+                    doMove(oUl, 'left', 25, -654*l);
+                }
+            }
+
+            //按钮鼠标移入事件
+            oBtn_1.onmouseover = function () {
+                fnInit(aLi, arrImg1, oBtn_1, oBtn_2, oUl, 'width', bannerImg[0]);
+            }
+
+            oBtn_2.onmouseover = function () {
+                fnInit(aLi, arrImg2, oBtn_2, oBtn_1, oUl, 'width', bannerImg[1]);
+            }
+
+            //doMove
+            function doMove(obj, attr, dir, target, endFn) {
+                dir = parseInt(getStyle(obj, attr)) < target ? dir : -dir;
+                clearInterval(obj.timer);
+                obj.timer = setInterval(function () {
+                    var speed = parseInt(getStyle(obj, attr)) + dir;
+                    if (speed > target && dir > 0 || speed < target && dir < 0) {
+                        speed = target;
+                    }
+                    obj.style[attr] = speed + "px";
+                    if (speed == target) {
+                        clearInterval(obj.timer);
+                        endFn && endFn(); //回调函数
+                    }
+                }, 30);
+            };
+
+            //获取行外样式
+            function getStyle(obj, attr) {
+                if (obj.currentStyle) {
+                    return obj.currentStyle[attr];
+                } else {
+                    return getComputedStyle(obj, 0)[attr];
+                }
+            };
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="title">
+            <h2>新鲜数码</h2>
+            <button id="btn_1">新品</button>
+            <button id="btn_2">极客</button>
+        </div>
+        <div id="content">
+            <span><img src="img/1.jpg" height="224" width="233" alt=""></span>
+            <div class="list" id="list">
+                <ul>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                    <li><img src="" alt=""></li>
+                </ul>
+            </div>
+            <p>
+                <!--<a href="#" id="Prev"></a>
+                <a href="#" id="Next"></a>
+                 <b class="active"></b>
+                <b></b> -->
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
