@@ -1,0 +1,208 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #box {
+            width: 490px;
+            height: 86px;
+            border: 1px solid #999;
+            padding: 10px;
+            margin: 10px auto;
+        }
+
+        #box li {
+            float: left;
+            width: 61px;
+            height: 86px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box li div {
+            width: 61px;
+            height: 172px;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+        }
+
+        #box li img {
+            width: 61px;
+            height: 86px;
+        }
+    </style>
+    <script src="../miaov.js"></script>
+    <script>
+        window.onload = function () {
+
+            var iCol = 0;
+            var bIntMark = true;
+
+            var arrImg = ['../img/0.JPG', '../img/1.JPG', '../img/2.JPG', '../img/3.JPG', '../img/4.JPG', '../img/5.JPG', '../img/6.JPG', '../img/7.JPG', '../img/8.JPG', '../img/9.JPG'];
+
+            var oDiv = document.getElementById('box');
+            var aLi = oDiv.getElementsByTagName('li');
+            var liLen = aLi.length;
+
+            var aDiv = [];
+            var aDian = [];
+            var j =0;
+            for (var i = 0; i < liLen; i++) {
+                var oDiv = aLi[i].getElementsByTagName('div')[0];
+                if (oDiv) {
+                    oDiv.bMark = true;
+                    oDiv.index = j;
+                    oDiv.iNum = 0;
+                    aDiv.push(oDiv);
+                    j++;
+                }else{
+                   aDian.push(aLi[i].getElementsByTagName('img')[0]);
+                }
+            }
+
+            // 点闪烁
+            var d = 0;
+            function showDian(){
+                if(d == 1){
+                    d = 0;
+                    for(var i=0;i<aDian.length;i++){
+                        aDian[i].src = '../img/colon.JPG';
+                    }
+                    
+                }else{
+                    d = 1;
+                    for(var i=0;i<aDian.length;i++){
+                        aDian[i].src = '../img/colon1.JPG';
+                    }
+                }
+            }
+            
+            
+            function intFn(obj, arrImg, str) {
+                var aImg = obj.getElementsByTagName('img');
+
+                if (obj.bMark) {
+                    obj.iNum = parseInt(str.charAt(obj.index));
+                    obj.iNow0 = parseInt(str.charAt(obj.index));
+                    obj.bMark = false;
+
+                    for (var i = 0; i < aImg.length; i++) {
+                        aImg[i].src = arrImg[obj.iNum % arrImg.length];
+                        obj.iNum++;
+                    }
+                    obj.iNum--;
+                }
+            }
+
+            function imgMove(obj, arrImg) {
+                var aImg = obj.getElementsByTagName('img');
+                aImg[1].src = arrImg[obj.iNow1 % arrImg.length];
+
+                doMove(obj, 'top', 4, -86, function () {
+                    aImg[0].src = arrImg[obj.iNow1 % arrImg.length];
+                    obj.style.top = 0;
+                })
+            }
+
+            function showTime() {
+                var iNow = new Date();
+                var h = iNow.getHours();
+                var m = iNow.getMinutes();
+                var s = iNow.getSeconds();
+
+                var str = toTwo(h) + toTwo(m) + toTwo(s);//具体时间字符串
+
+                if (bIntMark) {
+                    for (var i = 0; i < aDiv.length; i++) {
+                        intFn(aDiv[i], arrImg,str);
+                        bIntMark = false;
+                    }
+                }
+
+                for (var i = 0; i < aDiv.length; i++) {
+                    aDiv[i].iNow1 = parseInt(str.charAt(i));
+                    if (aDiv[i].iNow1 != aDiv[i].iNow0) {
+                        imgMove(aDiv[i], arrImg);
+                        aDiv[i].iNow0 = aDiv[i].iNow1;
+                    }
+                }
+
+
+            }
+
+            showTime();//时间初始化
+            setInterval(function(){
+                showTime();
+                showDian();
+            },1000);
+        }
+
+        function toTwo(n) {
+            return n < 10 ? '0' + n : '' + n;
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG" />
+                </div>
+            </li>
+            <li>
+                <img src="../img/colon.JPG">
+            </li>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG" />
+                </div>
+            </li>
+            <li>
+                <img src="../img/colon.JPG">
+            </li>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG" />
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="../img/0.JPG" />
+                    <img src="../img/0.JPG">
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
