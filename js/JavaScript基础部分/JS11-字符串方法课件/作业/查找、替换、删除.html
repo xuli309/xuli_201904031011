@@ -1,0 +1,158 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;font-size: 14px;color:#000;}
+        li{list-style: none;}
+        #box{width:500px; margin:20px auto;}
+        #box #left{width:340px; float: left;border:10px solid #f1f1f1;padding:20px;}
+        #box #left span{background:yellow;}
+        #box #right{float: right;}
+        #box #right input{background:#999;color:#fff;width:80px;height:35px;line-height: 35px;text-align: center;border:none;cursor: pointer;}
+        #box #right ul{display: none;}
+        #box #right li{width:80px;height:35px;line-height: 35px;text-align: center;background:#999;color:#fff;border-bottom:1px solid #fff;cursor: pointer;}
+        #box #right li.active{background:orange;color:#000;}
+
+        #box #bottom{float:left;width:440px;border:10px solid pink;padding:20px;margin:10px 0;background:#E7E7B5;position: relative;display: none;}
+        #box #bottom #close{position: absolute;right:0;top:0;width:30px;height: 30px;line-height: 30px; text-align: center;cursor: pointer;}
+        #box #bottom ul{width:340px;border-bottom:2px solid #E73100;height: 33px;margin-bottom:20px;}
+        #box #bottom ul li{float: left;width:80px; height: 33px; line-height: 33px; text-align: center;cursor: pointer;}
+        #box #bottom ul li.active{background:#E73100;color:#fff}
+
+        #bottom .text{width:150px;height:25px;line-height: 25px;background:#fff;margin-right:10px;}
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="left">
+            妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一种全新的快乐学习方法！2013年底，妙味课堂最新推出"远程培训"服务，受到很多朋友们的喜爱与追捧，我们必将更加努力的帮助远程学习的朋友实现技术提升……
+        </div>
+        <div id="right">
+            <input type="button" value="展开" id="rBtn">
+            <ul>
+                <li>查找</li>
+                <li>替换</li>
+            </ul>
+        </div>
+        <div id="bottom">
+            <div id="close">X</div>
+            <ul>
+                <li class="active">查找</li>
+                <li>替换</li>
+            </ul>
+            <input type="text" id="text1" class="text" />
+            <input type="text" id="text2" class="text" />
+            <input type="button" value=" 查找 " id="btn">
+        </div>
+    </div>
+
+    <script>
+        var left = document.getElementById("left");
+        var oDiv = document.getElementById("right");
+        var oUl = oDiv.getElementsByTagName("ul")[0];
+        var aLi = oUl.getElementsByTagName('li');
+        var rBtn = document.getElementById("rBtn");
+
+        var bottom = document.getElementById("bottom");
+        var close = document.getElementById("close");
+        var oUl2  = bottom.getElementsByTagName("ul")[0];
+        var aLi2 = oUl2.getElementsByTagName('li');
+
+        var text1 = document.getElementById("text1");
+        var text2 = document.getElementById("text2");
+        var btn1 = document.getElementById("btn");
+
+        var n = 0;//0-查找 1-替换
+
+        rBtn.onclick = function(){
+            oUl.style.display = 'block';
+        }
+
+        function show(obj){
+            bottom.style.display = 'block';
+            for(var i=0;i<aLi2.length;i++){
+                aLi2[i].className = '';
+            }
+            aLi2[obj.index].className = 'active';
+            btn1.value=" "+aLi2[obj.index].innerHTML+" ";
+            if(obj.index == 0){
+                text2.style.display = 'none';
+            }else{
+                text2.style.display = 'inline-block'
+            }
+            n = obj.index;
+
+            text1.value = "";
+            text2.value = "";
+        }
+
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].onmouseover = function(){
+                for(var i=0;i<aLi.length;i++){
+                    aLi[i].className = '';
+                }
+                this.className = 'active';
+            }
+
+            aLi[i].index = i;
+            aLi[i].onclick = function(){
+                show(this); 
+                oUl.style.display = 'none';               
+            }
+        }
+
+        for(var i=0;i<aLi2.length;i++){
+            aLi2[i].index = i;
+            aLi2[i].onclick = function(){
+                show(this);                
+            }
+        }
+
+        close.onclick = function(){
+            bottom.style.display = 'none';
+        }
+
+
+        function findCon(){
+            var str = text1.value;
+            if(str == ""){
+                alert("请输入要查找的文字");
+                return;
+            }
+            var leftHtml = left.innerHTML;
+            if(leftHtml.indexOf(str) == -1){
+                alert("对不起没有找到您输入的：【"+str+"】");
+                return;
+            }
+            left.innerHTML = leftHtml.split(str).join('<span>'+str+'</span>');
+            text1.value = "";
+        }
+
+        function replaceCon(){
+            var str1 = text1.value;
+            var str2 = text2.value;
+            if(str2 == ""){
+                alert("请输入要替换的文字");
+                return;
+            }
+            var leftHtml = left.innerHTML;
+            left.innerHTML = leftHtml.split(str1).join('<span>'+str2+'</span>');
+            text1.value = "";
+            text2.value = "";
+        }
+
+        btn1.onclick = function(){
+            if(n == 0){
+                findCon()
+            }else{
+                replaceCon();
+            }
+        }
+
+    </script>
+</body>
+</html>

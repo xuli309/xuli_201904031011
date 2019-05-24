@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin:0;padding:0;font-size: 14px;color:#000;}
+        li{list-style: none;}
+
+        #box{width:820px; margin:0 auto;padding:20px;}
+        #box .left,#box .right{width:350px;background:#EFEFD6;border:1px solid #999;height:200px;float: left;}
+        #box .left textarea{width:350px;height:200px;border:none;background:none;padding:10px;}
+
+        #box .right{float: right;padding:10px;width:330px;height:180px;background:#63EFF7}
+
+        #box .middle{float: left;padding:5px;margin-left:10px;}
+        #box .middle input{width:80px;background:#F76300;color:#fff;border:none;height:35px;}
+        #box .middle input.disable{background:#E7CECE;}
+        #box .middle p {margin:10px 0;text-align: center;font-size: 16px;}
+        #box .middle li{float: left;width:10px;height:20px;background:wheat;margin-right:2px;}
+        #box .middle li.active{background:#F76300;}
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="left">
+            <textarea id="text">妙味课堂是一支独具特色的IT培训团队，妙味反对传统IT教育枯燥乏味的教学模式，妙味提供一种全新的快乐学习方法！2013年底，妙味课堂最新推出"远程培训"服务，受到很多朋友们的喜爱与追捧，我们必将更加努力的帮助远程学习的朋友实现技术提升</textarea>
+        </div>
+        <div class="middle">
+            <input type="button" id="btn" value="把文字右移" />
+            <p id="con"> 0 / 0 </p>
+            <ul id="ul">
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+        </div>
+        <div class="right" id="right"></div>
+    </div>
+
+    <script>
+        var text = document.getElementById("text");
+        var btn = document.getElementById("btn");
+        var con = document.getElementById("con");
+        var right = document.getElementById("right");
+        var oUl = document.getElementById('ul');
+        var aLi = oUl.getElementsByTagName('li');
+
+        btn.onclick = function(){
+            oUl.style.opacity = '1';
+            this.disabled=true;
+            this.className = 'disable';
+            clearInterval(btn.timer);
+            right.innerHTML = '';
+
+            var str = text.value;
+            var len = str.length;
+            var i = 0;
+            var _this = this;
+            btn.timer = window.setInterval(function(){
+                for(var j=0;j<aLi.length;j++){
+                    aLi[j].className = '';
+                }
+                aLi[i%aLi.length].className = 'active';
+
+                right.innerHTML +=str.charAt(i);
+                text.value = str.substring(i);
+                con.innerHTML = i+' / '+ len;
+                if(i == len){
+                    clearInterval(btn.timer);
+                    oUl.style.opacity = '0';
+                    _this.disabled=false;
+                    _this.className = '';
+                }
+                i++;
+            },50)
+        }
+
+    </script>
+</body>
+</html>
