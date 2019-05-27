@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           var obj = {
+               name:'tom',
+               age: 28,
+               c: undefined,
+               a:1,
+               b:2
+           };
+           //剩余模式
+           var {name,age,...r} = obj;
+           console.log(name, age,r);
+
+        //    var name  = obj.name;
+        //    var age  = obj.age;
+        //    console.log(name, age);
+
+        //    var {name,age} = obj;
+        //    console.log(name, age);
+
+        //    var name = "";
+        //    ({name} = obj);
+        //    console.log(name);
+
+        // 别名的设置
+        //    var {name:str} = obj;
+        //    console.log(str);
+
+        //c-没有定义或者为 undefined 时取默认值，否则取定义的值
+        // var {c=100} = obj;
+        // console.log(c);
+
+        //别名和默认值设置
+        // var {gender:g="male"} = obj;
+        // console.log(g);
+
+        //数组解构赋值
+        var arr = "miaov".split('');
+        console.log(arr);
+        // var f = arr[0];
+        // var s = arr[1];
+        // console.log(f, s);
+
+        // var [f,s,,t] = arr;
+        // console.log(f, s, t);
+
+        // arr[0] = undefined;
+        // console.log(arr);
+        // var [a="1",b,c] = arr;
+        // console.log(a, b, c);
+
+        //剩余模式
+        var [a,b,c,...r] = arr;
+        console.log(a,b,c,r)
+
+    </script>
+</body>
+</html>

@@ -5,6 +5,7 @@
 <title>无标题文档</title>
 
 <script>
+// Math.random() //0-1之间的小数
 // alert( Math.round(3.4) );
 // 0~1 : Math.round(Math.random());
 // 0~10
@@ -28,7 +29,7 @@ var y = 49;
 // alert( Math.round( Math.random()*x) );
 
 // 1~x
-alert( Math.ceil( Math.random()*x) );
+// alert( Math.ceil( Math.random()*x) );// ceil() 向上取整
 
 
 // 课上小练习：
@@ -36,6 +37,11 @@ alert( Math.ceil( Math.random()*x) );
 // var str = 'aaasdlfjhasdlkfs';
 // indexOf('s') —— 为数组编写该方法：indexOf('img/1.jpg')
 
+var arr = [];
+for(var i=0;i<2;i++){
+    arr.push(Math.round( Math.random()*5 ));
+}
+console.log(arr);
 </script>
 
 </head>
