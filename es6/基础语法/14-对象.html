@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var a=1;
+    // var obj = {
+    //     a:a,
+    //     fn:function(){
+    //         console.log('fn');
+    //     }
+    // }
+
+    // var obj={
+    //     a,//键名和值相等时简写
+    //     fn(){
+    //         console.log('fn简写');
+    //     },
+    //     b:100,
+    // };
+    // console.log(obj);
+    // obj.fn();
+
+    // var attrname = 'height';
+    // var attrObj = {};
+    // var attrFn = "fn";
+    // var obj = {
+    //     [attrname]:100,
+    //     [attrObj]:'hello',//会将attrObj 转成字符串
+    //     [attrFn](){
+    //         console.log('attrFn执行了');
+    //     }
+    // }
+    // console.log(obj);
+    // obj.fn();
+
+    // console.log(1===1);//true
+    // console.log(NaN===NaN);//false
+    // console.log(Object.is(1,1));//true
+    // console.log(Object.is(1,"1"));//false
+    // console.log(Object.is(NaN,NaN));//true
+    // console.log(Object.is({},{}));//false
+    // var obj = {};
+    // console.log(Object.is(obj,obj));//true
+
+    // function move(obj){
+    //     var defaultObj = {
+    //         ease:"linear",
+    //         duration: 1000
+    //     }
+    //     // var para = {
+    //     //     ease:obj.ease || defaultObj.ease,
+    //     //     duration:obj.duration || defaultObj.duration
+    //     // }
+    //     var para = {};
+    //     Object.assign( para, defaultObj, obj );//修改第一个参数，以后面的参数为准
+    //     console.log(para,defaultObj);
+    // }
+    // move({
+    //     ease:"easeIn",
+    //     duration:2000
+    // })
+
+        var obj= {
+            a:1,
+            b:2
+        }
+        // console.log(Object.keys(obj));
+        // for (const attr of Object.keys(obj)) {
+        //     console.log(attr);
+        // } 
+
+        // console.log(Object.values(obj));
+        // for (const attr of Object.values(obj)) {
+        //     console.log(attr);
+        // } 
+
+        console.log(Object.entries(obj));
+        for (const attr of Object.entries(obj)) {
+            console.log(attr);
+        } 
+
+</script>
+</body>
+</html>
