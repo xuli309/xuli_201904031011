@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var m = new Map();
+        var wm = new WeakMap();
+        var zm = {name:"zmouse",age:30};
+        var reci = {name:"reci",age:20};
+        wm.set(zm,"miaov");
+        wm.set(reci,"miaov2"); 
+        // wm.set(1,"miaov");//报错，不能以非对象作为键名
+
+        // console.log(wm);
+        // zm = null;
+        // console.log(wm);
+
+        for (const v of wm) { // wm is not iterable
+            console.log(v);
+        }
+        
+    </script>
+</body>
+</html>

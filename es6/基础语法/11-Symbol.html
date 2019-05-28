@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var s = Symbol("a");
+        // console.log(typeof s);// "symbol"
+        // console.log(s);//Symbol()
+
+        // var s2 = Symbol("b");
+        // console.log(s2);//Symbol()
+
+        // console.log(s === s2);//false
+
+        // var s3 = new Symbol(); //不能用new调用
+
+        // var obj = {
+        //     a:1
+        // }
+        // obj.b = 2;
+        // obj.a = 3;
+        // console.log(obj);
+
+        // var a = Symbol("a"); // 避免键名重复
+        // obj[a] = "sa";
+        // // console.log(obj);
+
+        // var b = Symbol("b"); 
+        // obj[b] = "sb";
+        // console.log(obj);
+
+        // console.log(obj[a],obj[b]); //sa sb
+        // for (const attr in obj) {
+        //     console.log(obj[attr]);
+        // }
+
+        // console.log( Object.getOwnPropertySymbols(obj) );
+
+
+        var s = Symbol("a");
+        // console.log(s + 1); //转换不了数据类型
+        // console.log(s + 'a'); 
+        console.log(!!s); // 可以转换为布尔值
+        console.log(Boolean(s))
+
+    </script>
+</body>
+</html>

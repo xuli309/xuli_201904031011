@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            static isHuman(obj){
+                return obj instanceof Person;
+            }
+            say(){
+                console.log('我叫'+this.name+"；今年"+this.age);
+            }
+            
+            eat(){
+                console.log('我会吃。。。');
+            }
+        }
+
+        class Coder extends Person{//继承
+            constructor(name,age,money){
+                super(name,age);
+                this.money = money;
+            }
+            say(){
+                console.log('我叫'+this.name+"；今年"+this.age+";一月赚"+this.money);
+            }
+        }
+        
+        var coder = new Coder("zm",30,30000);
+        console.log(coder);
+        coder.say();
+        console.log(Coder.isHuman(2)); // false
+        console.log(Coder.isHuman(coder));// true
+
+        var p1 = new Person("momo",30,30000);
+        console.log(p1);
+        p1.say();
+    </script>
+</body>
+</html>
