@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 50px;
+            height:50px;
+            background:red;
+            position:absolute;
+            left:0;
+            top:10;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    /**
+     * duration-时间
+    */
+    // function move(obj,attr,traget,duration,callback){
+    //     var b = parseInt(getComputedStyle(obj)[attr]);
+    //     var c = traget - b;
+    //     var d = duration;
+    //     var temp = new Date().getTime();
+    //     var timer = setInterval(function(){
+    //         var t = new Date().getTime()-temp;
+    //         if(t>=d){
+    //             clearInterval(timer);
+    //             t = d;
+    //         }
+
+    //         var v = c/d*t+b;
+    //         obj.style[attr] = v+"px";
+    //         if(t===d){
+    //             typeof callback === "function" && callback();
+    //         }
+    //     },20)
+
+    // }
+
+    // var box = document.getElementById("box");
+    // move(box,"width",200,500,()=>{
+    //     move(box,"height",300,500,()=>{
+    //         move(box,"left",300,500,()=>{
+    //             move(box,"top",300,500)
+    //         })
+    //     })
+    // })
+
+    function movePromise(obj,attr,traget,duration){
+        return new Promise((res,rej)=>{
+            var b = parseInt(getComputedStyle(obj)[attr]);
+            var c = traget - b;
+            var d = duration;
+            var temp = new Date().getTime();
+            var timer = setInterval(function(){
+                var t = new Date().getTime()-temp;
+                if(t>=d){
+                    clearInterval(timer);
+                    t = d;
+                }
+
+                var v = c/d*t+b;
+                obj.style[attr] = v+"px";
+                if(t===d){
+                    // typeof callback === "function" && callback();
+                    res()
+                }
+            },20)
+        })
+    }
+    var box = document.getElementById("box");
+    movePromise(box,"width",200,500)
+    .then(()=>movePromise(box,"height",200,500))
+    .then(()=>movePromise(box,"left",200,500))
+    .then(()=>movePromise(box,"top",200,500))
+    .then(()=>console.log("done"))
+    </script>
+</body>
+</html>

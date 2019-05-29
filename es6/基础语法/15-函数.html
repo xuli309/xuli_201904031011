@@ -1,0 +1,76 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // function add(a,b){
+    //     // var _b = b || 100;
+    //     var _b = b === undefined ? 100 :b;
+    //     return a+_b;
+    // }
+
+    // function add(a,b=100){
+    //     return a+b;
+    // }
+    // console.log(add(10));
+    // console.log(add(10,5));
+    // console.log(add(10,0));
+    // console.log(add(10,undefined));
+
+
+    // function fn(a,...r){
+    //     console.log(a,arguments);
+    //     console.log(a,r);
+    // }
+    // fn(1,2,3,4,5);
+
+    // function add(a,b){
+    //     return a+b;
+    // }
+    // var add= (a,b)=>{return a+b}
+    // var add= (a,b)=> a+b;//只有一条可以省略（）和 return
+    // var add= (a,b)=>({miaov:3});
+
+    // var add = (a,b)=>{
+    //     miaov:for(var i=0;i<10;i++){
+    //         console.log(i);
+    //         if(i === 3){
+    //             break;
+    //         }
+    //     }
+    // }
+
+    // var add = a=>a*100;//只有一个参数时可以省略()
+    // console.log( add(2) );
+
+    // var arr = [1,10,3,40,20,45];
+    // // var res = arr.filter(function(item){
+    // //     return item > 20;
+    // // });
+    // var res = arr.filter( item => item>20 );
+    // console.log(res);
+
+    var fn = (...r) =>{
+        // console.log(this);
+        // console.log(arguments); // 箭头函数中没有arguments
+        // console.log(r)
+    }
+    // fn(1,2,3);
+    // document.onclick = fn;//指向window
+
+    // var fn =function(){
+    //     console.log(this);
+    // }
+    // fn.bind({a:1});
+    // document.onclick = fn; //指向document
+
+    // var obj = new fn();//箭头函数不能通过new调用
+
+
+</script>
+</body>
+</html>

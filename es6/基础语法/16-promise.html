@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//    function send(url,callback){
+//        //var xhr = ....;
+//        // ...
+//        callback();
+//    }
+
+//    //回调地狱
+//    send('/url1',()=>{
+//         send('/url2',()=>{
+//             send('/url3',()=>{
+        
+//             })
+//         })
+//    })
+
+    // //异步编程解决方案
+    // var p = new Promise( (resolve,reject) =>{
+    //     console.log('实例化....');
+
+    //     return resolve("成功");//成功  加了return后不会再执行后面的代码
+    //     // reject();//失败
+    //     // console.log('22222');//还会执行
+    // });
+    // console.log(p);
+
+    // //外部执行promise的值
+    // p.then((data)=>{
+    //     console.log("then =",data);
+    // })
+
+
+    // console.log(1);
+    // setTimeout(()=>{
+    //     console.log(3)
+    // })
+    // setTimeout(()=>{
+    //     console.log(4)
+    // })
+    // var p = new Promise((resolve,reject)=>{
+    //     console.log(5);
+    //     resolve();
+    // });
+    // p.then(()=>{//微任务执行
+    //     console.log(6);
+    // })
+    // console.log(2);
+    // // 1,5,2,6,3,4
+
+    var p = new Promise((res,rej)=>{
+        res("成功");
+        // rej();
+    });
+    // p.then((data)=>{
+    //     console.log(data);
+    // },()=>{
+    //     console.log('失败')
+    // })
+
+    //监听成功
+    // p.then((data)=>{
+    //     console.log(data);
+    // });
+
+    // //监听失败
+    // p.catch(()=>{
+    //     console.log('失败')
+    // })
+
+    var p2 = p.then((data)=>{
+        console.log(data);
+    });
+    console.log(p2 === p);
+
+    // p.then((data)=>{
+    //     console.log(data);
+    // }).then(()=>{
+    //     console.log("then");
+    // })
+
+</script>
+</body>
+</html>
