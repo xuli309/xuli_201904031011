@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="box"></div>
+    <!-- <script  src="move.js"> </script> -->
+    <!-- defer 延迟加载 在外链js上使用，会在其他的dom节点加载完成之后再加载 -->
+    <!-- 多个defer 都会延迟加载 按照先后引用js先后顺序 -->
+    <!-- <script src="./20-2.js" defer></script>
+    <script src="./20-3.js" defer></script>
+    <script src="./20-1.js"></script> -->
+
+
+    <!-- js 模块化 -->
+    <!-- <script src='./20-a.js' type="module" defer></script> -->
+    <!-- <script>
+        console.log(a);//报错 只能在内部使用
+        console.log(123);  // 后执行模块中输出
+    </script> -->
+    <!-- <script src="./20-3.js" defer></script> -->
+
+    <!-- <script src='./20-a.js' type="module" defer></script>
+    <script src="./20-3.js" defer></script> -->
+
+    <script src='./20-a.js' type="module"></script>
+    <script src='./20-b.js' type="module"></script>
+</body>
+</html>
