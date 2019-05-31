@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+     
+    </style>
+    <script>
+      // call 函数下的一个方法, call第一个参数可以改变函数指向过程中的内部this的指向 第二个参数开始就是原来函数的参数列表
+      // 如果第一个参数是null 指向原本该指向的东西 
+      function fn1(a,b){
+        alert(this);
+        alert(a+b);
+      }
+      // fn1();//this
+      fn1.call(null,10,20) //调用函数 fn1() == fn1.call();
+    </script>
+</head>
+<body>  
+
+</body>
+</html>
