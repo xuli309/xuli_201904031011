@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+      #div1{width:100px;height:100px;position: absolute;}
+      #img1{width:100px;height:100px;position: absolute;left:400px;top:200px;}
+    </style>
+    <script>
+
+      window.onload = function(){
+        var oDiv = document.getElementById("img1");
+        oDiv.onmousedown = function(ev){
+
+          var ev = ev || event;
+          var disX = ev.clientX - this.offsetLeft;
+          var disY = ev.clientY - this.offsetTop;
+
+          if(oDiv.setCapture){
+            oDiv.setCapture();
+          }
+
+          document.onmousemove = function(ev){
+            var ev = ev || event;
+            oDiv.style.left = ev.clientX - disX +"px";
+            oDiv.style.top =  ev.clientY - disY +"px";
+          }
+
+          document.onmouseup = function(){
+            document.onmousemove = document.onmouseup = null;
+            //释放全局捕获
+            if(oDiv.releaseCapture){
+              oDiv.releaseCapture();
+            }
+          }
+
+          return false;
+
+        }
+
+      }
+    </script>
+</head>
+<body>
+  addadldkjfaokd;af
+  <div id="div1"></div>
+  <img src="images/1.jpg" id="img1"/>
+</body>
+</html>
