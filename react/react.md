@@ -28,3 +28,27 @@ ReactV16.6.0之后的版本，可以使用一个新功能React.memo来完美实�
 
 ##### 组件复合而非组件继承
 
+##### 高阶组件，是重点，是个函数
+
+##### 高阶组件装饰器的写法
+
+这种链式写法逻辑比较绕，ES7中有一个很优秀的语法装饰器，专门用来处理这种问题
+
+1.安装：npm install --save-dev  babel-plugin-transform-decorators-legacy
+
+2.配置：
+
+```react
+const { injectBabelPlugin } = require('react-app-rewired')
+module.exports = function override(config){
+    // antd的按需加载
+	config = injectBabelPlugin(
+    	['import',{ libraryName:'antd', libraryDirectory:'es',style:'css'}],
+        config)
+	// 添加装饰器能力
+	config = injectBabelPlugin(
+        ['@babel/plugin-proposal-decorators',{"legacy":true}],config)
+    return config
+}
+```
+
