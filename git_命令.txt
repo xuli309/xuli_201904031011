@@ -1,4 +1,4 @@
-
+ï»¿
 <<<<<<< HEAD
 ¡­or create a new repository on the command line
 =======
@@ -32,33 +32,33 @@ git config --global user.name "name"
 git config --global user.email "email"
 
 <<<<<<< HEAD
-´ËÅäÖÃ´æ·ÅÔÚ~/.gitconfigÎÄ¼þÖÐ£¬¿ÉÒÔÍ¨¹ýmore»òÕßcatÃüÁî²é¿´
+æ­¤é…ç½®å­˜æ”¾åœ¨~/.gitconfigæ–‡ä»¶ä¸­ï¼Œå¯ä»¥é€šè¿‡moreæˆ–è€…catå‘½ä»¤æŸ¥çœ‹
 
 
---´´½¨·ÖÖ§
-git checkout -b ÐÂ·ÖÖ§Ãû×Ö
+--åˆ›å»ºåˆ†æ”¯
+git checkout -b æ–°åˆ†æ”¯åå­—
 
---Ìá½»·ÖÖ§µ½github·þÎñÆ÷
-git push origin xuli_201904031726 // ÍÆËÍµ½»ñÈ¡ÐÂ·ÖÖ§Ãû
+--æäº¤åˆ†æ”¯åˆ°githubæœåŠ¡å™¨
+git push origin xuli_201904031726 // æŽ¨é€åˆ°èŽ·å–æ–°åˆ†æ”¯å
 
---²é¿´·ÖÖ§
-git branch // ²é¿´µ±Ç°ÔÚÄÄ¸ö·ÖÖ§ÉÏÃæ
+--æŸ¥çœ‹åˆ†æ”¯
+git branch // æŸ¥çœ‹å½“å‰åœ¨å“ªä¸ªåˆ†æ”¯ä¸Šé¢
 
-git log --oneline ²é¿´log
-git checkout -b ÐÂ·ÖÖ§Ãû×Ö logÖÐµÄhash // ´´½¨·ÖÖ§
+git log --oneline æŸ¥çœ‹log
+git checkout -b æ–°åˆ†æ”¯åå­— logä¸­çš„hash // åˆ›å»ºåˆ†æ”¯
 
 
---ÇÐ»»µ½master·ÖÖ§
+--åˆ‡æ¢åˆ°masteråˆ†æ”¯
 git checkout master
 
---É¾³ý±¾µØ·ÖÖ§
+--åˆ é™¤æœ¬åœ°åˆ†æ”¯
 git branch -d name
 
---É¾³ý·þÎñÆ÷ÉÏµÄ·ÖÖ§
-git push origin :name   (·ÖÖ§ÃûÇ°µÄÃ°ºÅ´ú±íÉ¾³ý)
+--åˆ é™¤æœåŠ¡å™¨ä¸Šçš„åˆ†æ”¯
+git push origin :name   (åˆ†æ”¯åå‰çš„å†’å·ä»£è¡¨åˆ é™¤)
 
 
---µÚÒ»´ÎÌá½»
+--ç¬¬ä¸€æ¬¡æäº¤
 =======
 æ­¤é…ç½®å­˜æ”¾åœ¨~/.gitconfigæ–‡ä»¶ä¸­ï¼Œå¯ä»¥é€šè¿‡moreæˆ–è€…catå‘½ä»¤æŸ¥çœ‹
 
