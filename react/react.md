@@ -52,3 +52,17 @@ module.exports = function override(config){
 }
 ```
 
+##### Redux
+
+1.安装：npm install redux --save
+
+2.redux中的角色
+
+​	Store：状态载体，访问状态，提交状态更新，监听状态更新
+
+​	Reducer：状态更新具体执行者，纯函数
+
+​	Action：存放数据的对象，即消息的载体，只能被别人操作，自己不能进行任何操作。
+
+3.redux基本使用：
+
