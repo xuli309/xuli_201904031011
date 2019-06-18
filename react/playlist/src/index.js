@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import Lifecycle from './Lifecycle';
-import CartSample from './CartSample';
-import CommentList from './components/CommentList';
-import Composition from './components/Composition';
-import Hoc from './components/Hoc';
-import ContextSample from './components/ContextSample';
+// import App from './App';
+// import Lifecycle from './Lifecycle';
+// import CartSample from './CartSample';
+// import CommentList from './components/CommentList';
+// import Composition from './components/Composition';
+// import Hoc from './components/Hoc';
+// import ContextSample from './components/ContextSample';
+import AntdTest from './components/AntdTest';
+import KFormSample from './components/KFormSample';
+
 
 // ReactDOM.render(<h1>React真酷</h1>,document.querySelector('#root'))
 // ReactDOM.render(<App />,document.querySelector('#root'))
@@ -16,7 +19,10 @@ import ContextSample from './components/ContextSample';
 
 // ReactDOM.render(<Composition />, document.querySelector('#root'))
 // ReactDOM.render(<Hoc stage="React" />, document.querySelector('#root'))
-ReactDOM.render(<ContextSample />, document.querySelector('#root'))
+// ReactDOM.render(<ContextSample />, document.querySelector('#root'))
+// ReactDOM.render(<AntdTest />, document.querySelector('#root'))
+
+ReactDOM.render(<KFormSample />, document.querySelector('#root'))
 
 // 动态渲染
 // function tick(){
