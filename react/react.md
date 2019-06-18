@@ -52,7 +52,7 @@ module.exports = function override(config){
 }
 ```
 
-##### Redux
+##### Redux-中间件的概念
 
 1.安装：npm install redux --save
 
@@ -66,3 +66,18 @@ module.exports = function override(config){
 
 3.redux基本使用：
 
+安装：npm install react-redux --save
+
+##### Mobx
+
+学习难度redux > mobx
+
+工作量 redux > mobx
+
+内存开销 redux > mobx
+
+状态管理的集中性 redux > mobx
+
+样板代码的必要性 redux > mobx
+
+结论：使用mbox入门简单，构建应用迅速，但是当项目足够大时，还是使用redux，mobx爱不释手，那还是开启严格模式，再加上一套状态管理的规范
