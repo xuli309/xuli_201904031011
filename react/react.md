@@ -8,6 +8,49 @@
 
 4.启动：npm start
 
+##### 绑定this的方法注（有状态state组件，就用class方式，无状态state组件，最好用函数方式，性能好）
+
+1.函数方式：为了在回调中使用 `this`，这个绑定是必不可少的
+
+```react
+this.handleClick = this.handleClick.bind(this);
+handleClick() {
+    this.setState(state=>({isToggle:!state.isToggle}))
+}
+<button onClick={this.handleClick}>
+    { this.state.isToggle ? 'ON' : 'OFF' }
+</button>
+```
+
+2.class方式：此语法确保 `handleClick` 内的 `this` 已被绑定。注意: 这是 *实验性* 语法。[public class fields 语法](https://babeljs.io/docs/plugins/transform-class-properties/)
+
+```react
+ handleClick=()=>{
+ 	this.setState(state=>({isToggle:!state.isToggle}))
+ }
+ <button onClick={this.handleClick}>
+ 	{ this.state.isToggle ? 'ON' : 'OFF' }
+ </button>
+```
+
+3. 箭头函数方式：如果你没有使用 class fields 语法，你可以在回调中使用[箭头函数](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+```react
+handleClick() {
+   this.setState(state=>({isToggle:!state.isToggle}))
+}
+// 此语法确保 `handleClick` 内的 `this` 已被绑定。
+<button onClick={(e) => this.handleClick(e)}>
+    { this.state.isToggle ? 'ON' : 'OFF' }
+</button>
+```
+
+##### 时间传递参数
+
+```react
+
+```
+
 ##### 组件安装
 
 1.安装：npm install antd --save

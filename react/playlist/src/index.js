@@ -2,6 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
+// 官方示例
+import HelloWord from './components/official-demo/HelloWord'
+import JsxTest from './components/official-demo/JsxTest';
+import RenderElements from './components/official-demo/CompTest';
+import CompTest from './components/official-demo/CompTest';
+import Clock from './components/official-demo/Clock';
+import Toggle from './components/official-demo/Toggle';
+import LoginControl from './components/official-demo/LoginControl';
+import Page from './components/official-demo/Page';
+import List from './components/official-demo/List';
+import NameForm from './components/official-demo/NameForm';
+import Calculator from './components/official-demo/Calculator';
+
 // import App from './App';
 // import Lifecycle from './Lifecycle';
 // import CartSample from './CartSample';
@@ -12,10 +25,31 @@ import {Provider} from 'react-redux';
 // import AntdTest from './components/AntdTest';
 // import KFormSample from './components/KFormSample';
 
-import store from './store';
-import ReduxTest from './components/ReduxTest';
+// import store from './store';
+// import ReduxTest from './components/ReduxTest';
+
+// ReactDOM.render(<HelloWord />, document.querySelector('#root'));
+// ReactDOM.render(<JsxTest />, document.querySelector("#root"));
+// ReactDOM.render(<CompTest />, document.querySelector("#root"));
+// ReactDOM.render(<Clock />, document.querySelector("#root"));
+// ReactDOM.render(<Toggle />, document.querySelector("#root"));
+// ReactDOM.render(<LoginControl />, document.querySelector("#root"));
+// ReactDOM.render(<Page />, document.querySelector("#root"));
+// ReactDOM.render(<List />, document.querySelector("#root"));
+// ReactDOM.render(<NameForm />, document.querySelector("#root"));
+ReactDOM.render(<Calculator />, document.querySelector("#root"));
 
 
+// function App(){
+//     return (
+//         <div>
+//             <Clock ></Clock>
+//             <Clock ></Clock>
+//             <Clock ></Clock>
+//         </div>
+//     )
+// }
+// ReactDOM.render(<App />, document.querySelector("#root"));
 
 // ReactDOM.render(<h1>React真酷</h1>,document.querySelector('#root'))
 // ReactDOM.render(<App />,document.querySelector('#root'))
@@ -44,9 +78,9 @@ import ReduxTest from './components/ReduxTest';
 // store.subscribe(render)
 
 
-ReactDOM.render((
-    <Provider store={store}>
-        <ReduxTest />
-    </Provider>
-), document.querySelector('#root'))
+// ReactDOM.render((
+//     <Provider store={store}>
+//         <ReduxTest />
+//     </Provider>
+// ), document.querySelector('#root'))
 
