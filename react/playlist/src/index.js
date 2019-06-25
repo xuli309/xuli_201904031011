@@ -14,6 +14,9 @@ import Page from './components/official-demo/Page';
 import List from './components/official-demo/List';
 import NameForm from './components/official-demo/NameForm';
 import Calculator from './components/official-demo/Calculator';
+import SignUpDialog from './components/official-demo/SignUpDialog';
+import ProductListDemo from './components/official-demo/ProductListDemo';
+import CustomTextInput from './components/official-demo/CustomTextInput';
 
 // import App from './App';
 // import Lifecycle from './Lifecycle';
@@ -37,7 +40,13 @@ import Calculator from './components/official-demo/Calculator';
 // ReactDOM.render(<Page />, document.querySelector("#root"));
 // ReactDOM.render(<List />, document.querySelector("#root"));
 // ReactDOM.render(<NameForm />, document.querySelector("#root"));
-ReactDOM.render(<Calculator />, document.querySelector("#root"));
+// ReactDOM.render(<Calculator />, document.querySelector("#root"));
+// ReactDOM.render(<SignUpDialog />, document.querySelector("#root"));
+// ReactDOM.render(<ProductListDemo />, document.querySelector("#root"));
+ReactDOM.render(<CustomTextInput />, document.querySelector("#root"));
+
+
+
 
 
 // function App(){
