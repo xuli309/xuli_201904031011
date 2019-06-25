@@ -1,22 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
+// import {Provider} from 'react-redux';
 
 // 官方示例
-import HelloWord from './components/official-demo/HelloWord'
-import JsxTest from './components/official-demo/JsxTest';
-import RenderElements from './components/official-demo/CompTest';
-import CompTest from './components/official-demo/CompTest';
-import Clock from './components/official-demo/Clock';
-import Toggle from './components/official-demo/Toggle';
-import LoginControl from './components/official-demo/LoginControl';
-import Page from './components/official-demo/Page';
-import List from './components/official-demo/List';
-import NameForm from './components/official-demo/NameForm';
-import Calculator from './components/official-demo/Calculator';
-import SignUpDialog from './components/official-demo/SignUpDialog';
-import ProductListDemo from './components/official-demo/ProductListDemo';
-import CustomTextInput from './components/official-demo/CustomTextInput';
+// import HelloWord from './components/official-demo/HelloWord'
+// import JsxTest from './components/official-demo/JsxTest';
+// import RenderElements from './components/official-demo/CompTest';
+// import CompTest from './components/official-demo/CompTest';
+// import Clock from './components/official-demo/Clock';
+// import Toggle from './components/official-demo/Toggle';
+// import LoginControl from './components/official-demo/LoginControl';
+// import Page from './components/official-demo/Page';
+// import List from './components/official-demo/List';
+// import NameForm from './components/official-demo/NameForm';
+// import Calculator from './components/official-demo/Calculator';
+// import SignUpDialog from './components/official-demo/SignUpDialog';
+// import ProductListDemo from './components/official-demo/ProductListDemo';
+// import CustomTextInput from './components/official-demo/CustomTextInput';
+// import CustomPrentInput from './components/official-demo/CustomPrentInput';
+import OuterClickExample from './components/official-demo/OuterClickExample';
 
 // import App from './App';
 // import Lifecycle from './Lifecycle';
@@ -43,7 +45,11 @@ import CustomTextInput from './components/official-demo/CustomTextInput';
 // ReactDOM.render(<Calculator />, document.querySelector("#root"));
 // ReactDOM.render(<SignUpDialog />, document.querySelector("#root"));
 // ReactDOM.render(<ProductListDemo />, document.querySelector("#root"));
-ReactDOM.render(<CustomTextInput />, document.querySelector("#root"));
+// ReactDOM.render(<CustomTextInput />, document.querySelector("#root"));
+// ReactDOM.render(<CustomPrentInput />, document.querySelector("#root"));
+ReactDOM.render(<OuterClickExample />, document.querySelector("#root"));
+
+
 
 
 

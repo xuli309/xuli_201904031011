@@ -3,23 +3,28 @@ import React, { Component } from 'react'
 
 export default class CustomTextInput extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.textInput = React.createRef();
 
-        this.focus = this.focus.bind(this)
+        this.handleBtnClick = this.handleBtnClick.bind(this)
     }
 
     render() {
         return (
             <div>
-              <input type="text" ref={this.textInput} onClick={this.focus} />  
+                <input type="text" ref={this.textInput} />
+                <input
+                    type="button"
+                    value="Focus the text input"
+                    onClick={this.handleBtnClick}
+                />
             </div>
         )
     }
 
-    focus(e){
-        // console.log(e.target.value)
+    handleBtnClick(e) {
+        console.log(e.target.value)
         this.textInput.current.focus();
     }
 }
