@@ -18,7 +18,8 @@ import ReactDOM from 'react-dom';
 // import ProductListDemo from './components/official-demo/ProductListDemo';
 // import CustomTextInput from './components/official-demo/CustomTextInput';
 // import CustomPrentInput from './components/official-demo/CustomPrentInput';
-import OuterClickExample from './components/official-demo/OuterClickExample';
+// import OuterClickExample from './components/official-demo/OuterClickExample';
+import JqueryExample from './components/official-demo/JqueryExample';
 
 // import App from './App';
 // import Lifecycle from './Lifecycle';
@@ -47,11 +48,8 @@ import OuterClickExample from './components/official-demo/OuterClickExample';
 // ReactDOM.render(<ProductListDemo />, document.querySelector("#root"));
 // ReactDOM.render(<CustomTextInput />, document.querySelector("#root"));
 // ReactDOM.render(<CustomPrentInput />, document.querySelector("#root"));
-ReactDOM.render(<OuterClickExample />, document.querySelector("#root"));
-
-
-
-
+// ReactDOM.render(<OuterClickExample />, document.querySelector("#root"));
+ReactDOM.render(<JqueryExample />, document.querySelector("#root"));
 
 
 

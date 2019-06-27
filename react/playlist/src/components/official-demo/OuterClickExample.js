@@ -21,7 +21,7 @@ export default class OuterClickExample extends Component {
     //     window.addEventListener('click', this.onClickOutsideHandler);
     // }
 
-    // componentWillMount() {
+    // componentWillUnmount() {
     //     window.removeEventListener('click', this.onClickOutsideHandler)
     // }
 
