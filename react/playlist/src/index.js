@@ -20,6 +20,10 @@ import ReactDOM from 'react-dom';
 // import CustomPrentInput from './components/official-demo/CustomPrentInput';
 // import OuterClickExample from './components/official-demo/OuterClickExample';
 import JqueryExample from './components/official-demo/JqueryExample';
+import MouseTracker from './components/official-demo/MouseTracker';
+import FileInput from './components/official-demo/FileInput';
+// import ModelDemo from './components/official-demo/ModelDemo';
+
 
 // import App from './App';
 // import Lifecycle from './Lifecycle';
@@ -49,7 +53,10 @@ import JqueryExample from './components/official-demo/JqueryExample';
 // ReactDOM.render(<CustomTextInput />, document.querySelector("#root"));
 // ReactDOM.render(<CustomPrentInput />, document.querySelector("#root"));
 // ReactDOM.render(<OuterClickExample />, document.querySelector("#root"));
-ReactDOM.render(<JqueryExample />, document.querySelector("#root"));
+// ReactDOM.render(<JqueryExample />, document.querySelector("#root"));
+// ReactDOM.render(<ModelDemo />, document.querySelector("#root"));
+// ReactDOM.render(<MouseTracker />, document.querySelector("#root"));
+ReactDOM.render(<FileInput />, document.querySelector("#root"));
 
 
 
