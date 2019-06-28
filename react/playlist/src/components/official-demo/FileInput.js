@@ -20,7 +20,7 @@ export default class FileInput extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit}> 
                     <label>
                         upload file:
                         <input type="file" ref={this.fileInput} />
