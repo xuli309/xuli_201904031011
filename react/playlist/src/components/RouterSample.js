@@ -1,5 +1,8 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom'
+import React, { Component } from 'react';
+import { connect, Provider } from 'react-redux';
+import { BrowserRouter, Link, Route, Switch, Redirect } from 'react-router-dom';
+import { login } from '../store/user.redux'
+import store from '../store'
 
 function App(props) {
     return (
@@ -18,9 +21,12 @@ function App(props) {
             {/* 路由配置 */}
             <Switch>
                 <Route exact path="/" component={Home}></Route>
-                <Route path="/about" component={About}></Route>
+                {/* <Route path="/about" component={About}></Route> */}
+                <PrivateRoute path="/about" component={About}></PrivateRoute>
                 <Route path="/detail/:courseName" component={Detail}></Route>
+                <Route path="/login" component={Login}></Route>
                 <Route component={NoMatch} ></Route>
+
             </Switch>
         </div>
     )
@@ -93,49 +99,60 @@ function NoMatch() {
 
 
 // 接口
-let auth = {
+const auth = {
     isLogin: false,
-    login(cb){
-        // auth.isLogin = true,
-        setTimeout(cb,300)
+    login(cb) {
+        this.isLogin = true;
+        setTimeout(cb, 300);
     }
 }
 
 // 登录组件
-class Login extends Component{
-    state = {isLogin:false};
+class Login extends Component {
+    // state = { isLogin: false };
 
-    login = ()=> {
-        auth.login(()=>{
-            this.setState({isLogin:true})
-        })
-    }
+    // login = () => {
+    //     auth.login(() => {
+    //         this.setState({ isLogin: true })
+    //     })
+    // }
 
-    render(){
+    render() {
         // 回调地址
-        const from  = this.props.location.state.from || '/';
-        if(this.state.isLogin){
+        const from = this.props.location.state.from || '/';
+        // if (this.state.isLogin) {
+        if (this.props.isLogin) {
             return <Redirect to={from} />
         }
         return (
             <div>
                 <p>请先登录</p>
-                <button onClick={this.login}>登录</button>
+                <button onClick={this.props.login}>登录</button>
             </div>
         )
     }
 }
 
 // 路由守卫：定义可以验证的高阶组件
-function PrivateRoute({ component: Component, ...rest }) {
-    // render 和 component 二选一
-    return (
-        <Route {...rest} render={
-            props => auth.isLogin ?
-                <Component {...props} /> :
-                <Redirect to={{ pathname: '/login', state: { from: props.location.pathname } }} />
-        } />
-    )
+@connect(
+    state => ({ isLogin: state.user.isLogin }),// 状态映射
+    {
+        login
+    }
+)
+class PrivateRoute extends Component {
+
+    render() {
+        // render 和 component 二选一
+        return (
+            <Route {...this.props} render={
+                props => this.props.isLogin ?
+                    <Component {...props} /> :
+                    <Redirect to={{ pathname: '/login', state: { from: props.location.pathname } }} />
+            } />
+        )
+    }
+
 }
 
 
@@ -144,7 +161,9 @@ export default class RouterSample extends Component {
     render() {
         return (
             <BrowserRouter>
-                <App></App>
+                <Provider store={store}>
+                    <App></App>
+                </Provider>
             </BrowserRouter>
         )
     }
