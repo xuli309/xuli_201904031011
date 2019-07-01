@@ -96,7 +96,7 @@ function NoMatch() {
 let auth = {
     isLogin: false,
     login(cb){
-        auth.isLogin = true,
+        // auth.isLogin = true,
         setTimeout(cb,300)
     }
 }
