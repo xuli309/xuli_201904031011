@@ -19,9 +19,9 @@ import ReactDOM from 'react-dom';
 // import CustomTextInput from './components/official-demo/CustomTextInput';
 // import CustomPrentInput from './components/official-demo/CustomPrentInput';
 // import OuterClickExample from './components/official-demo/OuterClickExample';
-import JqueryExample from './components/official-demo/JqueryExample';
-import MouseTracker from './components/official-demo/MouseTracker';
-import FileInput from './components/official-demo/FileInput';
+// import JqueryExample from './components/official-demo/JqueryExample';
+// import MouseTracker from './components/official-demo/MouseTracker';
+// import FileInput from './components/official-demo/FileInput';
 // import ModelDemo from './components/official-demo/ModelDemo';
 
 
@@ -29,7 +29,7 @@ import FileInput from './components/official-demo/FileInput';
 // import Lifecycle from './Lifecycle';
 // import CartSample from './CartSample';
 // import CommentList from './components/CommentList';
-// import Composition from './components/Composition';
+import Composition from './components/Composition';
 // import Hoc from './components/Hoc';
 // import ContextSample from './components/ContextSample';
 // import AntdTest from './components/AntdTest';
@@ -56,7 +56,7 @@ import FileInput from './components/official-demo/FileInput';
 // ReactDOM.render(<JqueryExample />, document.querySelector("#root"));
 // ReactDOM.render(<ModelDemo />, document.querySelector("#root"));
 // ReactDOM.render(<MouseTracker />, document.querySelector("#root"));
-ReactDOM.render(<FileInput />, document.querySelector("#root"));
+// ReactDOM.render(<FileInput />, document.querySelector("#root"));
 
 
 
@@ -77,7 +77,7 @@ ReactDOM.render(<FileInput />, document.querySelector("#root"));
 // ReactDOM.render(<CartSample title="aaa" />, document.querySelector('#root'))
 // ReactDOM.render(<CommentList />, document.querySelector('#root'))
 
-// ReactDOM.render(<Composition />, document.querySelector('#root'))
+ReactDOM.render(<Composition />, document.querySelector('#root'))
 // ReactDOM.render(<Hoc stage="React" />, document.querySelector('#root'))
 // ReactDOM.render(<ContextSample />, document.querySelector('#root'))
 // ReactDOM.render(<AntdTest />, document.querySelector('#root'))

@@ -10,31 +10,6 @@ function Dialog(props){
     )
 }
 
-// 模拟接口
-const api = {
-    getUser:()=>({name:'jerry', age:20})
-}
-
-function Fetcher(props){
-    let user = api[props.name]();
-    return props.children(user)
-}
-
-function FilterP(props){
-    return (
-        <div>
-            {/* React.Children 提供了若干操作嵌套的帮助方法 -- 修改Children */}
-            {React.Children.map(props.children, child=>{
-                console.log(child);
-                if(child.type != 'p'){
-                    return;
-                }
-                return child;
-            })}
-        </div>
-    )
-}
-
 function WelcomeDialog(){
     const confirmBtn = <button onClick={()=>alert('react 确实好')}>确定</button>
     return (
@@ -45,13 +20,49 @@ function WelcomeDialog(){
     )
 }
 
-function Radio(){
+// 模拟接口
+const api = {
+    getUser:()=>({name:'jerry', age:20})
+}
+function Fetcher(props){
+    let user = api[props.name]();
+    return props.children(user)
+}
+
+// 过滤掉非P标签
+function FilterP(props){
+    return (
+        <div>
+            {/* React.Children 提供了若干操作嵌套的帮助方法 -- 修改Children */}
+            {React.Children.map(props.children, child=>{
+                // console.log(child);
+                if(child.type != 'p'){ 
+                    return;
+                }
+                return child;
+            })}
+        </div>
+    )
+}
+
+function RadioGroup(props){
+    return (
+        <div>
+            {React.Children.map(props.children,child=>{
+                return React.cloneElement(child,{name:props.name})
+            })}
+        </div>
+    )
+}
+
+function Radio({children,...rest}){
     return (
         <label>
-            <input type="radio" name="" id="" />
+            <input type="radio" {...rest} />{children}
         </label>
     )
 }
+
 
 export default class Composition extends Component {
     render() {
