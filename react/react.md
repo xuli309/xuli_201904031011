@@ -95,7 +95,7 @@ module.exports = function override(config){
 }
 ```
 
-##### Redux-中间件的概念
+##### 数据管理-Redux-中间件的概念
 
 1.安装：npm install redux --save
 
@@ -111,6 +111,26 @@ module.exports = function override(config){
 
 安装：npm install react-redux --save
 
+安装：npm install redux-thunk redux-logger --save
+
+##### 路由管理-redux-router
+
+1、版本：4.x
+
+2、安装：npm install --save react-router-dom
+
+3、学习网址：https://reacttraining.com/react-router/
+
+4、特点：
+
+​	1.路由也是组件
+
+​	2.分布式配置
+
+​	3.包含式匹配
+
+
+
 ##### Mobx
 
 学习难度redux > mobx
@@ -124,3 +144,6 @@ module.exports = function override(config){
 样板代码的必要性 redux > mobx
 
 结论：使用mbox入门简单，构建应用迅速，但是当项目足够大时，还是使用redux，mobx爱不释手，那还是开启严格模式，再加上一套状态管理的规范
+
+##### 
+

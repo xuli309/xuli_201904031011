@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Provider} from 'react-redux';
+import {Provider} from 'react-redux';
 
 // 官方示例
 // import HelloWord from './components/official-demo/HelloWord'
@@ -29,14 +29,16 @@ import ReactDOM from 'react-dom';
 // import Lifecycle from './Lifecycle';
 // import CartSample from './CartSample';
 // import CommentList from './components/CommentList';
-import Composition from './components/Composition';
+// import Composition from './components/Composition';
 // import Hoc from './components/Hoc';
 // import ContextSample from './components/ContextSample';
 // import AntdTest from './components/AntdTest';
 // import KFormSample from './components/KFormSample';
 
-// import store from './store';
+// import store from './store/';
 // import ReduxTest from './components/ReduxTest';
+
+import RouterSample from './components/RouterSample';
 
 // ReactDOM.render(<HelloWord />, document.querySelector('#root'));
 // ReactDOM.render(<JsxTest />, document.querySelector("#root"));
@@ -77,11 +79,13 @@ import Composition from './components/Composition';
 // ReactDOM.render(<CartSample title="aaa" />, document.querySelector('#root'))
 // ReactDOM.render(<CommentList />, document.querySelector('#root'))
 
-ReactDOM.render(<Composition />, document.querySelector('#root'))
+// ReactDOM.render(<Composition />, document.querySelector('#root'))
 // ReactDOM.render(<Hoc stage="React" />, document.querySelector('#root'))
 // ReactDOM.render(<ContextSample />, document.querySelector('#root'))
 // ReactDOM.render(<AntdTest />, document.querySelector('#root'))
 // ReactDOM.render(<KFormSample />, document.querySelector('#root'))
+
+ReactDOM.render(<RouterSample />, document.querySelector('#root'))
 
 
 // 动态渲染

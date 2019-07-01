@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 
-import store from '../store';
-
-import{connect} from 'react-redux'
+import{connect} from 'react-redux';
+import {add,minus,asyncAdd} from '../store/counter.redux'
 
 const mapStateToProps = state=>({ num:state });
 const mapDispatchToProps = dispatch=>({
@@ -10,15 +9,16 @@ const mapDispatchToProps = dispatch=>({
     minus:()=>dispatch({type:'minus'})
 })
 
-// @connect(
-//     state => ({ num: state }),// 状态映射
-//     {
-//         add: () => ({ type: "add" }),
-//         minus: () => ({ type: "minus" })
-//     }
-// )
+@connect(
+    state => ({ num: state.counter }),// 状态映射
+    {
+        add,
+        minus,
+        asyncAdd
+    }
+)
 
-@connect(mapStateToProps,mapDispatchToProps)
+// @connect(mapStateToProps,mapDispatchToProps)
 class ReduxTest extends Component {
     render() {
         return (
@@ -33,6 +33,7 @@ class ReduxTest extends Component {
                     
                     <button onClick={()=>this.props.minus()}>-</button>
                     <button onClick={()=>this.props.add()}>+</button>
+                    <button onClick={()=>this.props.asyncAdd()}>asyncAdd</button>
                 </div>
             </div>
         )
