@@ -156,7 +156,6 @@ class PrivateRoute extends Component {
 }
 
 
-
 export default class RouterSample extends Component {
     render() {
         return (
