@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    
+        table td {
+            height: 30px;
+            width: 100px
+        
+        }
+
+        .input {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100px;
+            border: none;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="txtId" type="text" class="input"  />
+    <table id="table" border="1" cellspacing="0">
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+            <td colspan="2">操作</td>
+        </tr>
+        <tr>
+            <td><span>张三</span></td>
+            <td><span>男</span></td>
+            <td><span>18</span></td>
+            <td><input type="button" value="修改"   /></td>
+        </tr>
+        <tr>
+            <td><span>李四</span></td>
+            <td><span>女</span></td>
+            <td><span>19</span></td>
+            <td><input type="button" value="修改"   /></td>
+        </tr>
+        <tr>
+            <td><span>王五</span></td>
+            <td><span>女</span></td>
+            <td><span>19</span></td>
+            <td><input type="button" value="修改"   /></td>
+        </tr>
+        <tr>
+            <td><span>赵六</span></td>
+            <td><span>女</span></td>
+            <td><span>19</span></td>
+            <td><input type="button" value="修改"   /></td>
+        </tr>
+    </table>
+</body>
+
+</html>
+
+
+<script type="text/javascript">
+
+    //1、点击单元格
+    function edit(tdDom) {
+
+        tdDom.firstElementChild.style.display = "none";
+
+        var txtDom = document.getElementById("txtId");
+        tdDom.appendChild(txtDom);
+        txtDom.style.display = "block";
+
+        txtDom.value = tdDom.firstElementChild.innerHTML;
+        txtDom.focus();
+
+        txtDom.onblur = function(){
+            save(this);
+        }
+    }
+
+    //2、当光标离开文本框
+    function save(txtDom) {
+        txtDom.previousElementSibling.style.display = "block";
+        txtDom.style.display = "none";
+        txtDom.previousElementSibling.innerHTML = txtDom.value;
+    }
+
+
+    window.onload = function () {
+        //给需要编辑的单元格增加onclick事件
+        var tbody = document.getElementById("table").firstElementChild;
+        var trs = tbody.children;
+        for (var i = 1; i < trs.length; i++) {
+            for (var j = 0; j < trs[i].children.length - 1; j++) {
+                trs[i].children[j].onclick = function () {
+                    edit(this);
+                }
+            }
+        }
+
+    }
+</script>
