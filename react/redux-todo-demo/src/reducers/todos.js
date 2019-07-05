@@ -6,14 +6,14 @@ const todos = (state=[], action) => {
                {
                    id: action.id,
                    text:action.text,
-                   complated:false
+                   completed:false
                }
            ]
     
         case 'TOGGLE_TODO':
-            return state.map((todo) => 
+            return state.map(todo => 
                 (todo.id === action.id) 
-                ? {...todo,complated:!todo.complated}
+                ? {...todo,completed:!todo.completed}
                 :todo
             )
         default:
