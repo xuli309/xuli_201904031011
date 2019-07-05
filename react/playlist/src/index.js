@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
+
 // 官方示例
 // import HelloWord from './components/official-demo/HelloWord'
 // import JsxTest from './components/official-demo/JsxTest';
@@ -107,4 +108,3 @@ ReactDOM.render(<RouterSample />, document.querySelector('#root'))
 //         <ReduxTest />
 //     </Provider>
 // ), document.querySelector('#root'))
-
