@@ -129,8 +129,6 @@ module.exports = function override(config){
 
 ​	3.包含式匹配
 
-
-
 ##### Mobx
 
 学习难度redux > mobx
@@ -147,3 +145,25 @@ module.exports = function override(config){
 
 ##### 
 
+##### redux-saga使用
+
+概述：redux-sage使副作用（数据获取、浏览缓存获取）易于管理、执行、测试和失败处理
+
+地址：https://github.com/redux-saga/redux-saga
+
+安装：npm install --save redux-saga
+
+与redux-thunk的区别：
+
+1. thunk可以接受function的action，而saga纯对象action解决方案
+2. saga使用generator解决异步，非常容易用同步方式编写异步代码
+
+##### ES6 Generator
+
+##### Umi
+
+基本使用：npm install umi -g
+
+生成页面：umi g page index
+
+启动：umi dev

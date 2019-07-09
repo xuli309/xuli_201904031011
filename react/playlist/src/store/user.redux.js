@@ -3,7 +3,7 @@ const initialState = {
 };
 
 export default (state = initialState, { type, payload }) => {
-  
+
     switch (type) {
 
         case 'login':
@@ -14,11 +14,17 @@ export default (state = initialState, { type, payload }) => {
     }
 }
 
+// for redux-thunk
+// export function login() {
+//     return (dispatch) => {
+//         // mock异步登录
+//         setTimeout(() => {
+//             dispatch({ type: 'login' })
+//         }, 1000)
+//     }
+// }
+
+// for saga
 export function login() {
-    return (dispatch) => {
-        // mock异步登录
-        setTimeout(() => {
-            dispatch({ type: 'login' })
-        }, 1000)
-    }
+    return { type: 'login_request' }
 }
