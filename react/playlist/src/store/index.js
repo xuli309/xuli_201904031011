@@ -8,5 +8,5 @@ import user from '../store/user.redux';
 export default createStore(
     // reducer 模块化
     combineReducers({counter, user}),
-    applyMiddleware(logger, thunk)
+    applyMiddleware(logger, thunk)  // 第二个参数增强器
 );
