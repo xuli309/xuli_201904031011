@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux'
 import { createLogger } from 'redux-logger'
 import thunk from 'redux-thunk'
 
-import productReducer from '../reducers/products'
+import productReducer from '../reducers/productsReducer'
 import { getAllProducts } from '../actions'
 
 const middleware = [thunk];
