@@ -1,0 +1,42 @@
+
+table td th{
+    margin:0 ;
+    padding:0;
+    border:none;
+}
+
+
+#musicApp{
+    width:550px;
+
+}
+
+
+table th{
+    text-align: left;
+    border-bottom:1px solid #f1f1f1
+}
+
+table td{
+    border-bottom:1px solid #f1f1f1
+}
+.main{
+    width:550px;
+}
+
+.info{
+    width:550px;
+    height:35px;
+    line-height: 35px;
+}
+
+.align-right{
+    float: right
+}
+
+.like{
+    background:#f1f1f1
+}
+.selected{
+    background:pink
+}
