@@ -167,3 +167,36 @@ module.exports = function override(config){
 生成页面：umi g page index
 
 启动：umi dev
+
+##### react原理
+
+1. 什么是jsx，为什么需要jsx，怎么用，原理？
+
+   JSX是对js语法扩展，使我们可以用类似xml方式描述视图
+
+   执行快、类型安全、提高开发效率
+
+   原理：babel-loader会预编译JSX为React.createElement(type,props,...children)
+
+   总结：
+
+   1.webpack+babel-loader编译时，替换JSX为React.createElement(...);
+
+   2.所有React.createElement(...)执行结束会得到一个JS对象树，他能完整描述dom结构，称之为DOM
+
+   3.React-DOM.render(vdom,container)可以将vdom转换为dom追加至container中，通过遍历vdom树，根据vtype不同，执行不同逻辑：vtype为1生成元素标签，vtype为2实例化class组件并将其render返回的vdom初始化，vtype为3直接执行函数结果初始化
+
+2. setState原理 虚拟dom
+
+   虚拟dom就是JS，传统的dom渲染太费时，减少渲染次数
+
+   diff策略：
+
+   1.Web UI 中DOM节点跨层级的移动操作特别少，可以忽略不计
+
+   2.拥有相同类的两个组件将会生成相似的树形结构，拥有不同类的两个组件将会生成不同的树形结构。
+
+   3.对于同一个层级的一组子节点，他们可以通过唯一id进行分区
+
+   基于以上三个前提策略，React分别对tree diff、component diff 以及 element diff 进行算法优化，事实也证明这三个提前策略是合理且准确的，它爆炸了整体界面构建的性能。
+
