@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function shiftLeft(str, n) {
+            var len = str.length;
+            n = n % len;
+            return str.substring(n, len) + str.substring(0, n);
+        }
+
+        var s = shiftLeft('abcdef', 3);
+        console.log(s); // "cdefab"
+
+        var s = shiftLeft('abcdefg', 2);
+        console.log(s); // "cdefgab"
+
+        s = shiftLeft('abcdefg', 10);
+        console.log(s); // "defgabc"
+
+        s = shiftLeft('abcdef', 3);
+        console.log(s); // "defabc"
+
+
+        // void leftShiftOne(char * s, int n) {
+        //     char t = s[0];
+        //     for (int i = 1; i < n; ++i) {
+        //         s[i - 1] = s[i];
+        //     }
+        //     s[n - 1] = t;
+        // }
+
+
+        // void leftRotateString(char * s, int n, int m) {
+        //     while (m--) {
+        //         leftShiftOne(s, n);
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

@@ -199,4 +199,3 @@ module.exports = function override(config){
    3.对于同一个层级的一组子节点，他们可以通过唯一id进行分区
 
    基于以上三个前提策略，React分别对tree diff、component diff 以及 element diff 进行算法优化，事实也证明这三个提前策略是合理且准确的，它爆炸了整体界面构建的性能。
-
