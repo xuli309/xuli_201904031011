@@ -3,7 +3,7 @@
         <div class="con">
             <div class="left">
               <img src="../assets/logo.png" class="logo">
-              <p class="l-con">头部标题头部标题头部标题</p>
+              <p class="l-con">头部标题头部标题头部标题 {{ msg }}</p>
             </div>
             <div class="right-nav">
                 <ul>
@@ -22,8 +22,12 @@ export default {
     name:'headercom',
     data(){
         return {
-
+            
         }
+    },
+    props:{
+        msg:String,
+        default:''
     }
 }
 </script>

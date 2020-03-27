@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.prototype.HOST = '/api'
+Vue.prototype.HOST = ''
 
 
 Vue.config.productionTip = false

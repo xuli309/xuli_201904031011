@@ -1,21 +1,20 @@
-# my_vue_project
+# 父组件 => 子组件
+1. 属性props
+    // child
+    props:{msg:String}
+    //parent
+    <Helloworld msg="Hello Vue" />
+2. 引用refs
+    // parent
+    <Helloworld ref="hw" />
+    // child
+    this.$refs.hw.msg='ddddd'
+3. 子元素children
+    //parent 这个放在mouted里头，不能放在created里
+    this.$children[0].msg='aaaa'
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+# 子组件=>父组件：自定义事件
+//child
+this.$emit('add', good)
+//parent
+<Helloworld @add="add(count)" />
