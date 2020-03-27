@@ -89,23 +89,41 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### 祖先和后代之间
 
-由于嵌套层数多，传递props不切实际，vue提供了provide/inject API完成该任务
-provide/inject: 能够实现祖先给后代传值
-
-```
-
-```
-
-或者
-
-```
-
-```
-
-注意：provide和inject主要为高阶插件/组件提供用例。并不推荐之间用于应用程序代码中，我们更多会在开源组件中见到。
-但是反过来想要后代给祖先传值这种方案就不行了
-
-
+    由于嵌套层数多，传递props不切实际，vue提供了provide/inject API完成该任务
+    provide/inject: 能够实现祖先给后代传值
+    ```
+    // parent app.vue
+    provide:{
+        aprovid:'aprovid'
+    }
+    // child  HelloWorld.vue 子元素
+    inject:['aprovid'],
+    <h3>{{aprovid}}</h3>
+    // child-child  child.vue 孙子元素
+    inject:['aprovid'],
+    <h3>{{aprovid}}</h3>
+    ```
+    或者
+    ```
+    provide(){
+        return {
+            aprovid:this
+        }
+    },
+    data(){
+        return {
+            tua:'aprovid'
+        }
+    }
+    // child  HelloWorld.vue 子元素
+    inject:['aprovid'],
+    <h3>{{aprovid.tua}}</h3>
+    // child-child  child.vue 孙子元素
+    inject:['aprovid'],
+    <h3>{{aprovid.tua}}</h3>
+    ```
+    注意：provide和inject主要为高阶插件/组件提供用例。并不推荐之间用于应用程序代码中，我们更多会在开源组件中见到。
+    但是反过来想要后代给祖先传值这种方案就不行了
 
 ### 任意两个组件之间：事件总线 或 vuex
 
