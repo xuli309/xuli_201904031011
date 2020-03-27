@@ -9,7 +9,7 @@
     <!-- 具名插槽 -->
     <!-- <slot name="content"></slot> -->
     <!-- 作用域插槽 -->
-    <slot name="content" bla="bla~~~~~"></slot>
+    <slot name="content" bla="bla~~~~~" bar="bar~~~"></slot>
   </div>
 </template>
 

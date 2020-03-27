@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h2  @click="$emit('add',222)">{{ foo }}</h2>
-    <h3>子元素：{{aprovid}}</h3>
+    <h3>子元素：{{aprovid.tua}}</h3>
 
     <Child />
   </div>

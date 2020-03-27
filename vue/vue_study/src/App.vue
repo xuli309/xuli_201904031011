@@ -5,7 +5,7 @@
     <HelloWorld2>
         <template v-slot:default>匿名插槽<br></template>
         <!-- <template v-slot:content="slotProps">具名插槽: {{slotProps.bla}}</template> -->
-        <template v-slot:content="{bla}">具名插槽: {{bla}}</template>
+        <template v-slot:content="{bla,bar}">具名插槽: {{bla}}{{bar}}</template>
     </HelloWorld2>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   // },
   provide(){
     return {
-      aprovid:this.tua
+      aprovid:this
     }
   },
   data(){

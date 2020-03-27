@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>孙子元素：{{aprovid}}</h3>
+        <h3>孙子元素：{{aprovid.tua}}</h3>
     </div>
 </template>
 <script>
