@@ -92,13 +92,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 由于嵌套层数多，传递props不切实际，vue提供了provide/inject API完成该任务
 provide/inject: 能够实现祖先给后代传值
 
-```vue
+```
 
 ```
 
 或者
 
-```vue
+```
 
 ```
 
