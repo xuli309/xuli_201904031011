@@ -53,7 +53,8 @@
                     [this.prop]:value
                 }
                 const schema = new Schema(desc);
-                schema.validate(vals, errors=>{
+                //返回 promise <boolean>
+                return schema.validate(vals, errors=>{
                     console.log(errors);
                     
                     if(errors){

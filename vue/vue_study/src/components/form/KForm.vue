@@ -21,6 +21,15 @@
                 type: Object
             }
         },
+        methods: {
+            validate(cb) {
+                // map结果是若干promise数组
+                const tasks = this.$children.map(item=>item.validate());
+                Promise.all(tasks)
+                .then(()=>cb(true))
+                .catch(()=>cb(false))
+            }
+        },
     }
 </script>
 
