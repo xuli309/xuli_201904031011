@@ -156,3 +156,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     // 子元素
     <slot name="content" bla="bla~~~~~"></slot>
 
+### 实现KInput
+ . 任务1：实现自定义组件双向绑定功能
+    v-model是语法趟，实现自定义组件双绑需要指定:value和@input即可
+ . 任务2：值发生变化能够通知FormItem组件
+ . 任务3：input各种设定，如type,placeholder等
+ 创建components/form/KInput.vue
+
+
