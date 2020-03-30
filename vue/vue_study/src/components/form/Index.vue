@@ -34,8 +34,8 @@ export default {
         password: ""
       },
       rules:{
-          username:[{require:true,message:"用户名必填"}],
-          password:[{require:true,message:"密码必填"}]
+          username:[{required:true,message:"用户名必填"}],
+          password:[{required:true,message:"密码必填"}]
       }
     };
   },

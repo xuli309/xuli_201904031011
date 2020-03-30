@@ -54,13 +54,11 @@
                 }
                 const schema = new Schema(desc);
                 //返回 promise <boolean>
-                return schema.validate(vals, errors=>{
-                    console.log(errors);
-                    
+                return schema.validate(vals, errors=>{                    
                     if(errors){
                         this.errorMessage = errors[0].message;
                     }else{
-                        this.errorMessage = "ddddd";
+                        this.errorMessage = "";
                     }
                 })
             }

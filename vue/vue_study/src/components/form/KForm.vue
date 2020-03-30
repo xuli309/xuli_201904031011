@@ -9,7 +9,7 @@
         name:'kForm',
         provide(){
             return {
-                form:this //传递form实例给后代
+                form: this //传递form实例给后代
             }
         },
         props: {
