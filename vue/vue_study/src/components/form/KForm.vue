@@ -22,9 +22,13 @@
             }
         },
         methods: {
-            validate(cb) {
+            validate(cb) {                
                 // map结果是若干promise数组
-                const tasks = this.$children.map(item=>item.validate());
+                const tasks = this.$children
+                .filter(item => item.prop)
+                .map(item => item.validate());
+                
+                //所有任务必须全部成功才算校验通过
                 Promise.all(tasks)
                 .then(()=>cb(true))
                 .catch(()=>cb(false))

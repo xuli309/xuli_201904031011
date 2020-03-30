@@ -36,7 +36,6 @@
         },
         methods: {
             validate() {
-                // console.log(this.prop);
                 
                 //执行组件校验
                 //1.获取校验规则

@@ -41,13 +41,11 @@ export default {
   },
   methods: {
       onLogin() {
-          this.$refes.loginForm.validate((isvalidate)=>{
-              if(isvalidate){
-                  console.log('登录成功！！！');
-                  
+          this.$refs.loginForm.validate((isValid)=>{           
+              if(isValid){
+                  alert('登录成功！！！');
               }else{
-                  console.log('登录失败！！！');
-                  
+                  alert('登录失败！！！');                  
               }
           })
       }
