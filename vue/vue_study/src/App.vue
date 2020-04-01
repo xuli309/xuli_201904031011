@@ -1,5 +1,10 @@
 <template>
   <div id="app">
+
+    <GoodsPub></GoodsPub>
+    <hr />
+    <Goods></Goods>
+    <hr />
     <FormTest></FormTest>
 
     <hr>
@@ -21,6 +26,9 @@ import HelloWorld2 from './components/HelloWorld2.vue'
 
 import FormTest from './components/form/Index'
 
+import Goods from './components/cart/Goods'
+import GoodsPub from './components/cartPub/Goods'
+
 export default {
   name: 'App',
   // provide:{
@@ -39,7 +47,9 @@ export default {
   components: {
     HelloWorld,
     HelloWorld2,
-    FormTest
+    FormTest,
+    Goods,
+    GoodsPub
   },
   mounted(){
      this.$refs.hw.foo = "ddddd"

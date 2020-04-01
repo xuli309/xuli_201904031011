@@ -3,12 +3,14 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
-// Vue.prototype.$bus = new Bus()
+// 总线模式 没有实例只做订阅发布功能
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   render: h => h(App),
 }).$mount('#app')
 
+// Vue.prototype.$bus = new Bus()
 // 总线关系
 // class Bus{
 //   constructor(){
