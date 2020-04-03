@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-
+    <router-view />
+    <hr />
     <Goods2></Goods2>
     <hr />
     <Goods1></Goods1>
@@ -29,6 +30,7 @@ import FormTest from './components/form/Index'
 import Goods1 from './components/cart/cart1/Goods'
 import Goods2 from './components/cart/cart2/Goods'
 
+
 export default {
   name: 'App',
   // provide:{
@@ -49,7 +51,7 @@ export default {
     HelloWorld2,
     FormTest,
     Goods1,
-    Goods2
+    Goods2,
   },
   mounted(){
      this.$refs.hw.foo = "ddddd"
