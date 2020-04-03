@@ -2,7 +2,7 @@
     <div>
         <table border="1">
             <tr>
-                <th><input type="checkbox" /></th>
+                <th></th>
                 <th>课程名称</th>
                 <th>单价</th>
                 <th>数量</th>
