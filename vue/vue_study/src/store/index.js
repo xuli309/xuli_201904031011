@@ -4,7 +4,7 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 let store = new Vuex.Store({
-    strict:true,
+    strict:true,//不能在程序里改
     state:{
         count:0
     },
