@@ -13,8 +13,16 @@ let store = new Vuex.Store({
     },
     // mutations修改数据而存在 同步的
     mutations:{
-        increment(state){
-            state.count++;
+        increment(state,args){
+            state.count += args.num || 1;
+        }
+    },
+    // action就是异步的mutations
+    actions: {
+        incrementAsync(store,args) {//{commit}
+            setTimeout(() => {
+                store.commit('increment',args);
+            }, 2000);
         }
     }
 })

@@ -5,6 +5,7 @@
 </template>
 
 <script>
+    import { mapState, mapActions, mapMutations } from 'vuex'
     export default {
         name:'page2',
         data(){
@@ -13,17 +14,27 @@
             }
         },
         created () {
+            this.incrementAsync({num:11})
+            // this.$store.dispatch('incrementAsync',{num:10});
             setInterval(() => {
-                this.$store.commit('increment');
+                // this.$store.commit('increment');
+                this.increment({num:1})
             }, 2000);
         },
         computed: {
-            count() {
-                return this.$store.state.count; 
-            },
+            ...mapState({
+                count: state=>state.count 
+            }),
+            // count() {
+            //     return this.$store.state.count; 
+            // },
             money(){
                 return this.$store.getters.money;
             }
+        },
+        methods: {
+           ...mapActions(['incrementAsync']),
+           ...mapMutations(['increment'])
         },
     }
 </script>
