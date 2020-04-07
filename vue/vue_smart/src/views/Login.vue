@@ -10,7 +10,6 @@
 </template>
 
 <script>
-    import axios from 'axios'
     export default {
         name:'login',
         data(){
@@ -29,9 +28,29 @@
                                 placeholder: '请输入用户名'
                             },
                             rules: {
-                                required: true
+                                required: true,
+                                type:'string',
+                                min:3,
+                                max:15,
+                                usercheck:(val)=>{
+                                    console.log(val);
+                                    
+                                    return (reslove)=>{
+                                        this.$axios.get('/api/checkName?username='+val)
+                                        .then(res=>{
+                                            reslove(res.code==0)
+                                        })
+                                    }
+                                }
+
                             },
-                            trigger:"blur"
+                            trigger:"blur",
+                            messages:{
+                                required:'请输入用户名',
+                                min:'用户名不能少于3个字符',
+                                max:'用户名不能大于15个字符',
+                                usercheck:'用户名不存在'
+                            }
                         },
                         {
                             type:'input',
@@ -41,13 +60,13 @@
                                 type:'password',
                                 placeholder: '请输入密码',
                                 eye:{
-                                    open:true
+                                    open:false
                                 }
                             },
                             rules:{
                                 required:true,
                             },
-                            trigger:'blur'
+                            trigger:'change'
                         },
                         {
                             type:'submit',
@@ -70,26 +89,26 @@
                     username:this.model.username,
                     password:this.model.passwrd
                 }
-                const ret  = await axios.get('/api/login',{params:obj});
-                if(ret.status == 200){
-                    if(ret.data.code == 0){
-                        // alert('登录成功');
-                        // 存token
-                        const token = ret.data.token;
-                        localStorage.setItem("token",token);
-                        this.$store.commit('settoken',token);     
-                    }else{                      
-                        const toast = this.$createToast({
-                            txt: ret.data.message || '未知错误',
-                            type:'error',
-                            time: 1000,
-                            // onTimeout: () => {
-                            //     console.log('Timeout')
-                            // }
-                        });
-                        toast.show();
-                    }
+                const ret  = await this.$axios.get('/api/login',{params:obj});
+                // console.log(ret);
+                if(ret.code == 0){
+                    // alert('登录成功');
+                    // 存token
+                    const token = ret.token;
+                    localStorage.setItem("token",token);
+                    this.$store.commit('settoken',token);     
+                }else{                      
+                    const toast = this.$createToast({
+                        txt: ret.message || '未知错误',
+                        type:'error',
+                        time: 1000,
+                        // onTimeout: () => {
+                        //     console.log('Timeout')
+                        // }
+                    });
+                    toast.show();
                 }
+                
                
               
             }           

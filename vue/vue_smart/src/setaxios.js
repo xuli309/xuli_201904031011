@@ -2,7 +2,7 @@ import axios from 'axios'
 import store from './store'
 import router from './router'
 
-// http 拦截
+// http 拦截器
 // token 要放在所有的http请求header之上
 // const LOGINOUT = 'LOGINOUT'
 export default function setAxios(){
@@ -13,7 +13,6 @@ export default function setAxios(){
             }
             return config;
         }
-        
     )
 
     // 获取数据时 如果code是-1 认为登录过期了，需要重新登录
@@ -33,8 +32,10 @@ export default function setAxios(){
                         path: '/login'
                     })
                 }
-                return response;
+                return data;
             }
+            return response;
         }
+        
     )
 }
