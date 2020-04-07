@@ -27,5 +27,16 @@ npm install axios mint-ui -S
 npm install moment -S
 
 
+##### 前端UI库使用
+
+###### pc端 
+Element https://element.eleme.cn/#/zh-CN/component/quickstart
+mint-ui https://github.com/ElemeFE/mint-ui
+vux     https://github.com/airyland/vux
+ivue    https://www.iviewui.com/docs/guide/install
+
+###### 手机端 
+cube-ui https://didi.github.io/cube-ui/#/zh-CN/docs/create-api
+
 
 ##### 
