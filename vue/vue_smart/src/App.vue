@@ -6,15 +6,18 @@
       <router-link to="/login">Login</router-link> |
       <span v-if="isLogin" @click="logout">退出</span>
     </div> -->
-    
-
     <cube-tab-bar
        v-model="selectedLabelDefault"
        :data="tabs"
        @change="changeHandle"
        show-slider
     >
+      <cube-tab v-for="(item,index) in tabs" :key="index" :icon="item.icon" :label="item.value">
+          <span>{{item.label}}</span>
+          <span class="badge" v-if="item.label=='Cart'">{{cartTotal}}</span>
+      </cube-tab>
     </cube-tab-bar>
+
     <transition name="route-move">
       <router-view/>
     </transition>
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 export default {
   data(){
     return{
@@ -54,9 +58,12 @@ export default {
     const ret = await this.$axios.get('/api/goods');
   },
   computed: {
+    ...mapGetters({
+      cartTotal:"cartTotal"
+    }),
     isLogin() {
       return !!this.$store.state.token 
-    }
+    },
   },
   methods: {
     logout() {
@@ -96,5 +103,12 @@ export default {
 }
 .route-move-enter-active,.route-move-leave-active{
   transition: transform 0.3s;
+}
+.badge{
+  display: inline-block;
+  background:#de3529;
+  color:#fff;
+  padding:5px;
+  border-radius:50%;
 }
 </style>

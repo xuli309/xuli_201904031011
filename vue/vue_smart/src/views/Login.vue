@@ -1,11 +1,17 @@
 <template>
     <div>
         <cube-form 
+            v-if="!$store.state.token"
             :model="model"  
             :schema="schema" 
             @submit='handlerLogin'
             @validate='handlerValidate'
         ></cube-form>
+        <div v-else>
+            <p>已登录</p>
+            <i class="cubeic-person"></i>
+            <cube-button @click="logout">注销</cube-button>
+        </div>
     </div>
 </template>
 
@@ -108,14 +114,25 @@
                     });
                     toast.show();
                 }
-                
-               
-              
-            }           
+
+            },
+            logout(){
+                localStorage.removeItem('token');
+                this.$store.commit('settoken','');
+            }        
         },
     }
 </script>
 
 <style scoped>
+.logo{
+    text-align:center;
+    margin-top:30px;
+    margin-bottom:30px;
+}
+
+i.cubeic-person{
+    font-size:80px;
+}
 
 </style>
