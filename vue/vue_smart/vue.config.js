@@ -27,13 +27,12 @@ module.exports = {
 
             const [key,expires] = token.split('-');
             const now = new Date().getTime();
-            console.log(key,expires,now);
+            // console.log(key,expires,now);
             
-
             if(key == API_KEY && expires > now){
               return res.json({
                 code:0,
-                data:'经过校验'
+                data:'校验通过'
               })
             }else{
               return res.json({

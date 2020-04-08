@@ -33,7 +33,7 @@
                                 min:3,
                                 max:15,
                                 usercheck:(val)=>{
-                                    console.log(val);
+                                    // console.log(val);
                                     
                                     return (reslove)=>{
                                         this.$axios.get('/api/checkName?username='+val)
@@ -60,7 +60,7 @@
                                 type:'password',
                                 placeholder: '请输入密码',
                                 eye:{
-                                    open:false
+                                    open:false //默认密码隐藏
                                 }
                             },
                             rules:{
