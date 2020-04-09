@@ -1,0 +1,25 @@
+{
+  "name": "a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "encoding": "^0.1.12",
+    "fetch": "^1.1.0",
+    "fs": "0.0.1-security",
+    "iconv-lite": "^0.4.24",
+    "jschardet": "^2.1.0",
+    "node-fetch": "^2.5.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "superagent": "^5.0.5",
+    "superagent-charset": "^1.2.0"
+  }
+}
