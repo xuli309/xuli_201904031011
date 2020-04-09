@@ -8,8 +8,8 @@
                 <div class="right">
                     <div class="title">{{ item.title }}</div>
                     <div class="info">
-                        <i class="cubeic-add" @click.stop.prevent="addCart(item)"></i>
                         <span>{{item.count}} 人购买</span>
+                        <i class="cubeic-add" @click.stop.prevent="addCart($event,item)"></i>
                     </div>
                 </div>
             </router-link>
@@ -22,9 +22,13 @@ export default {
     name:'goodlist',
     props: ["data"],
     methods: {
-        addCart(item) {
+        addCart(event,item) {
             // console.log(item);
             this.$store.commit('addCart',item);
+            // 把点击的dom传递出去
+            this.$emit('addCart',event.target);
+            // console.log(event.target);
+            
         },
         imgPreview(imgUrl){
             // console.log(imgUrl);
@@ -50,7 +54,7 @@ export default {
     
 .right{
     margin-left:120px;
-    text-align:left;
+    text-align:right;
 }
 .right .title{
     line-height:30px;

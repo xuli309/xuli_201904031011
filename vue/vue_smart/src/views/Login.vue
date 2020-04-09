@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="alert" v-if="showError">
+            {{ errorMsg }}
+        </div>
         <cube-form 
             v-if="!$store.state.token"
             :model="model"  
@@ -20,6 +23,8 @@
         name:'login',
         data(){
             return{
+                showError:false,
+                errorMsg:'',
                 model:{
                     username:'',
                     passwrd:''
@@ -80,6 +85,7 @@
                         }
                     ]
                 }
+               
             }
         },
         methods: {
@@ -89,7 +95,7 @@
                
             },
             async handlerLogin(e) {
-                e.preventDefault();
+                e.preventDefault();//阻止表单自动提交
                 // console.log(this.model);
                 const obj = {
                     username:this.model.username,
@@ -102,17 +108,28 @@
                     // 存token
                     const token = ret.token;
                     localStorage.setItem("token",token);
-                    this.$store.commit('settoken',token);     
-                }else{                      
-                    const toast = this.$createToast({
-                        txt: ret.message || '未知错误',
-                        type:'error',
-                        time: 1000,
-                        // onTimeout: () => {
-                        //     console.log('Timeout')
-                        // }
-                    });
-                    toast.show();
+                    this.$store.commit('settoken',token);
+                    this.showError = false; 
+                }else{ 
+                    
+                    // this.showError = true;
+                    // this.errorMsg = ret.message || '未知错误';  
+
+                    this.$notice.info({
+                        duration:3,
+                        content: ret.message || '未知错误'
+                    })
+                    
+                    // 外部框架的
+                    // const toast = this.$createToast({
+                    //     txt: ret.message || '未知错误',
+                    //     type:'error',
+                    //     time: 1000,
+                    //     // onTimeout: () => {
+                    //     //     console.log('Timeout')
+                    //     // }
+                    // });
+                    // toast.show();
                 }
 
             },
@@ -134,5 +151,7 @@
 i.cubeic-person{
     font-size:80px;
 }
-
+.alert{
+    color:red;
+}
 </style>

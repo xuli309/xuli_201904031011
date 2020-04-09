@@ -6,7 +6,12 @@
       <router-link to="/login">Login</router-link> |
       <span v-if="isLogin" @click="logout">退出</span>
     </div> -->
-    <cube-tab-bar
+   
+    <transition name="route-move">
+      <router-view/>
+    </transition>
+
+     <cube-tab-bar
        v-model="selectedLabelDefault"
        :data="tabs"
        @change="changeHandle"
@@ -17,10 +22,6 @@
           <span class="badge" v-if="item.label=='Cart'">{{cartTotal}}</span>
       </cube-tab>
     </cube-tab-bar>
-
-    <transition name="route-move">
-      <router-view/>
-    </transition>
   </div>
 </template>
 
@@ -84,6 +85,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-bottom: 40px;;
 }
 
 #nav {
@@ -110,5 +112,12 @@ export default {
   color:#fff;
   padding:5px;
   border-radius:50%;
+}
+.cube-tab-bar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#edf0f4;
 }
 </style>
