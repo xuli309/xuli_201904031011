@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+
+    
+    <hr />
     <router-view />
     <hr />
     <Goods2></Goods2>
@@ -22,6 +25,7 @@
 </template>
 
 <script>
+
 import HelloWorld from './components/HelloWorld.vue'
 import HelloWorld2 from './components/HelloWorld2.vue'
 
@@ -43,7 +47,10 @@ export default {
   },
   data(){
     return {
-      tua:'tua'
+      tua:'tua',
+      info:{
+        name:'aaaaaaa'
+      }
     }
   },
   components: {
