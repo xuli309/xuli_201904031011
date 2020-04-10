@@ -40,3 +40,33 @@ cube-ui https://didi.github.io/cube-ui/#/zh-CN/docs/create-api
 
 
 ##### 
+
+
+##### 添加购物车的方法
+1. 第一种方法
+#父组件Goods.vue中
+<Cart ref="cart"></Cart>
+addCart(good){
+    this.$refs.cart.addCart(good)
+}
+
+2.第二种方法
+main.js 中增加总线机制  适合小项目，项目大的话用VueX
+Vue.prototype.$bus = new Vue();
+#父组件Goods.vue中this.$bus.$emit派发
+addCart(good){
+    this.$bus.$emit("addCart",good);
+}
+#子组件Cart.vue中this.$bus.$on接收并执行
+ created () {
+    this.$bus.$on('addCart',good=>this.addCart(good));
+ }
+
+ 3.第三种方法，子组件--->父组件通信
+ #子组件Cart.vue
+ this.$emit('addCart');
+ #父组件Goods.vue
+ <Cart @addCart="onAddCart"></Cart>
+ onAddCart(){
+    console.log('aaa');
+}
