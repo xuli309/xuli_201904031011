@@ -2,7 +2,7 @@
     <div>
         <!-- 自定义组件要实现v-model必须实现 :value @input -->
         <!-- $attrs存储的是props之外的部分 -->
-        <input :value="value" @input="onInput" v-bind="$attrs" />
+        <input :value="value" @input="onInput" v-bind="$attrs"  />
     </div>
 </template>
 
