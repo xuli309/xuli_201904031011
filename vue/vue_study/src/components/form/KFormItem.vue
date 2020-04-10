@@ -1,8 +1,6 @@
 <template>
     <div>
-        <label v-if="label">
-            {{ label }}
-        </label>
+        <label v-if="label">{{ label }}</label>
         <slot></slot>
         <p v-if="errorMessage">
             {{ errorMessage }}
