@@ -1,6 +1,6 @@
 <template>
   <div>
-    <KFrom :model="model" :rules="rules" ref="loginForm">
+    <KForm :model="model" :rules="rules" ref="loginForm">
       <KFormItem label="用户名" prop="username">
         <KInput v-model="model.username"></KInput>
       </KFormItem>
@@ -11,21 +11,21 @@
        <KFormItem>
            <button @click='onLogin'>登录</button>
       </KFormItem>
-    </KFrom>
+    </KForm>
     {{model}}
   </div>
 </template>
 <script>
 import KInput from "./KInput";
 import KFormItem from "./KFormItem";
-import KFrom from "./KForm";
+import KForm from "./KForm";
 
 export default {
   name: "formIndex",
   components: {
     KInput,
     KFormItem,
-    KFrom
+    KForm
   },
   data() {
     return {

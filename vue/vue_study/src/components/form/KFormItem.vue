@@ -35,23 +35,14 @@
         methods: {
             validate() {
                 
-                //执行组件校验
-                //1.获取校验规则
-                const rules =  this.form.rules[this.prop]
                 
-                //2.获取输入值
-                const value =  this.form.model[this.prop]
-                
-                //3.执行校验
-                const desc ={
-                    [this.prop]:rules
-                }
-                const vals ={
-                    [this.prop]:value
-                }
+		const desc ={[this.prop]:this.form.rules[this.prop]};
+		
+		//3.执行校验
                 const schema = new Schema(desc);
+		
                 //返回 promise <boolean>
-                return schema.validate(vals, errors=>{                    
+                return schema.validate({[this.prop]:this.form.model[this.prop]}, errors=>{                    
                     if(errors){
                         this.errorMessage = errors[0].message;
                     }else{

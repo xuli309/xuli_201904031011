@@ -164,3 +164,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
  创建components/form/KInput.vue
 
 
+#### 完整的路由导航解析流程
+1.导航被触发
+2.调用全局的 beforeEach 守卫
+3.在重用的组件里调用 beforeRouteUpdate 守卫
+4.在路由配置里调用 beforeEnter
+5.在被激活的组件里调用 beforeRouteEnter
+6.调用全局的 beforeResolve 守卫（2.5+）
+7.导航被确认
+8.调用全局 afterEach 钩子
+9.触发 DOM 更新

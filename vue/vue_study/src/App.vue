@@ -29,7 +29,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import HelloWorld2 from './components/HelloWorld2.vue'
 
-import FormTest from './components/form/Index'
+import FormTest from './components/form/KIndex'
 
 import Goods1 from './components/cart/cart1/Goods'
 import Goods2 from './components/cart/cart2/Goods'
