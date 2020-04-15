@@ -195,5 +195,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 4. 启动 start nginx
 
 
-#### vue实现原理
-new Vue() ---init---> $mount(挂载)------>compile()------>render function---render--->Virtual DOM Tree(虚拟DOM树)------>patch()经过 patchVnode 和 updateChildren ------>生产DOM
+#### vue实现原理 （见图Vue实现原理.jpg）
+new Vue() ---init---> $mount(挂载)------>compile(编译)---经过parse、optimize、generate------>render function
+(1)---render--->Virtual DOM Tree(虚拟DOM树)------>patch()经过 patchVnode 和 updateChildren------>生成DOM
+(2)---touch--->getter/setter---collect as dependency/notify--->Watcher---update--->patch()经过 patchVnode 和 updateChildren------>生成DOM
+注：编译模块分三个阶段
+1.parse: 使用正则解析template中的vue的指令(v-xxx)变量等等形成抽象语法树AST
+2.optimize：标记一些静态节点，用作后面的性能优化，在diff的时候直接略过
+3.generate：把第一步生成的AST转化为渲染函数render function
+
