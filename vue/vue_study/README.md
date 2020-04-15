@@ -174,3 +174,26 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 7.导航被确认
 8.调用全局 afterEach 钩子
 9.触发 DOM 更新
+
+#### 发布项目
+1. 发布 npm run build
+2. 下载 nginx
+3. 配置 nginx conf/nginx.conf
+    server{ 
+        listen  80;
+        server_name localhost #或者域名;
+        root 项目目录\dist;  #注意目录配置 若有必须dist目录下增加 例如下例增加kcart
+        location /kcart {
+            try_files $uri /kcart/index.html
+        }
+        #nginx反向代理，实现接口转发 请求的地址
+        location ^~ /api/{
+            proxy_pass http://localhost:3000;  #注意路径后面不加/
+        }
+
+    }
+4. 启动 start nginx
+
+
+#### vue实现原理
+new Vue() ---init---> $mount(挂载)------>compile()------>render function---render--->Virtual DOM Tree(虚拟DOM树)------>patch()经过 patchVnode 和 updateChildren ------>生产DOM
