@@ -11,20 +11,19 @@
     </div>
     <script>
         var obj = {};
-        Object.defineProperty(obj,"name",{
+        Object.defineProperty(obj,"name",{ //数据劫持
             get(){
                 console.log('获取name');
-                return document.querySelector('name').innerHTML;
+                return document.querySelector('#name').innerHTML;
             },
             set(name){
                 console.log('设置name');
-                document.querySelector('name').innerHTML = name
+                document.querySelector('#name').innerHTML = name
             }
         })
 
         obj.name = 'tom'
         console.log(obj.name);
-        
     </script>
 </body>
 </html>

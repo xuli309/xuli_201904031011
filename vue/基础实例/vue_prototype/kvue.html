@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./kvue.js"></script>
+    <script src="./compile.js"></script>
+</head>
+<body>
+    <!-- <script>
+        const app = new KVue({
+            data:{
+                test: 'define vue',
+                name:'tom'
+            }
+        }); 
+
+        app.$data.test= 'I am change';
+        app.$data.name='jack'
+
+        app.test = 'dddd'
+    </script> -->
+
+    <div id="app">
+        <p>{{name}}</p>
+        <p k-text="name"></p>
+        <p>{{age}}</p>
+        <p>
+            {{doubleAge}}
+        </p>
+        <input type="text" k-model="name">
+        <button @click="changeName">呵呵</button>
+        <div k-html="html"></div>
+    </div>
+    <script>
+        const kvue = new KVue({
+            el:'#app',
+            data:{
+                name:'tom',
+                age: 12,
+                doubleAge:20
+            }
+        })
+    </script>
+</body>
+</html>
