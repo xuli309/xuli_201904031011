@@ -204,3 +204,11 @@ new Vue() ---init---> $mount(挂载)------>compile(编译)---经过parse、optim
 2.optimize：标记一些静态节点，用作后面的性能优化，在diff的时候直接略过
 3.generate：把第一步生成的AST转化为渲染函数render function
 
+
+#### 解决vuex vue-router.esm.js?8c4f:2089 Uncaught (in promise)
+#### 在router.js中增加
+import VueRouter from 'vue-router'
+const routerPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
