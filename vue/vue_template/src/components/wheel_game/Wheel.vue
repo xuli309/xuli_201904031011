@@ -108,7 +108,7 @@
                     ctx2.beginPath();
                     ctx2.strokeStyle = "rgba(255,255,255,0)";
                     // ctx2.strokeStyle = "rgba(0,0,0,1)";
-                    console.log(this.index,isRunning);
+                    // console.log(this.index,isRunning);
                     // 每个奖品区块背景颜色
                     // 正在运行的时候，改变当前扇形的颜色
                     if (isRunning && this.index == i) {
@@ -211,8 +211,12 @@
 
             },
             showResult() {
-                console.log(this.item);
-                
+                alert("恭喜您获得"+this.awardData[this.item].name);
+                window.setTimeout(()=>{
+                    document.querySelector("#turnStart_gray").style.display="hide";
+                    document.querySelector("#turnStart").style.display="block";
+                    document.querySelector("#turnStop").style.display="hide";
+                },1000)
             },
             clearTimer() {
                 clearInterval(this.timer);

@@ -2,7 +2,9 @@
     <div>
         <div class="turn-con turn-con-bg">
 			<div class="turnplate" id="turnplate">
-				<wheel :awardData = 'awardData'></wheel>
+				<wheel 
+					:awardData = 'awardData'
+				></wheel>
 			</div>
 		</div>
     </div>
