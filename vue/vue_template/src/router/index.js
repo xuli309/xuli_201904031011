@@ -3,7 +3,8 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import BigWheel1 from '../views/BigWheel.vue'
 import BigWheel2 from '../views/BigWheel2.vue'
-import RedPackage from '../views/RedPackage.vue';
+// import RedPackage from '../views/RedPackage.vue';
+import RedPackRain from '../views/RedPackRain.vue';
 
 Vue.use(VueRouter)
 
@@ -24,9 +25,10 @@ Vue.use(VueRouter)
     component: BigWheel2
   },
   {
-    path: '/redPackage',
-    name: 'redPackage',
-    component: RedPackage
+    path: '/redPackRain',
+    name: 'redPackRain',
+    component: RedPackRain
+    
   },
   {
     path: '/about',

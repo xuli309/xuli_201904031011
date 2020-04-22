@@ -135,10 +135,7 @@ export default {
       // canvasAPI文档在线查看地址https://www.canvasapi.cn/CanvasRenderingContext2D/
       const _this = this;
       const canvas = _this.$refs.wheelCanvas;
-      const ctx = canvas.getContext("2d");
-
-      console.log(_this.prizeList);
-      
+      const ctx = canvas.getContext("2d");     
 
       //根据奖品个数计算圆周角度
       let arc = Math.PI / (_this.prizeList.length / 2);

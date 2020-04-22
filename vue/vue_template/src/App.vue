@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link> | 
       <router-link to="/bigWheel1">Wheel</router-link> | 
       <router-link to="/bigWheel2">Wheel</router-link> | 
-      <router-link to="/redPackage">redPackage</router-link>
+      <router-link to="/redPackRain">redPackRain</router-link>
     </div>
     <router-view/>
   </div>

@@ -125,8 +125,7 @@
                         oPage.bindClick($(this));
                         oPage.redHtml($(this),pos2.top,pos2.left);
                     });
-                    
-                    
+                                        
     //				alert("top1="+top1+";left1="+left1+"\ntop2="+top2+";left2="+left2);
 
                 }else{

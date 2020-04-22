@@ -1,21 +1,21 @@
 <template>
     <div>
-        <red-package ref="redPack" :time="30"></red-package>
+        <red-package ref="redPackRain" :time="30"></red-package>
     </div>
 </template>
 
 <script>
-    import RedPackage from '@/components/redPackage/Index';
+    import RedPackage from '@/components/redPackRain/Index';
     export default {
-        name: 'redpack',
+        name: 'redpackrain',
         components: {
             RedPackage
         },
         beforeDestroy() {
-            this.$refs.redPack.clear()
+            this.$refs.redPackRain.clear();
         },
         mounted() {
-            this.$refs.redPack.start()
+            this.$refs.redPackRain.start();
         }
     }
 </script>

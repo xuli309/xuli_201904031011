@@ -76,7 +76,6 @@ export default {
         margin: 0rem auto 0;
         padding: .44rem;
         background-image: url('../../assets/img/disk_bg.png');
-        // background-image: url('../../assets/img/zp_bg.png');
         background-repeat: no-repeat;
         background-size: 100%;
         background-position: center;
