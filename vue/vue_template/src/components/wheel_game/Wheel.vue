@@ -14,7 +14,7 @@
             ref="canvas">
         </canvas>
 
-        <div class="pointer" id="turnStart" @click="mouseDown_Start"></div>
+        <div class="pointer" id="turnStart" @click.stop="mouseDown_Start"></div>
         <div class="pointer" id="turnStart_gray"></div>
         <div class="pointer" id="turnStop"></div>
     </div>
@@ -40,7 +40,7 @@
                 outsideRadius : 245, //转盘外圆的半价 // 245, //大转盘外圆的半径
 				textRadius : 148, // 转盘奖品位置距离圆心距离的位置 //148, //大转盘奖品位置距离圆心的距离
 		
-				// canvas : document.querySelector('#drawContainer'),
+				canvas : null,//document.querySelector('#drawContainer'),
 				index : 0, //转得格的下标
 				timer : null,
 				running : false, // 是否运行中				
@@ -52,11 +52,7 @@
                 item : 0, //最终选项
 
                 roflag:false,
-                newIndex:0, //减速格
-                flag:false,
 
-                prizetype:0,
-                prizeid:0,
             } 
         }, 
         mounted () {       
@@ -147,7 +143,6 @@
                 
             },
             rotate() {
-               
                 if (this.stepping == 4) { //3步之后开始加速
                     this.clearTimer();
                     this.speed = 100;
@@ -191,8 +186,8 @@
                         
                         const _this = this;
                         document.querySelector("#turnStart_gray").style.display="block";
-                        document.querySelector("#turnStart").style.display="hide";
-                        document.querySelector("#turnStop").style.display="hide";
+                        document.querySelector("#turnStart").style.display="none";
+                        document.querySelector("#turnStop").style.display="none";
                         window.setTimeout(function() {
                             _this.showResult();
                         }, 2000);
@@ -211,11 +206,14 @@
 
             },
             showResult() {
-                alert("恭喜您获得"+this.awardData[this.item].name);
-                window.setTimeout(()=>{
-                    document.querySelector("#turnStart_gray").style.display="hide";
+                if(this.item != 1)
+                    alert("恭喜您获得"+this.awardData[this.item-1].name+"！！！");
+                else
+                    alert('请继续努力！！！')
+                window.setTimeout(()=>{                
+                    document.querySelector("#turnStart_gray").style.display="none";
                     document.querySelector("#turnStart").style.display="block";
-                    document.querySelector("#turnStop").style.display="hide";
+                    document.querySelector("#turnStop").style.display="none";
                 },1000)
             },
             clearTimer() {
@@ -231,24 +229,15 @@
 
             },
             mouseDown_Start(e) {
-                this.resultData = null;
+
                 var local = this.getPointOnCanvas(this.canvas, e.pageX, e.pageY);
                 if (this.running) {
                     return;
                 }
-                this.init(); //初始化数据	
+                this.init(); //初始化数据
+                this.$emit('go',event);
 
-                const award_id = Math.floor(Math.random()*this.awardData.length);
                 
-                for (var i = 0; i < this.awardData.length; i++) {
-                    if (award_id == this.awardData[i].id) {
-                        this.selected = i + 1;                        
-                        this.item = this.selected;
-                        break;
-                    }
-                }
-
-                this.timer = setInterval(this.rotate, this.speed);
             }
         },
     }

@@ -262,7 +262,7 @@ export default {
     transition: transform cubic-bezier(0.11,0.77,0.2,0.94); // 转盘旋转
   }
   ._big-wheel-go-img {
-    width: 112px;
+    width: 224px;
     position: absolute;
     top: 28%;
     left: 50%;

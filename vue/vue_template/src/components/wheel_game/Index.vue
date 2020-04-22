@@ -3,7 +3,9 @@
         <div class="turn-con turn-con-bg">
 			<div class="turnplate" id="turnplate">
 				<wheel 
+					ref="wheel"
 					:awardData = 'awardData'
+					@go="go"
 				></wheel>
 			</div>
 		</div>
@@ -27,32 +29,40 @@
 					{ id: 5, name: '50元京东卡', val: 4 ,src:'zp_award_5.png',imgId:'award_img_4',imgPos:[-60,-67], bgcolor:'rgba(255,255,255,0)'  },
 					{ id: 6, name: 'iPhone手机', val: 5 ,src:'zp_award_6.png',imgId:'award_img_5',imgPos:[-60,-67], bgcolor:'rgba(255,255,255,0)'  }
 				],
-				awardImgArr:[ 
-					[-40,-15],
-					[-47,-46],
-					[-62,-67],
-					[-60,-67], 
-					[-60,-67],
-					[-60,-67]
-				],
+				// awardImgArr:[ 
+				// 	[-40,-15],
+				// 	[-47,-46],
+				// 	[-62,-67],
+				// 	[-60,-67], 
+				// 	[-60,-67],
+				// 	[-60,-67]
+				// ],
 				
 			}
 		},
-		
-		// async mounted () {   
-        //    	const ret = await this.$axios.get('/api/wheel')
-		// 	this.awardData = ret.data.list;
-		// 	for (const i in this.awardData) {
-							
-		// 		// this.awardData[i].src =  "zp_award_"+(i+1)+".png";
-		// 		this.awardData[i].imgId = 'award_img_' + this.awardData[i].id ;
-		// 		this.awardData[i].imgPos = this.awardImgArr[i];
-		// 		// this.awardData[i].bgcolor = 'rgba(255,255,255,0)'
-		// 		this.awardData[i].bgcolor = 'rgba(0,0,0,1)'
-		// 	}
-            
-		// },
-		
+		methods: {
+			async go(event) {
+				const ret = await this.$axios.get('/api/award');
+				console.log(ret);
+				if(ret.data.code == 0){
+					const award_id = ret.data.award_id;
+					const len = this.awardData.length;
+					const childWheel = this.$refs.wheel;
+					for (var i = 0; i < len; i++) {                    
+						if (award_id == this.awardData[i].id) {
+							childWheel.selected = i + 1;                        
+							childWheel.item =  i + 1;
+							break;
+						}
+					}
+					childWheel.timer = setInterval(childWheel.rotate, childWheel.speed);
+				}else{
+					alert('服务器繁忙，请稍后再试');
+				}
+				
+				
+			}
+		},	
         
     }
 </script>
@@ -60,7 +70,7 @@
 <style>
 .turn-con{
 	position: absolute;
-	top:4.2rem;
+	top:2rem;
 	left:50%;
 	margin-left:-3.375rem;
 }

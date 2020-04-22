@@ -14,6 +14,13 @@ module.exports = {
                         ]
                     })
                 })
+                app.get('/api/award',(req,res)=>{
+                    const award_id = Math.floor(Math.random()*(1 - 6) + 6);
+                    res.json({
+                        code:0,
+                        award_id:award_id
+                    })
+                })
             }
         }
     }

@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import BigWheel from '../views/BigWheel.vue'
+import BigWheel1 from '../views/BigWheel.vue'
+import BigWheel2 from '../views/BigWheel2.vue'
+import RedPackage from '../views/RedPackage.vue';
 
 Vue.use(VueRouter)
 
@@ -12,9 +14,19 @@ Vue.use(VueRouter)
     component: Home
   },
   {
-    path: '/bigWheel',
-    name: 'BigWheel',
-    component: BigWheel
+    path: '/bigWheel1',
+    name: 'BigWheel1',
+    component: BigWheel1
+  },
+  {
+    path: '/bigWheel2',
+    name: 'BigWheel2',
+    component: BigWheel2
+  },
+  {
+    path: '/redPackage',
+    name: 'redPackage',
+    component: RedPackage
   },
   {
     path: '/about',

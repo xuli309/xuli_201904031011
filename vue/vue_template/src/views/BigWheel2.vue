@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import Wheel from '../components/wheel_game/Index';
+    import Wheel from '../components/wheel/index';
     export default {
         components: {
             Wheel,
@@ -14,4 +14,5 @@
 </script>
 
 <style scoped>
+
 </style>

@@ -62,8 +62,8 @@ export default {
 </script>
 <style  lang='scss'>
 #demo {
-    width: 100vw;
-    min-height: 100vh;
+    // width: 200vw;
+    min-height: 20vh;
     // background-image: url('../../assets/img/wheel_bg.jpg');
     // background-repeat: no-repeat;
     // background-position: center top;
@@ -71,10 +71,10 @@ export default {
     overflow: hidden;
     .box {
         box-sizing: border-box;
-        width: 3.42rem;
-        height: 3.42rem;
-        margin: 1.7rem auto 0;
-        padding: .22rem;
+        width: 6.84rem;
+        height: 6.84rem;
+        margin: 0rem auto 0;
+        padding: .44rem;
         background-image: url('../../assets/img/disk_bg.png');
         // background-image: url('../../assets/img/zp_bg.png');
         background-repeat: no-repeat;
@@ -82,7 +82,7 @@ export default {
         background-position: center;
         overflow: hidden;
         .btn { // 使用自定义类 不能用scope
-            width: 1.12rem;
+            width: 2.24rem;
         }
   }
 }
