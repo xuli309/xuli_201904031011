@@ -5,6 +5,9 @@ import BigWheel1 from '../views/BigWheel.vue'
 import BigWheel2 from '../views/BigWheel2.vue'
 // import RedPackage from '../views/RedPackage.vue';
 import RedPackRain from '../views/RedPackRain.vue';
+import Grid from '../views/Grid';
+import Tree from '../views/Tree';
+import SvgDemo from '../views/SvgDemo';
 
 Vue.use(VueRouter)
 
@@ -37,6 +40,21 @@ Vue.use(VueRouter)
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path:'/grid',
+    name:'grid',
+    component:Grid
+  },
+  {
+    path:'/tree',
+    name:'tree',
+    component:Tree
+  },
+  {
+    path:'/svg',
+    name:'svg',
+    component:SvgDemo
   }
 ]
 

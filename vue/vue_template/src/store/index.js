@@ -15,6 +15,7 @@ export default new Vuex.Store({
       [-60,-67],
       [-60,-67]
     ],
+    point:{}
   },
   mutations: {
     getAwardData(state) {
@@ -24,6 +25,21 @@ export default new Vuex.Store({
         state.awardData[i].imgPos = state.awardImgArr[i];
         state.awardData[i].bgcolor = 'rgba(255,255,255,0)'
       }
+    },
+    valueToPoint(state,param) {
+      const value=param.value, index=param.index, total=param.total;
+      let x = 0;
+      let y = -value * 0.8;
+      let angle = ((Math.PI * 2) / total) * index;
+      let cos = Math.cos(angle);
+      let sin = Math.sin(angle);
+      let tx = x * cos - y * sin + 100;
+      let ty = x * sin + y * cos + 100;
+      // console.log('x='+tx,'y='+ty);
+      state.point ={
+          x: tx,
+          y: ty
+      };
     }
   },
   actions: {

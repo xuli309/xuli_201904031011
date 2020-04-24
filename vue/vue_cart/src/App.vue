@@ -2,18 +2,22 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
-      <router-link to="/bigWheel1">Wheel</router-link> | 
-      <router-link to="/bigWheel2">Wheel</router-link> | 
-      <router-link to="/redPackRain">redPackRain</router-link> | 
-      <router-link to="/grid">Grid</router-link> |
-      <router-link to="/tree">Tree View</router-link> |
-      <router-link to="/svg">Svg Demo</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/login" v-if="!isLogin">Login</router-link>
+      <span>{{loginState}}</span>
     </div>
     <router-view/>
   </div>
 </template>
-
+<script>
+import {mapState,mapGetters} from 'vuex';
+export default {
+  computed: {
+    ...mapState(['isLogin']),
+    ...mapGetters(['loginState'])
+  },
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -21,7 +25,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  font-size: .12rem;
 }
 
 #nav {

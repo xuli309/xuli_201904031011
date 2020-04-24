@@ -110,8 +110,7 @@
                     localStorage.setItem("token",token);
                     this.$store.commit('settoken',token);
                     this.showError = false; 
-                }else{ 
-                    
+                }else{                 
                     // this.showError = true;
                     // this.errorMsg = ret.message || '未知错误';  
 
@@ -131,7 +130,6 @@
                     // });
                     // toast.show();
                 }
-
             },
             logout(){
                 localStorage.removeItem('token');
