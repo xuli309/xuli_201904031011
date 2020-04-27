@@ -91,11 +91,11 @@ export default {
             // Dom节点
             let el = this.$refs[`rain-point-${rainscount}`][0];
             let initStyleText = {
-            'transform': `translate(${rects.startX}px, ${rects.startY}px)`
+              'transform': `translate(${rects.startX}px, ${rects.startY}px)`
             }
             let actionStyleText = {
-            'transition': `transform ${this.delay}s cubic-bezier(${ this.newCubicBezier() })`,
-            'transform': `translate(${rects.endX}px, ${rects.endY}px)`
+              'transition': `transform ${this.delay}s cubic-bezier(${ this.newCubicBezier() })`,
+              'transform': `translate(${rects.endX}px, ${rects.endY}px)`
             }
             
             // 设置初始坐标
@@ -122,8 +122,8 @@ export default {
             remainTime: parseInt(this.time) * 1000,
             label: 'rain',
             timeoutFn: () => {
-            this.clear()
-            this.timeoutCallback()
+              this.clear()
+              this.timeoutCallback()
             }
         })
         // 创建节点

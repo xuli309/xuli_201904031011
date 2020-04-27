@@ -11,12 +11,7 @@
         components: {
             RedPackage
         },
-        beforeDestroy() {
-            this.$refs.redPack.clear()
-        },
-        mounted() {
-            this.$refs.redPack.start()
-        }
+        
     }
 </script>
 

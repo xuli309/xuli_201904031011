@@ -6,11 +6,23 @@
       <router-link to="/bigWheel1">Wheel</router-link> | 
       <router-link to="/bigWheel2">Wheel</router-link> | 
       <router-link to="/redPackRain">redPackRain</router-link> | 
+      <router-link to="/redPackage">redPackage</router-link> | 
       <router-link to="/grid">Grid</router-link> |
       <router-link to="/tree">Tree View</router-link> |
       <router-link to="/svg">Svg Demo</router-link>
     </div>
     <router-view/>
+
+    <!-- <hr />
+    <div class="container ring">
+      <p>圆环旋转</p>
+      <ul>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div>登录</div></li>
+        <li><div></div></li>
+      </ul>
+    </div> -->
   </div>
 </template>
 
@@ -36,4 +48,82 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+
+/* * {
+	box-sizing: border-box;
+}
+ 
+.ring li {
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	margin: 20px;
+	padding: 10px;
+	list-style: none;
+}
+ 
+.ring li:hover {
+	cursor: pointer;
+}
+ 
+.ring li:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: -6px;
+	top: -6px;
+	border-radius: 50%;
+	border: 6px dashed rgb(204, 204, 204);
+}
+ 
+.ring li > div {
+	height: 100%;
+	background: rgb(158, 234, 106);
+	border-radius: 50%;
+	box-shadow: 0 0 3px rgba(0,0,0,0.3);
+	text-align: center;
+	line-height: 80px;
+	font-size: 16px;
+	color: rgb(255, 255, 255);
+}
+ 
+@-webkit-keyframes circle{
+	0%{ transform:rotate(0deg); }
+	100%{ transform:rotate(-360deg); }
+}
+ 
+.ring li:hover:before {
+	-webkit-animation: circle 4s infinite linear;
+}
+ 
+.ring li:first-child:before {
+	-webkit-animation: circle 4s infinite linear;
+}
+ 
+.ring li:hover:before {
+	border-color: rgba(204, 204, 204, .8);
+}
+ 
+.ring li:active:before {
+	border-color: orange;
+}
+ 
+.ring li:hover > div {
+	background: rgba(158, 234, 106, .8);
+}
+ 
+.ring li:active > div {
+	background: rgba(0, 0, 255, .5);
+}
+ 
+.ring li:last-child,
+.ring li:last-child > div,
+.ring li:last-child:before {
+	border-radius: 0;
+} */
 </style>

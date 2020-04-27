@@ -18,9 +18,23 @@ module.exports = {
                     const award_id = Math.floor(Math.random()*(1 - 6) + 6);
                     res.json({
                         code:0,
-                        award_id:award_id
+                        award_id
                     })
                 })
+
+                app.get('/api/getHbResult',(req,res)=>{
+                    // 抽中的钱
+                    const money = Math.floor(Math.random()*(1 - 10) + 10);
+                    // 红包剩余个数
+                    const remanetTotal = Math.floor(Math.random()*(1 - 50) + 50);
+                    res.json({
+                        code:0,
+                        money,
+                        remanetTotal
+                    })
+                })
+
+                
             }
         }
     }

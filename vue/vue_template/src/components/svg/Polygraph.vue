@@ -36,7 +36,7 @@
                     return point.x + "," + point.y;
 
                 }).join(" ")
-                console.log(newStats);
+                // console.log(newStats);
                 return newStats;
             }
         }
