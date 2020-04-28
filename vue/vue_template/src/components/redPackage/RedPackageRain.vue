@@ -10,9 +10,13 @@
 				@click="bindClick"
 			></div>
 
-			<!-- <transition name="font-move" mode="out-in" >
-				<div class="gold-font" v-if="fontShow" >{{ redText[redI] }}</div>
-			</transition> -->
+			<transition 
+				name="font-move"
+				v-on:before-enter="beforeEnter"
+				v-on:enter="enter"
+			>
+				<!-- <div class="gold-font" v-if="fontShow" >{{ redText[redI] }}</div> -->
+			</transition>
 	</div>
 </template>
 
@@ -27,13 +31,20 @@
 				// redText: ["坚持就是胜利","下一秒就会中","前方就是红包","怎么还不出啊","一定要坚持","坚持坚持坚持","怎么还不中"
 	            //    ,"要睡着了喂","不要这样对我","我不会放弃的","谁来帮帮我吧","刚刚是不是中了","好累啊好累啊","真的好无聊啊"
 	            //    ,"红包你在哪里","我的7要炸了","不抛弃不放弃","胜利就在前方","下一秒就是红包","快出来啊红包","这系统有问题？"
-                //    ,"跪着也要走下去","下一个肯定中","其实我说了不算"],
+                //    ,"跪着也要走下去","下一个肯定中","其实我说了不算"],				
                 // redI: 0,
-				// redTime: new Date().getTime(),
-				// fontShow: false
+                // redTime: new Date().getTime(),
+				// fontShow: false, //显示弹出文字
 			}
 		},
         methods: {
+			beforeEnter(el) {
+				el.style.opacity = 0;
+				// el.style.transformOrigin = 'left'
+			},
+			enter(el, done) {
+				el.style.opacity = 1;
+			},
 			bindClick(e) {
 				if(this.isClick)return;
 				this.isClick = true;
@@ -42,6 +53,7 @@
 				// 出现文字
 				// this.fontShow=true;	
 				// this.redHtml();
+				
 			},
 			setStyle(params) {
 				this.styleText = params;
@@ -49,19 +61,17 @@
 			destory() {
 				this.isShow = false;
 			},
-			redHtml(){						
+			redHtml(){
+
+				// const text = this.redText[this.redI];
+				console.log(this.redI);
 				if(this.redI == this.redText.length){
 					this.redI = 0;
 				}
 				this.redI++;
-				// const _this = this;
-				// const timer = window.setTimeout(() => {
-				// 	_this.fontShow=false;
-				// }, 600);
-
-				// console.log(this.redI);
-
-            },
+				console.log(this.redI);
+		    }
+			
 		},
     }
 </script>
@@ -118,16 +128,18 @@
 	top:-0.4rem;
 	left:0;
 	z-index: 201;
-	/* display:none; */
-
 }
 
-.font-move-enter-active, .font-move-leave-active {
-	transition: opacity .3s;
-}
-.font-move-enter, .font-move-leave-to {
+.font-move-enter-active,.font-move-leave-active {
 	opacity: 0;
+    transition: all .6s ease;
+} 
+/* .font-move-leave-active {
+  	transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}  */
+.font-move-enter, .font-move-leave-to{
 	transform: translateY(80px);
-}
+	opacity: 0;
+} 
 
 </style>
