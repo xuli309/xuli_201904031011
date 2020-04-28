@@ -2,10 +2,10 @@
     <div class="wrap">
         <red-package-main></red-package-main>
 
-        <button @click="onAnimate">动画开始</button>
+        <!-- <button @click="onAnimate">动画开始</button>
         <transition name="slide-fade">
             <p v-if="show">hello</p>
-        </transition>
+        </transition> -->
     </div>
 </template>
 
