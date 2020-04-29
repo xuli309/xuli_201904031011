@@ -105,15 +105,18 @@
                 }
                 await this.$nextTick( async ()=>{
                     // Dom节点
-                    let el = this.$refs[`rain-package-${index}`][0];
+                    let rain = this.$refs[`rain-package-${index}`];
                     // console.log(el);
-                    if(el){
-                        //每次画红包之前将点击样式重置
-                        el.isClick=false;
-                        // 调用子组件的方法
-                        await el.setStyle(param);
+                    if(rain){
+                        let el = rain[0];
+                        if(el){
+                            //每次画红包之前将点击样式重置
+                            el.isClick=false;
+                            // 调用子组件的方法
+                            await el.setStyle(param);
 
-                        el.$el.addEventListener('transitionend', el.destory, false);
+                            el.$el.addEventListener('transitionend', el.destory, false);
+                        }
                     }
                    
                 });

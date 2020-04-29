@@ -2,14 +2,19 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
-      <router-link to="/bigWheel1">Wheel</router-link> | 
-      <router-link to="/bigWheel2">Wheel</router-link> | 
-      <router-link to="/redPackRain">redPackRain</router-link> | 
-      <router-link to="/redPackage">redPackage</router-link> | 
-      <router-link to="/grid">Grid</router-link> |
-      <router-link to="/tree">Tree View</router-link> |
-      <router-link to="/svg">Svg Demo</router-link>
+      <!-- <router-link to="/about">About</router-link> |  -->
+      <router-link to="/bigWheel1">转盘</router-link> | 
+      <!-- <router-link to="/bigWheel2">转盘2</router-link> |  -->
+      <!-- <router-link to="/redPackRain">红包雨</router-link> |  -->
+      <router-link to="/redPackage">抢红包</router-link> | 
+      <router-link to="/grid">网格grid</router-link> |
+      <!-- <router-link to="/tree">树形tree</router-link> | -->
+      <!-- <router-link to="/svg">Svg Demo</router-link> | 
+	  <router-link to="/markdown">markdown编辑器</router-link> | 
+	  <router-link to="/gitSubmit">git submit</router-link> -->
+	   <router-link to="/dialog">弹窗dialog</router-link>  | 
+	   <router-link to="/flexcom">拖拽窗口</router-link> | 
+	   <router-link to="/select2">select2</router-link>
     </div>
     <router-view/>
 
