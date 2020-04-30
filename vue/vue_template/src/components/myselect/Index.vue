@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import Select2 from '@/components/myselect/Select2';
+    import Select2 from '@/components/myselect/Select2.vue';
     export default {
         components: {
             Select2,

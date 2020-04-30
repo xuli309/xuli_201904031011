@@ -13,6 +13,7 @@ import GithubSubmit from '../views/GithubSubmit';
 import Dialog from '../views/Dialog';
 import FlexComponent from '../views/FlexComponent';
 import SelectComponent from '../views/SelectComponent';
+import TodoView from '../views/TodoView';
 
 
 Vue.use(VueRouter)
@@ -36,7 +37,8 @@ Vue.use(VueRouter)
   { path:'/gitSubmit', name:'gitSubmit', component:GithubSubmit },
   { path:'/dialog', name:'dialog', component:Dialog },
   { path:'/flexcom', name:'flexcom', component:FlexComponent },
-  { path:'/select2', name:'select2', component:SelectComponent }
+  { path:'/select2', name:'select2', component:SelectComponent },
+  { path:'/todoView', name:'todoView', component:TodoView }
 ]
 
 const router = new VueRouter({

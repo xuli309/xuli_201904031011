@@ -14,7 +14,8 @@
 	  <router-link to="/gitSubmit">git submit</router-link> -->
 	   <router-link to="/dialog">弹窗dialog</router-link>  | 
 	   <router-link to="/flexcom">拖拽窗口</router-link> | 
-	   <router-link to="/select2">select2</router-link>
+	   <router-link to="/select2">select2</router-link> |
+	   <router-link to="/todoView">todoView</router-link>
     </div>
     <router-view/>
 
