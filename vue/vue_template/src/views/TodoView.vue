@@ -152,8 +152,6 @@
         methods: {
             addTodo() {
                 const value = this.newTodo && this.newTodo.trim();
-                console.log(value);
-    
                 if (!value) return;
                 
                 this.todos.push({
@@ -167,6 +165,8 @@
                 this.todos.splice(this.todos.indexOf(todo), 1);
             },
             editTodo(todo){
+                console.log(todo);
+                
                 this.beforeEditCache = todo.title;
                 this.editedTodo = todo;
             },
@@ -185,7 +185,7 @@
                 todo.title = this.beforeEditCache;
             },
             removeCompleted() {
-                console.log(this.todo.length);
+                // console.log(this.todo);
                 
                 this.todos = filters.active(this.todos);
             }
@@ -195,6 +195,8 @@
         // http://vuejs.org/guide/custom-directive.html
         directives: {
           "todo-focus": function(el, binding) {
+            //   console.log(el);
+              
             if (binding.value) {
               el.focus();
             }
