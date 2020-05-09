@@ -1,6 +1,6 @@
 <template>
     <div>
-        services
+admin
     </div>
 </template>
 
@@ -10,6 +10,6 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>

@@ -22,28 +22,28 @@ module.exports = {
             code:0,
             menu:[
               {
-                "id":1, "pid":0, "k_id":"xitongshezhi","type":1, "url":"","title":"系统管理","url_otype":"",
+                "id":1, "pid":0, "k_id":"md-cog","type":1, "url":"","title":"系统管理","url_otype":"",
                 "list":[
                   {"id":2, "pid":1, "k_id":"","type":1, "url":"","title":"权限管理","url_otype":"",
                   "list":[
-                      {"id":5, "pid":2, "k_id":"","type":1, "url":"/system/privilege/privilege/list.do","title":"菜单管理","url_otype":"" },
-                      {"id":4, "pid":2, "k_id":"","type":1, "url":"/system/privilege/role/list.do","title":"角色管理","url_otype":"" },
-                      {"id":3, "pid":2, "k_id":"","type":1, "url":"/system/privilege/admin/list.do","title":"操作员管理","url_otype":"" },
+                      {"id":5, "pid":2, "k_id":"","type":1, "url":"/system/privilege","title":"菜单管理","url_otype":"" },
+                      {"id":4, "pid":2, "k_id":"","type":1, "url":"/system/role","title":"角色管理","url_otype":"" },
+                      {"id":3, "pid":2, "k_id":"","type":1, "url":"/system/admin","title":"操作员管理","url_otype":"" },
                     ]
                   },
                   {"id":9, "pid":1, "k_id":"","type":1, "url":"","title":"日志管理","url_otype":"",
                     "list":[
-                        {"id":10, "pid":9, "k_id":"","type":1, "url":"/system/syslog/login/list.do","title":"登录日志","url_otype":"" },
-                        {"id":11, "pid":9, "k_id":"","type":1, "url":"/system/syslog/op/list.do","title":"操作日志","url_otype":"" },
+                        {"id":10, "pid":9, "k_id":"","type":1, "url":"/syslog/login","title":"登录日志","url_otype":"" },
+                        {"id":11, "pid":9, "k_id":"","type":1, "url":"/syslog/op","title":"操作日志","url_otype":"" },
                     ]
                   },
                 ]
               },
-              {"id":2018010740, "pid":0, "k_id":"xitongshezhi","type":1, "url":"","title":"责任彩票","url_otype":"",
+              {"id":2018010740, "pid":0, "k_id":"md-cog","type":1, "url":"","title":"责任彩票","url_otype":"",
                 "list":[
-                  {"id":2018010741, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/list.do","title":"中心设置限额","url_otype":"" },
-                  {"id":2018010742, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/userReport/list.do","title":"问题彩民预警","url_otype":"" },
-                  {"id":2018010743, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/userStat/list.do","title":"问题彩民统计","url_otype":"" },
+                  {"id":2018010741, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/list","title":"中心设置限额","url_otype":"" },
+                  {"id":2018010742, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/userReport","title":"问题彩民预警","url_otype":"" },
+                  {"id":2018010743, "pid":2018010740, "k_id":"","type":1, "url":"/lottery/userStat","title":"问题彩民统计","url_otype":"" },
                 ]
               },
               

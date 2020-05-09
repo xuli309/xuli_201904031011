@@ -7,7 +7,7 @@
               <Layout :style="{position:'absolute',left: '200px',width:'89vw'}">
                 <Content :style="{padding: '0 16px 16px'}">
                     <Breadcrumb :style="{margin: '16px 0'}">
-                        <BreadcrumbItem>内容管理</BreadcrumbItem>
+                        <BreadcrumbItem to="/about">内容管理</BreadcrumbItem>
                         <BreadcrumbItem to="/">文章管理</BreadcrumbItem>
                     </Breadcrumb>
                     <Card>
