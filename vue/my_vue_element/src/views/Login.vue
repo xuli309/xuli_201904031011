@@ -67,6 +67,8 @@
                     if(valid){                        
                         this.loading = true;
                         this.$store.dispatch('login',this.loginForm).then(() => {
+                            console.log(1111);
+                            
                             this.loading = false;
                             setCookie('username',this.loginForm.username,15);
                             this.$router.push({path:'/'})

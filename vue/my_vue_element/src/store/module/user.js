@@ -9,6 +9,8 @@ const user = {
     },
     mutations: {
         SET_TOKEN:(state,token)=>{
+            console.log(token);
+            
             state.token = token
         },
 
@@ -21,11 +23,8 @@ const user = {
             const username = userInfo.username;
             
             return new Promise((resolve,reject)=>{
-                login(username,userInfo.password).then(response => {
-
-                    // console.log('response',response);
-                    const data = response.data                                        
-                    const tokenStr = data.tokenHead + data.token;
+                login(username,userInfo.password).then(response => {                                                      
+                    const tokenStr = response.token;                    
                     setToken(tokenStr);
                     commit('SET_TOKEN', tokenStr);
                     resolve();
