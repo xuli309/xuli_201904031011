@@ -6,6 +6,8 @@ const user = {
     state:{
         token: getToken(),
         name:'',
+        avatar:'',
+        roles:[]
     },
     mutations: {
         SET_TOKEN:(state,token)=>{
@@ -16,6 +18,14 @@ const user = {
 
         SET_NAME:(state,name)=>{
             state.name = name
+        },
+
+        SET_AVATAR:(state,avatar)=>{
+            state.avatar = avatar
+        },
+
+        SET_ROLES:(state,roles)=>{
+            state.roles = roles
         }
     },
     actions: {
@@ -51,6 +61,23 @@ const user = {
                 resolve()
             })
         },
+        getInfo({commit,state}){
+            return new Promise((resolve, reject)=>{
+                getInfo().then(response=>{
+                    const  data =  response.data
+                    if(data.roles && data.roles.length > 0){
+                        commit('SET_ROLES', data.roles)
+                    }else{
+                        reject('getInfo: select is null')
+                    }
+                    commit('SET_NAME',data.username)
+                    commit('SET_AVATAR',data.icon)
+                    resolve(response)
+                }).catch(error=>{
+                    reject(error)
+                })
+            })
+        }
        
     }
 }

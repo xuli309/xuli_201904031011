@@ -17,3 +17,10 @@ export function loginOut() {
         method:'post'
     })
 }
+
+export function getInfo() {
+    return request({
+      url: '/admin/info',
+      method: 'get',
+    })
+  }

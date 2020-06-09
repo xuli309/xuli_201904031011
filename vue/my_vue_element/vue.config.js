@@ -34,6 +34,19 @@ module.exports = {
                         })
                     }
                 })
+
+                app.get('/admin/info', (req,res)=>{
+                    res.json({
+                        code:0,
+                        icon:'logo.png',
+                        username:'admin',
+                        roles:[
+                            {name:'商品管理员',description:'只能查看及操作商品',admin_count:'1',status:1},
+                            {name:'订单管理员',description:'只能查看及操作订单',admin_count:'1',status:1},
+                            {name:'超级管理员',description:'拥有所有查看和操作功能',admin_count:'1',status:1}
+                        ]
+                    })
+                })
             }
             
         }
