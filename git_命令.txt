@@ -98,7 +98,7 @@ git push -u origin master
 --之后提交
 git add .
 git init
-git commit -m  https://github.com/xuli309/xuli_201904031011.git
+git commit -m  'https://github.com/xuli309/xuli_201904031011.git'
 git push -u origin master
 
 
