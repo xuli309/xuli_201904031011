@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-原理模拟</title>
+</head>
+<body>
+    <div id="app">
+        <p>你好，<span id="name"></span></p>
+    </div>
+    <script>
+        var obj = {};
+        Object.defineProperty(obj,"name",{ //数据劫持
+            get(){
+                console.log('获取name');
+                return document.querySelector('#name').innerHTML;
+            },
+            set(name){
+                console.log('设置name');
+                document.querySelector('#name').innerHTML = name
+            }
+        })
+
+        obj.name = 'tom'
+        console.log(obj.name);
+    </script>
+</body>
+</html>

@@ -12,7 +12,7 @@ module.exports = {
   pluginOptions: {
     'cube-ui': {
       postCompile: true,
-      theme: true
+      theme: false
     }
   },
   configureWebpack:{

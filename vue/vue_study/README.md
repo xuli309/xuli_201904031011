@@ -164,3 +164,51 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
  创建components/form/KInput.vue
 
 
+#### 完整的路由导航解析流程
+1.导航被触发
+2.调用全局的 beforeEach 守卫
+3.在重用的组件里调用 beforeRouteUpdate 守卫
+4.在路由配置里调用 beforeEnter
+5.在被激活的组件里调用 beforeRouteEnter
+6.调用全局的 beforeResolve 守卫（2.5+）
+7.导航被确认
+8.调用全局 afterEach 钩子
+9.触发 DOM 更新
+
+#### 发布项目
+1. 发布 npm run build
+2. 下载 nginx
+3. 配置 nginx conf/nginx.conf
+    server{ 
+        listen  80;
+        server_name localhost #或者域名;
+        root 项目目录\dist;  #注意目录配置 若有必须dist目录下增加 例如下例增加kcart
+        location /kcart {
+            try_files $uri /kcart/index.html
+        }
+        #nginx反向代理，实现接口转发 请求的地址
+        location ^~ /api/{
+            proxy_pass http://localhost:3000;  #注意路径后面不加/
+        }
+
+    }
+4. 启动 start nginx
+
+
+#### vue实现原理 （见图Vue实现原理.jpg）
+new Vue() ---init---> $mount(挂载)------>compile(编译)---经过parse、optimize、generate------>render function
+(1)---render--->Virtual DOM Tree(虚拟DOM树)------>patch()经过 patchVnode 和 updateChildren------>生成DOM
+(2)---touch--->getter/setter---collect as dependency/notify--->Watcher---update--->patch()经过 patchVnode 和 updateChildren------>生成DOM
+注：编译模块分三个阶段
+1.parse: 使用正则解析template中的vue的指令(v-xxx)变量等等形成抽象语法树AST
+2.optimize：标记一些静态节点，用作后面的性能优化，在diff的时候直接略过
+3.generate：把第一步生成的AST转化为渲染函数render function
+
+
+#### 解决vuex vue-router.esm.js?8c4f:2089 Uncaught (in promise)
+#### 在router.js中增加
+import VueRouter from 'vue-router'
+const routerPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}

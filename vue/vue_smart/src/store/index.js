@@ -42,7 +42,7 @@ const store = new Vuex.Store({
       state.cart.forEach(v=>{
         num += v.cartCount
       })
-      return num
+      return num;
     },
     total:state=>{
       let num = 0;

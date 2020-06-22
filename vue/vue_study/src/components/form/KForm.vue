@@ -15,7 +15,7 @@
         props: {
             model: {
                 type: Object,
-                require:true
+                required:true
             },
             rules:{
                 type: Object
