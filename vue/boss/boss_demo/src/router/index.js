@@ -74,19 +74,19 @@ export const asyncRoutes=[
         meta: {title: '修改菜单'},
         hidden: true
       },
-      {
-        path: 'resource',
-        name: 'resource',
-        component: () => import('@/views/ums/resource/index'),
-        meta: {title: '资源列表', icon: 'ums-resource'}
-      },
-      {
-        path: 'resourceCategory',
-        name: 'resourceCategory',
-        component: () => import('@/views/ums/resource/categoryList'),
-        meta: {title: '资源分类'},
-        hidden: true
-      }
+      // {
+      //   path: 'resource',
+      //   name: 'resource',
+      //   component: () => import('@/views/ums/resource/index'),
+      //   meta: {title: '资源列表', icon: 'ums-resource'}
+      // },
+      // {
+      //   path: 'resourceCategory',
+      //   name: 'resourceCategory',
+      //   component: () => import('@/views/ums/resource/categoryList'),
+      //   meta: {title: '资源分类'},
+      //   hidden: true
+      // }
     ]
   },
   {path: '*', redirect: '/404', hidden: true}

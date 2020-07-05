@@ -1,0 +1,1 @@
+{"result":{"code":200,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","description":"登出功能","startTime":1593929832104,"uri":"/admin/logout","url":"http://localhost:8080/admin/logout","spendTime":0}

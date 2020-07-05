@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":1,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","parameter":{"ids":[8]},"description":"批量删除角色","startTime":1593931935763,"uri":"/role/delete","url":"http://localhost:8080/role/delete","spendTime":38}

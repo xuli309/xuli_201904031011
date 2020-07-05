@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":1,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","parameter":{"hidden":0,"createTime":1593934143778,"level":1,"name":"test菜单","icon":"aa","id":26,"sort":0,"title":"test","parentId":1},"description":"添加后台菜单","startTime":1593934143778,"uri":"/menu/create","url":"http://localhost:8080/menu/create","spendTime":21}

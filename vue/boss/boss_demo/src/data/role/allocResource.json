@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":8,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","parameter":[{"roleId":1},{"resourceIds":[1,2,3,4,5,6,23,24]}],"description":"给角色分配资源","startTime":1593933466277,"uri":"/role/allocResource","url":"http://localhost:8080/role/allocResource","spendTime":1056}

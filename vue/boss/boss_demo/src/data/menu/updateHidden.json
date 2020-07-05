@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":1,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","parameter":{"hidden":1},"description":"修改菜单显示状态","startTime":1593934002768,"uri":"/menu/updateHidden/6","url":"http://localhost:8080/menu/updateHidden/6","spendTime":13}

@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":1,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","description":"删除指定用户信息","startTime":1593931444500,"uri":"/admin/delete/1","url":"http://localhost:8080/admin/delete/1","spendTime":2028}

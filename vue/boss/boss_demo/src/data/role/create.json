@@ -1,0 +1,1 @@
+{"result":{"code":200,"data":1,"message":"操作成功"},"basePath":"http://localhost:8080","method":"POST","ip":"admin","parameter":{"createTime":1593931805872,"adminCount":0,"name":"测试管理员","id":8,"sort":0,"status":1},"description":"添加角色","startTime":1593931805871,"uri":"/role/create","url":"http://localhost:8080/role/create","spendTime":11}
