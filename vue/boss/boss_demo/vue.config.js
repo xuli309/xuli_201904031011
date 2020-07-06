@@ -35,17 +35,17 @@ module.exports = {
             symbolId: 'icon-[name]'
         })
     },
-    //configureWebpack:{
-        // devServer:{
-        //     before(app){
-        //         app.get('/api/authapi',function(req,res){
+//     configureWebpack:{
+//         devServer:{
+//             before(app){
+//                 app.get('/admin/login',function(req,res){
+                        
+//                 })
+//             }
 
-        //         })
-        //     }
-
-        // }
+//         }
        
-   // }
+//    }
 
     
 }
