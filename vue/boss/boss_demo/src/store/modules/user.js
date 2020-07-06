@@ -18,6 +18,7 @@ const user={
     },
     SET_AVATAR: (state, avatar) => {
       state.avatar = avatar
+      // state.avatar = "./assests/"+avatar
     },
     SET_ROLES: (state, roles) => {
       state.roles = roles
